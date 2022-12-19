@@ -1,0 +1,12 @@
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\bin\Release\ArtRepositorySystem.exe.config
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\bin\Release\ArtRepositorySystem.exe
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\bin\Release\ArtRepositorySystem.pdb
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.csproj.SuggestedBindingRedirects.cache
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.Form1.resources
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.loginForm.resources
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.Properties.Resources.resources
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.csproj.GenerateResource.cache
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.exe
+C:\Users\hp\source\repos\ArtRepositorySystem\ArtRepositorySystem\obj\Release\ArtRepositorySystem.pdb
