@@ -1,4 +1,4 @@
-﻿namespace Mededa
+﻿namespace ArtRepositorySystem
 {
     partial class App
     {
@@ -57,7 +57,7 @@
             // 
             this.BtnSearch.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnSearch.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnSearch.BackgroundImage = global::Mededa.Properties.Resources.loupe;
+            this.BtnSearch.BackgroundImage = global::ArtRepositorySystem.Properties.Resources.loupe;
             this.BtnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnSearch.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BtnSearch.Location = new System.Drawing.Point(878, 3);
@@ -71,7 +71,7 @@
             // 
             this.BtnNavigation.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BtnNavigation.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.BtnNavigation.BackgroundImage = global::Mededa.Properties.Resources.menu_bar;
+            this.BtnNavigation.BackgroundImage = global::ArtRepositorySystem.Properties.Resources.menu_bar;
             this.BtnNavigation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtnNavigation.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.BtnNavigation.Location = new System.Drawing.Point(3, 3);
@@ -91,7 +91,7 @@
             this.Controls.Add(this.PanelContent);
             this.Name = "App";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Mededa";
+            this.Text = "ArtRepositorySystem";
             this.PanelContent.ResumeLayout(false);
             this.ResumeLayout(false);
 

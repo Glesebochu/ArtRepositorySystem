@@ -1,4 +1,4 @@
-namespace Mededa
+namespace ArtRepositorySystem
 {
     public partial class App : Form
     {

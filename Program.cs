@@ -1,4 +1,4 @@
-namespace Mededa
+namespace ArtRepositorySystem
 {
     internal static class Program
     {

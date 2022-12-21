@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ArtRepositorySystem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mededa
+namespace ArtRepositorySystem
 {
     internal abstract class Art
     {
