@@ -11,12 +11,14 @@ namespace ArtRepositorySystem
     {
         Square,
         Rectangle,
-        Circle
     }
     internal class Painting : Art
     {
-        public Image? Image { get; set; }
+
+        public Image Image { get; set; }
         public PaintingShape Shape { get; set; }
+
+
 
     }
 }
