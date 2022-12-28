@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ArtRepositorySystem")]
+[assembly: AssemblyTitle("UserRegistrationApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ArtRepositorySystem")]
+[assembly: AssemblyProduct("UserRegistrationApp")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b5f00b10-eee5-4094-8313-1715023a4695")]
+[assembly: Guid("53edad7c-29d9-455e-8daf-1a48d283c5e3")]
 
 // Version information for an assembly consists of the following four values:
 //

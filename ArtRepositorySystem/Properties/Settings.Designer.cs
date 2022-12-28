@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArtRepositorySystem.Properties
+namespace UserRegistrationApp.Properties
 {
 
 
