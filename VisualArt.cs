@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    enum PaintingShape
+    enum VisualArtShape
     {
         Square,
         Rectangle,
+        Circle,
     }
-    internal class Painting : Art
+    enum VisualArtType
     {
-
+        Painting,
+        Photograph
+    }
+    internal class VisualArt : Art
+    {
         public Image Image { get; set; }
-        public PaintingShape Shape { get; set; }
-
-
-
+        public VisualArtShape Shape { get; set;}
+        public VisualArtType Type { get; set;}
     }
 }

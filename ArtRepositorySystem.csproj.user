@@ -1,8 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="ConsumerExperience.cs">
+    <Compile Update="App.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\ConsumerExperience.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\MyFeedPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\MyPlaylistsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\PanelArtworkDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\TopArtistsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\TopArtworksPage.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>

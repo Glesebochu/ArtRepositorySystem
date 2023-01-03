@@ -15,7 +15,7 @@ namespace ArtRepositorySystem
     internal partial class User
     {
         public string Username { get; set; }
-        private UserMode userMode { get; set; }
+        public UserMode userMode { get; set; }
         public Image ProfilePic;
         public string FirstName;
         public string LastName;
