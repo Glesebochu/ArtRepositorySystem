@@ -1,2 +1,2 @@
-# ArtRepositorySystem
-C# project for Autumn 2022
+# Mededa
+The all-in-one art hub.
