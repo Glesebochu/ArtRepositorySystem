@@ -2,10 +2,17 @@ using System.Globalization;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
+    //Structure for storing the colors of the app's theme.
+    public struct ColorThemes
+    {
+        public static Color NavigationPanel = Color.LightGray;
+        public static Color ContentPanel = Color.White;
+    }
     public partial class ConsumerExperience : UserControl
     {
         //For testing purposes
         User? ekele;
+        
         public ConsumerExperience()
         {
             InitializeComponent();
@@ -18,12 +25,13 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             ekele.Username = "ekele";
             LblUserMode.Text = ekele.userMode.ToString();
             LblFullName.Text = ekele.FirstName + " " + ekele.LastName;
+            LblUsername.Text = "@" + ekele.Username;
         }
         private void addUserControl(UserControl userControl)
         {
-            userControl.Dock = DockStyle.Fill;
             PanelContent.Controls.Clear();
             PanelContent.Controls.Add(userControl);
+            userControl.Dock = DockStyle.Fill;
             userControl.BringToFront();
         }
 
@@ -52,6 +60,22 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             ekele.SwitchMode();
             LblUserMode.Text = ekele.userMode.ToString();
         }
+
+
+        private void BtnNavigation_Click(object sender, EventArgs e)
+        {
+            if(SplitContainerAll.Panel1.Visible == true)
+            {
+                SplitContainerAll.Panel1.Hide();
+                SplitContainerAll.Panel2.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                SplitContainerAll.Panel1.Show();
+                SplitContainerAll.Panel2.Dock = DockStyle.None;
+            }
+        }
+
 
     }
 }

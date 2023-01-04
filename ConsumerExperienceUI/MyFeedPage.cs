@@ -121,6 +121,17 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             return requiredSize;
         }
+        private void CreateCenterDisplay(Art art)
+        {
+            PanelArtworkDisplay panelArtworkDisplay = new PanelArtworkDisplay(p);
+            //Create a new transparent panel that overlays above everything
+            //Set the paddding of this panel to 20% of its dimensions (x and y)
+            //Add the panelartworkdisplay to this panel and set the dock property to fill
+
+            //Stopped here...
+
+            this.Padding = new Padding(4,4,4,4);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             //Get an Art object based on the picture box that was clicked and make sure all its properties are filled
@@ -147,5 +158,6 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
 
         }
+
     }
 }
