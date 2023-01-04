@@ -12,7 +12,7 @@ namespace ArtRepositorySystem
         {
             Painting p = new Painting();
             p.Title = "The Total Liberation of Africa";
-            p.Image = Image.FromFile("C:\\Users\\zelal\\source\\repos\\FinhasYohannesGustavo\\ArtRepositorySystem\\Resources\\The Total Liberation of Africa.jpg");
+            p.Image = Image.FromFile("C:\\Users\\hp\\Desktop\\ArtRepositorySystemV3\\Resources\\The Total Liberation of Africa.jpg");
             p.Description = @"
                 In 1958, Ethiopian multi-disciplinary artist Afewerk Tekle created arguably his greatest work: a 
                 stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in 
