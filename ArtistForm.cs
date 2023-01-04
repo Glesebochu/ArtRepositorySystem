@@ -32,6 +32,7 @@ namespace ArtRepositorySystem
         {
 
         }
+        //method that changes the fontawesome button when it is clicked
         public static void CustomizeButton(Object senderButton ,Color color)
         {
             DisableButton();
@@ -47,6 +48,7 @@ namespace ArtRepositorySystem
 
             }
         }
+        //method that returns a fontawesome button when another button is clicked
        public static void DisableButton()
         {
             if (currentButton != null)
@@ -61,6 +63,7 @@ namespace ArtRepositorySystem
 
             }
         }
+        //method used to add user controls to the navigation panel
         public void addUserControlNavigation(UserControl userControl)
         {
             
@@ -72,7 +75,7 @@ namespace ArtRepositorySystem
 
         }
       
-
+        //method used to add usercontrols to content panel
         public void addUserControl(UserControl userControl)
         {
             if (userControl != null)
@@ -84,66 +87,10 @@ namespace ArtRepositorySystem
 
             }
         }
-        private void button1_Click(object sender, EventArgs e) { }
-        //{
-        //    SqlConnection con1 = new SqlConnection();
-        //    con1.ConnectionString = ConfigurationManager.ConnectionStrings["DBCS"].ToString();
-        //    con1.Open();
-            
-        //    string selectAll = "SELECT * FROM tblArtWork;";
-        //    SqlCommand cmd = new SqlCommand(selectAll,con1);
-            
-        //    cmd.CommandType = CommandType.Text;
-        //    SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
-            
-        //    DataSet ds = new DataSet();
-        //    dadapter.Fill(ds);
-        //    int count = ds.Tables[0].Rows.Count;
-        //    uscMyWorks csc = new uscMyWorks();
-
-        //    if (count > 0)
-        //    {
-
-        //        PictureBox[] pictureBoxes = new PictureBox[count];
-        //        for (int i = 0; i < count; i++)
-        //        {
-        //            var data = (Byte[])ds.Tables[0].Rows[count - i - 1]["Image"];
-        //            var stream = new MemoryStream(data);
-        //            pictureBoxes[i] = new PictureBox();
-        //            pictureBoxes[i].Image = Image.FromStream(stream);
-        //            pictureBoxes[i].SizeMode = PictureBoxSizeMode.Zoom;
-        //            pictureBoxes[i].Size = new Size(250, 250);
-                   
-        //            csc.flowLayoutPanel1.Controls.Add(pictureBoxes[i]);
-
-        //            Label artDescriptionLabel = new Label();
-        //            artDescriptionLabel.Text = (string)ds.Tables[0].Rows[count - i - 1]["ArtDescription"];
-        //            artDescriptionLabel.AutoSize = true;
-        //            artDescriptionLabel.Font = new System.Drawing.Font("Lucida Handwriting", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-        //            csc.flowLayoutPanel1.Controls.Add(artDescriptionLabel);
-                   
-
-
-        //        }
-        //    }
-        //    addUserControl(csc);
-        //}
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        //methods used to remove user controls from content panel
+        public void removeUserControl(UserControl userControl)
         {
-            
-            
-        }
-
-        private void iconButton1_Click(object sender, EventArgs e)
-        {
-             
-        }
-
-        private void UserControlsPanel_Paint(object sender, PaintEventArgs e)
-        {
-
+            contentPanel.Controls.Remove(userControl);
         }
 
         private void btnModeClick(object sender, EventArgs e)
@@ -153,20 +100,22 @@ namespace ArtRepositorySystem
             {
                 
                 btnMode.Text = "Consumer Mode";
-                pnlSidePanel.Controls.Clear();
+                pnlSidePanel.Controls.Clear();//remove the contents from the panels
+                contentPanel.Controls.Clear();
                 btnMode.IconChar = IconChar.ToggleOn;
                 
             }
             else
             {
-                uscpnlArtist newPanel = new uscpnlArtist();
-                addUserControlNavigation(newPanel);
+                uscpnlArtist newArtistPanel = new uscpnlArtist();
+                addUserControlNavigation(newArtistPanel);
                 btnMode.Text = "Artist Mode";
                 btnMode.IconChar = IconChar.ToggleOff;
                 
             }
         }
 
+        //adding a browse for images function when the profile oval PCB is clicked
         private void ovalPictureBox1_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
