@@ -30,10 +30,13 @@
         {
             this.pnlSidePanel = new System.Windows.Forms.Panel();
             this.pnlPersonal = new System.Windows.Forms.Panel();
+            this.ovalPictureBox1 = new ArtRepositorySystem.OvalPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnMode = new FontAwesome.Sharp.IconButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contentPanel = new System.Windows.Forms.Panel();
             this.pnlPersonal.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,6 +52,9 @@
             // 
             // pnlPersonal
             // 
+            this.pnlPersonal.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pnlPersonal.Controls.Add(this.ovalPictureBox1);
+            this.pnlPersonal.Controls.Add(this.label1);
             this.pnlPersonal.Controls.Add(this.btnMode);
             this.pnlPersonal.Controls.Add(this.pictureBox1);
             this.pnlPersonal.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,6 +63,29 @@
             this.pnlPersonal.Name = "pnlPersonal";
             this.pnlPersonal.Size = new System.Drawing.Size(800, 114);
             this.pnlPersonal.TabIndex = 2;
+            // 
+            // ovalPictureBox1
+            // 
+            this.ovalPictureBox1.BackColor = System.Drawing.Color.White;
+            this.ovalPictureBox1.Image = global::ArtRepositorySystem.Properties.Resources.profile1;
+            this.ovalPictureBox1.InitialImage = global::ArtRepositorySystem.Properties.Resources.profile1;
+            this.ovalPictureBox1.Location = new System.Drawing.Point(375, 12);
+            this.ovalPictureBox1.Name = "ovalPictureBox1";
+            this.ovalPictureBox1.Size = new System.Drawing.Size(117, 99);
+            this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ovalPictureBox1.TabIndex = 3;
+            this.ovalPictureBox1.TabStop = false;
+            this.ovalPictureBox1.Click += new System.EventHandler(this.ovalPictureBox1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(599, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 18);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Brought to you by ግለሰቦች";
             // 
             // btnMode
             // 
@@ -67,7 +96,7 @@
             this.btnMode.IconColor = System.Drawing.Color.Black;
             this.btnMode.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMode.Location = new System.Drawing.Point(261, 3);
+            this.btnMode.Location = new System.Drawing.Point(606, 3);
             this.btnMode.Margin = new System.Windows.Forms.Padding(0);
             this.btnMode.Name = "btnMode";
             this.btnMode.Size = new System.Drawing.Size(194, 53);
@@ -82,7 +111,7 @@
             // 
             this.pictureBox1.BackgroundImage = global::ArtRepositorySystem.Properties.Resources.mededaNew1;
             this.pictureBox1.Image = global::ArtRepositorySystem.Properties.Resources.mededaNew1;
-            this.pictureBox1.Location = new System.Drawing.Point(4, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(4, -12);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(253, 126);
@@ -94,6 +123,7 @@
             // contentPanel
             // 
             this.contentPanel.AutoScroll = true;
+            this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.contentPanel.Location = new System.Drawing.Point(261, 120);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(539, 330);
@@ -113,6 +143,8 @@
             this.Text = "Artist";
             this.Load += new System.EventHandler(this.ArtistForm_Load);
             this.pnlPersonal.ResumeLayout(false);
+            this.pnlPersonal.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ovalPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -124,5 +156,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton btnMode;
         public  Panel contentPanel;
+        private Label label1;
+        private OvalPictureBox ovalPictureBox1;
     }
 }

@@ -166,5 +166,15 @@ namespace ArtRepositorySystem
                 
             }
         }
+
+        private void ovalPictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "Image files (*.png;*.jpeg;*.bmp)|*.JPEG;*.PNG;*.BMP";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                ovalPictureBox1.ImageLocation = ofd.FileName;
+            }
+        }
     }
 }
