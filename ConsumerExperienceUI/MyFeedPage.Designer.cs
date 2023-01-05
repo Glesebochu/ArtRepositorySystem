@@ -32,10 +32,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelAllArtworks = new System.Windows.Forms.TableLayoutPanel();
             this.PanelHeader.SuspendLayout();
             this.PanelContent.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanelAllArtworks.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblPageTitle
@@ -47,7 +47,7 @@
             this.LblPageTitle.Name = "LblPageTitle";
             this.LblPageTitle.Size = new System.Drawing.Size(175, 44);
             this.LblPageTitle.TabIndex = 0;
-            this.LblPageTitle.Text = "My Page";
+            this.LblPageTitle.Text = "My Feed";
             // 
             // button1
             // 
@@ -57,6 +57,7 @@
             this.button1.Size = new System.Drawing.Size(357, 196);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonArtwork_Click);
             // 
             // PanelHeader
             // 
@@ -71,7 +72,7 @@
             // 
             // PanelContent
             // 
-            this.PanelContent.Controls.Add(this.tableLayoutPanel1);
+            this.PanelContent.Controls.Add(this.tableLayoutPanelAllArtworks);
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContent.Location = new System.Drawing.Point(0, 84);
             this.PanelContent.Margin = new System.Windows.Forms.Padding(10);
@@ -80,22 +81,22 @@
             this.PanelContent.Size = new System.Drawing.Size(1129, 646);
             this.PanelContent.TabIndex = 3;
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanelAllArtworks
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(20, 20);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1089, 606);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanelAllArtworks.ColumnCount = 3;
+            this.tableLayoutPanelAllArtworks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelAllArtworks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelAllArtworks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelAllArtworks.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanelAllArtworks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelAllArtworks.Location = new System.Drawing.Point(20, 20);
+            this.tableLayoutPanelAllArtworks.Name = "tableLayoutPanelAllArtworks";
+            this.tableLayoutPanelAllArtworks.RowCount = 3;
+            this.tableLayoutPanelAllArtworks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelAllArtworks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelAllArtworks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanelAllArtworks.Size = new System.Drawing.Size(1089, 606);
+            this.tableLayoutPanelAllArtworks.TabIndex = 2;
             // 
             // MyFeedPage
             // 
@@ -106,9 +107,10 @@
             this.Controls.Add(this.PanelHeader);
             this.Name = "MyFeedPage";
             this.Size = new System.Drawing.Size(1129, 730);
+            this.Load += new System.EventHandler(this.MyFeedPage_Load);
             this.PanelHeader.ResumeLayout(false);
             this.PanelContent.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanelAllArtworks.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -119,6 +121,6 @@
         private Button button1;
         private Panel PanelHeader;
         private Panel PanelContent;
-        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanelAllArtworks;
     }
 }

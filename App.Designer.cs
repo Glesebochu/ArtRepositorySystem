@@ -34,8 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1179, 654);
             this.Name = "App";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "App";
             this.Load += new System.EventHandler(this.App_Load);
             this.ResumeLayout(false);

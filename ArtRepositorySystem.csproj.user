@@ -13,7 +13,7 @@
     <Compile Update="ConsumerExperienceUI\MyPlaylistsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ConsumerExperienceUI\PanelArtworkDisplay.cs">
+    <Compile Update="ConsumerExperienceUI\CenterDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\TopArtistsPage.cs">

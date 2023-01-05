@@ -15,6 +15,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
     {
         //For testing purposes
         VisualArt? p;
+        List<VisualArt>? visuals;
         public MyFeedPage()
         {
             InitializeComponent();
@@ -43,96 +44,46 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             p.Artists = new List<User> { afewerk };
             
-            button1.BackgroundImage = p.Image;
+            //button1.BackgroundImage = p.Image;
+
+            visuals = new List<VisualArt>();
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+        }
+        private void CreateCenterDisplayFor(Art art)
+        {
+            //Get the major form
+            Form mainForm = this.FindForm();
+            //Create center display
+            CenterDisplay centerDisplay = new CenterDisplay(art);
             
+            //Set the paddding of this userControl to 20% of the form's dimensions (x and y)
+            int xPadding = (int)(mainForm.Width * 0.2);
+            int yPadding = (int)(mainForm.Height * 0.2);
+            centerDisplay.Padding = new Padding(xPadding, (yPadding/2), xPadding, yPadding);
+
+            centerDisplay.Dock = DockStyle.Fill;
+
+            mainForm.Controls.Add(centerDisplay);
+            centerDisplay.BringToFront();
+
         }
-        private Rectangle GetAvailableSpace()
+        private List<Button> CreateButtonsFromVisualArtworks(List<VisualArt> visualArts)
         {
-            Rectangle availableSpace = new Rectangle();
-            availableSpace.Width = (int)(this.Width * 0.6);
-            availableSpace.Height = (int)(this.Height * 0.6);
-            availableSpace.X = (int)(this.Width * 0.2);
-            availableSpace.Y = (int)(this.Height * 0.2);
-            return availableSpace;
-        }
-        private Rectangle GetPanelForDisplay(VisualArt visualArt)
-        {
-            //The image that determines the size of the rectangle
-            Image image = visualArt.Image;
-            //The rectangle to be returned
-            Rectangle requiredSize = new Rectangle();
-
-            //The space available for displaying the art
-            Rectangle availableSpace = GetAvailableSpace();
-
-            //The x-to-y ratio of the image that represents the shape of the image mathematically
-            double xToYRatio = Convert.ToDouble(image.Width) / image.Height;
-
-            ///<summary>
-            ///Calculating the size of the rectangle to be returned
-            ///</summary>
-
-            double availableSpaceToImageRatio;
-
-            //Check which side of the image is longer
-            if (image.Width > image.Height)
+            List<Button> buttonList = new List<Button>();
+            for(int i=0; i < visualArts.Count(); i++)
             {
-                //For images whose width is longer than their height
-                availableSpaceToImageRatio = Convert.ToDouble(availableSpace.Width) / image.Width;
-                requiredSize.Width = availableSpace.Width;
-                requiredSize.Height = (int)(image.Height * availableSpaceToImageRatio);
-                requiredSize.X = availableSpace.X;
-
-                //The difference between the height of the image and the available space
-                int diffBetweenImageAndAvailableSpace = requiredSize.Height - availableSpace.Height;
-                if (diffBetweenImageAndAvailableSpace < 0)
-                {
-                    requiredSize.Y = availableSpace.Y - diffBetweenImageAndAvailableSpace;
-                }
-                else
-                {
-                    requiredSize.Y = availableSpace.Y;
-                }
-            }
-            else
-            {
-                //For images whose height is longer than their width 
-                availableSpaceToImageRatio = Convert.ToDouble(availableSpace.Height) / image.Height;
-                requiredSize.Height = availableSpace.Height;
-                requiredSize.Width = (int)(image.Width * availableSpaceToImageRatio);
-                requiredSize.Y = availableSpace.Y;
-
-                //The difference between the width of the image and the available space
-                int diffBetweenImageAndAvailableSpace = requiredSize.Width - availableSpace.Width;
-                if (diffBetweenImageAndAvailableSpace < 0)
-                {
-                    requiredSize.X = availableSpace.X - diffBetweenImageAndAvailableSpace;
-                }
-                else
-                {
-                    requiredSize.X = availableSpace.X;
-                }
+                buttonList.ElementAt(i).BackgroundImage = visualArts.ElementAt(i).Image;
+                buttonList.ElementAt(i).Text = "";
             }
 
-            ///<summary>
-            ///Calculating the location of the rectangle
-            ///</summary>
-
-
-            return requiredSize;
+            return buttonList;
         }
-        private void CreateCenterDisplay(Art art)
-        {
-            PanelArtworkDisplay panelArtworkDisplay = new PanelArtworkDisplay(p);
-            //Create a new transparent panel that overlays above everything
-            //Set the paddding of this panel to 20% of its dimensions (x and y)
-            //Add the panelartworkdisplay to this panel and set the dock property to fill
-
-            //Stopped here...
-
-            this.Padding = new Padding(4,4,4,4);
-        }
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonArtwork_Click(object sender, EventArgs e)
         {
             //Get an Art object based on the picture box that was clicked and make sure all its properties are filled
             //Create a new panel that hovers above everything
@@ -141,23 +92,16 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             // description & artist
             // feedback form
             // analytics
-            //Buttons appear to the right and left of the panel for navigating through the cards
-            // The button on the left is disabled when on page 1
-            // The button on the right is disabled when on page 4
 
-            PanelArtworkDisplay panelArtworkDisplay = new PanelArtworkDisplay(p);
-            Rectangle panelForDisplay = GetPanelForDisplay(p);
-            panelArtworkDisplay.Width = panelForDisplay.Width;
-            panelArtworkDisplay.Height = panelForDisplay.Height;
-            panelArtworkDisplay.Location = new Point(panelForDisplay.X, panelForDisplay.Y);
-            panelArtworkDisplay.Anchor = AnchorStyles.None;
-            panelArtworkDisplay.Dock = DockStyle.None;
-            //panelArtworkDisplay.Location
-            this.Controls.Add(panelArtworkDisplay);
-            panelArtworkDisplay.BringToFront();
-
-
+            CreateCenterDisplayFor(p);
         }
 
+        private void MyFeedPage_Load(object sender, EventArgs e)
+        {
+            List<Button> buttonList = CreateButtonsFromVisualArtworks(visuals);
+            //tableLayoutPanelAllArtworks.Controls.AddRange();
+
+            //Stopped here...
+        }
     }
 }
