@@ -43,16 +43,16 @@
             this.pnlContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContentPanel.Location = new System.Drawing.Point(0, 0);
             this.pnlContentPanel.Name = "pnlContentPanel";
-            this.pnlContentPanel.Size = new System.Drawing.Size(530, 326);
+            this.pnlContentPanel.Size = new System.Drawing.Size(703, 467);
             this.pnlContentPanel.TabIndex = 0;
             // 
             // txtSearchBox
             // 
-            this.txtSearchBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSearchBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtSearchBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.txtSearchBox.BackColor = System.Drawing.Color.White;
-            this.txtSearchBox.Location = new System.Drawing.Point(3, 10);
+            this.txtSearchBox.Dock = System.Windows.Forms.DockStyle.Left;
+            this.txtSearchBox.Location = new System.Drawing.Point(0, 0);
             this.txtSearchBox.Name = "txtSearchBox";
             this.txtSearchBox.Size = new System.Drawing.Size(257, 23);
             this.txtSearchBox.TabIndex = 1;
@@ -66,7 +66,7 @@
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearch.IconSize = 23;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(266, 10);
+            this.btnSearch.Location = new System.Drawing.Point(263, 0);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(134, 30);
             this.btnSearch.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(530, 49);
+            this.panel1.Size = new System.Drawing.Size(703, 40);
             this.panel1.TabIndex = 1;
             // 
             // uscMyWorks
@@ -94,7 +94,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlContentPanel);
             this.Name = "uscMyWorks";
-            this.Size = new System.Drawing.Size(530, 326);
+            this.Size = new System.Drawing.Size(703, 467);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

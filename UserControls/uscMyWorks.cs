@@ -61,7 +61,7 @@ namespace ArtRepositorySystem.UserControls
                         artDescriptionLabel.AutoSize = true;
                         artDescriptionLabel.Font = new System.Drawing.Font("Lucida Handwriting", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 
-                        pnlContentPanel.Controls.Add(artDescriptionLabel);
+                        //pnlContentPanel.Controls.Add(artDescriptionLabel);
                     }
                     con.Close();
                 }

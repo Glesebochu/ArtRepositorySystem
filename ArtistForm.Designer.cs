@@ -47,7 +47,7 @@
             this.pnlSidePanel.Location = new System.Drawing.Point(0, 120);
             this.pnlSidePanel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlSidePanel.Name = "pnlSidePanel";
-            this.pnlSidePanel.Size = new System.Drawing.Size(257, 330);
+            this.pnlSidePanel.Size = new System.Drawing.Size(257, 475);
             this.pnlSidePanel.TabIndex = 0;
             // 
             // pnlPersonal
@@ -61,7 +61,7 @@
             this.pnlPersonal.Location = new System.Drawing.Point(0, 0);
             this.pnlPersonal.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pnlPersonal.Name = "pnlPersonal";
-            this.pnlPersonal.Size = new System.Drawing.Size(800, 114);
+            this.pnlPersonal.Size = new System.Drawing.Size(1069, 114);
             this.pnlPersonal.TabIndex = 2;
             // 
             // ovalPictureBox1
@@ -69,9 +69,9 @@
             this.ovalPictureBox1.BackColor = System.Drawing.Color.White;
             this.ovalPictureBox1.Image = global::ArtRepositorySystem.Properties.Resources.profile1;
             this.ovalPictureBox1.InitialImage = global::ArtRepositorySystem.Properties.Resources.profile1;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(375, 12);
+            this.ovalPictureBox1.Location = new System.Drawing.Point(554, 12);
             this.ovalPictureBox1.Name = "ovalPictureBox1";
-            this.ovalPictureBox1.Size = new System.Drawing.Size(117, 99);
+            this.ovalPictureBox1.Size = new System.Drawing.Size(109, 97);
             this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ovalPictureBox1.TabIndex = 3;
             this.ovalPictureBox1.TabStop = false;
@@ -81,7 +81,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(599, 74);
+            this.label1.Location = new System.Drawing.Point(875, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(194, 18);
             this.label1.TabIndex = 2;
@@ -96,7 +96,7 @@
             this.btnMode.IconColor = System.Drawing.Color.Black;
             this.btnMode.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMode.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMode.Location = new System.Drawing.Point(606, 3);
+            this.btnMode.Location = new System.Drawing.Point(875, 0);
             this.btnMode.Margin = new System.Windows.Forms.Padding(0);
             this.btnMode.Name = "btnMode";
             this.btnMode.Size = new System.Drawing.Size(194, 53);
@@ -118,26 +118,24 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            
             // 
             // contentPanel
             // 
             this.contentPanel.AutoScroll = true;
             this.contentPanel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.contentPanel.Location = new System.Drawing.Point(261, 120);
+            this.contentPanel.Location = new System.Drawing.Point(264, 120);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(539, 330);
+            this.contentPanel.Size = new System.Drawing.Size(805, 475);
             this.contentPanel.TabIndex = 3;
             // 
             // ArtistForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1069, 607);
             this.Controls.Add(this.contentPanel);
             this.Controls.Add(this.pnlPersonal);
             this.Controls.Add(this.pnlSidePanel);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "ArtistForm";
             this.Text = "Artist";
