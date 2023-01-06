@@ -44,7 +44,7 @@ namespace ArtRepositorySystem
     {
         public Image Image { get; set; }
         public VisualArtShape Shape { get; set;}
-        public VisualArtType Type { get; set;}
+        public VisualArtType VisualArtType { get; set;}
         public PaintingGenre? PaintingGenre { get; set;}
         public PhotographGenre? PhotographGenre { get; set;}
     }

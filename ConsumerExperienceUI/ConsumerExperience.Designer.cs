@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -99,10 +99,10 @@
             // PanelNavButtons
             // 
             this.PanelNavButtons.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.PanelNavButtons.Controls.Add(this.BtnMyFeed);
-            this.PanelNavButtons.Controls.Add(this.BtnTopArtworks);
             this.PanelNavButtons.Controls.Add(this.BtnMyPlaylist);
+            this.PanelNavButtons.Controls.Add(this.BtnTopArtworks);
             this.PanelNavButtons.Controls.Add(this.BtnTopArtists);
+            this.PanelNavButtons.Controls.Add(this.BtnMyFeed);
             this.PanelNavButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelNavButtons.Location = new System.Drawing.Point(0, 248);
             this.PanelNavButtons.Name = "PanelNavButtons";
@@ -117,7 +117,7 @@
             this.BtnMyFeed.CheckedState.FillColor = System.Drawing.Color.LightCoral;
             this.BtnMyFeed.CustomBorderColor = System.Drawing.Color.Gray;
             this.BtnMyFeed.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.BtnMyFeed.CustomizableEdges = customizableEdges1;
+            this.BtnMyFeed.CustomizableEdges = customizableEdges7;
             this.BtnMyFeed.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnMyFeed.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnMyFeed.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -129,11 +129,11 @@
             this.BtnMyFeed.ForeColor = System.Drawing.Color.Black;
             this.BtnMyFeed.HoverState.FillColor = System.Drawing.Color.Gray;
             this.BtnMyFeed.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnMyFeed.Location = new System.Drawing.Point(0, 209);
+            this.BtnMyFeed.Location = new System.Drawing.Point(0, 20);
             this.BtnMyFeed.Margin = new System.Windows.Forms.Padding(10);
             this.BtnMyFeed.Name = "BtnMyFeed";
             this.BtnMyFeed.Padding = new System.Windows.Forms.Padding(5);
-            this.BtnMyFeed.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            this.BtnMyFeed.ShadowDecoration.CustomizableEdges = customizableEdges8;
             this.BtnMyFeed.Size = new System.Drawing.Size(244, 63);
             this.BtnMyFeed.TabIndex = 9;
             this.BtnMyFeed.Text = "My Feed";
@@ -175,7 +175,7 @@
             this.BtnMyPlaylist.CheckedState.FillColor = System.Drawing.Color.LightCoral;
             this.BtnMyPlaylist.CustomBorderColor = System.Drawing.Color.Gray;
             this.BtnMyPlaylist.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.BtnMyPlaylist.CustomizableEdges = customizableEdges5;
+            this.BtnMyPlaylist.CustomizableEdges = customizableEdges1;
             this.BtnMyPlaylist.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnMyPlaylist.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnMyPlaylist.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -187,11 +187,11 @@
             this.BtnMyPlaylist.ForeColor = System.Drawing.Color.Black;
             this.BtnMyPlaylist.HoverState.FillColor = System.Drawing.Color.Gray;
             this.BtnMyPlaylist.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnMyPlaylist.Location = new System.Drawing.Point(0, 83);
+            this.BtnMyPlaylist.Location = new System.Drawing.Point(0, 209);
             this.BtnMyPlaylist.Margin = new System.Windows.Forms.Padding(10);
             this.BtnMyPlaylist.Name = "BtnMyPlaylist";
             this.BtnMyPlaylist.Padding = new System.Windows.Forms.Padding(5);
-            this.BtnMyPlaylist.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            this.BtnMyPlaylist.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.BtnMyPlaylist.Size = new System.Drawing.Size(244, 63);
             this.BtnMyPlaylist.TabIndex = 9;
             this.BtnMyPlaylist.Text = "My Playlist";
@@ -204,7 +204,7 @@
             this.BtnTopArtists.CheckedState.FillColor = System.Drawing.Color.LightCoral;
             this.BtnTopArtists.CustomBorderColor = System.Drawing.Color.Gray;
             this.BtnTopArtists.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.BtnTopArtists.CustomizableEdges = customizableEdges7;
+            this.BtnTopArtists.CustomizableEdges = customizableEdges5;
             this.BtnTopArtists.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.BtnTopArtists.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.BtnTopArtists.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -216,11 +216,11 @@
             this.BtnTopArtists.ForeColor = System.Drawing.Color.Black;
             this.BtnTopArtists.HoverState.FillColor = System.Drawing.Color.Gray;
             this.BtnTopArtists.HoverState.ForeColor = System.Drawing.Color.White;
-            this.BtnTopArtists.Location = new System.Drawing.Point(0, 20);
+            this.BtnTopArtists.Location = new System.Drawing.Point(0, 83);
             this.BtnTopArtists.Margin = new System.Windows.Forms.Padding(10);
             this.BtnTopArtists.Name = "BtnTopArtists";
             this.BtnTopArtists.Padding = new System.Windows.Forms.Padding(5);
-            this.BtnTopArtists.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            this.BtnTopArtists.ShadowDecoration.CustomizableEdges = customizableEdges6;
             this.BtnTopArtists.Size = new System.Drawing.Size(244, 63);
             this.BtnTopArtists.TabIndex = 9;
             this.BtnTopArtists.Text = "Top Artists";
@@ -345,6 +345,7 @@
             // 
             // PanelContent
             // 
+            this.PanelContent.AutoScroll = true;
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContent.Location = new System.Drawing.Point(0, 86);
             this.PanelContent.Margin = new System.Windows.Forms.Padding(10);

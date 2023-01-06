@@ -29,6 +29,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             LblArtworkTitle.Text = Art.Title;
             VisualArt p = (VisualArt)Art;
 
+            //tabControlArtworkInfo.Size = new Size(p.Image.Width,p.Image.Height);
+            //The above wont work because the tab control is docked to fill.
+
             //picBoxArtwork.BackgroundImage = p.Image;
             artPage.BackgroundImage = p.Image;
             artPage.BackgroundImageLayout = ImageLayout.Zoom;
@@ -36,7 +39,6 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             
             //Stopped here...
             
-            //tabControlArtworkInfo.Size = new Size(p.Image.Width,p.Image.Height);
         }
 
         private void CenterDisplay_Click(object sender, EventArgs e)

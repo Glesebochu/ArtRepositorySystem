@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.LblPageTitle = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.PanelContent = new System.Windows.Forms.Panel();
             this.tableLayoutPanelAllArtworks = new System.Windows.Forms.TableLayoutPanel();
             this.PanelHeader.SuspendLayout();
             this.PanelContent.SuspendLayout();
-            this.tableLayoutPanelAllArtworks.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblPageTitle
@@ -48,16 +46,6 @@
             this.LblPageTitle.Size = new System.Drawing.Size(175, 44);
             this.LblPageTitle.TabIndex = 0;
             this.LblPageTitle.Text = "My Feed";
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(357, 196);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.buttonArtwork_Click);
             // 
             // PanelHeader
             // 
@@ -72,10 +60,12 @@
             // 
             // PanelContent
             // 
+            this.PanelContent.AutoScroll = true;
             this.PanelContent.Controls.Add(this.tableLayoutPanelAllArtworks);
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelContent.Location = new System.Drawing.Point(0, 84);
             this.PanelContent.Margin = new System.Windows.Forms.Padding(10);
+            this.PanelContent.MinimumSize = new System.Drawing.Size(400, 500);
             this.PanelContent.Name = "PanelContent";
             this.PanelContent.Padding = new System.Windows.Forms.Padding(20);
             this.PanelContent.Size = new System.Drawing.Size(1129, 646);
@@ -83,13 +73,15 @@
             // 
             // tableLayoutPanelAllArtworks
             // 
+            this.tableLayoutPanelAllArtworks.AutoScroll = true;
             this.tableLayoutPanelAllArtworks.ColumnCount = 3;
             this.tableLayoutPanelAllArtworks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelAllArtworks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelAllArtworks.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelAllArtworks.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanelAllArtworks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelAllArtworks.Location = new System.Drawing.Point(20, 20);
+            this.tableLayoutPanelAllArtworks.Margin = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanelAllArtworks.MinimumSize = new System.Drawing.Size(400, 400);
             this.tableLayoutPanelAllArtworks.Name = "tableLayoutPanelAllArtworks";
             this.tableLayoutPanelAllArtworks.RowCount = 3;
             this.tableLayoutPanelAllArtworks.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -110,7 +102,6 @@
             this.Load += new System.EventHandler(this.MyFeedPage_Load);
             this.PanelHeader.ResumeLayout(false);
             this.PanelContent.ResumeLayout(false);
-            this.tableLayoutPanelAllArtworks.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -118,7 +109,6 @@
         #endregion
 
         private Label LblPageTitle;
-        private Button button1;
         private Panel PanelHeader;
         private Panel PanelContent;
         private TableLayoutPanel tableLayoutPanelAllArtworks;

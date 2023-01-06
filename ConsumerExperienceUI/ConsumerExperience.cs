@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Runtime.CompilerServices;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
@@ -26,6 +27,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             LblUserMode.Text = ekele.userMode.ToString();
             LblFullName.Text = ekele.FirstName + " " + ekele.LastName;
             LblUsername.Text = "@" + ekele.Username;
+            addUserControl(new MyFeedPage());
         }
         private void addUserControl(UserControl userControl)
         {
@@ -33,6 +35,75 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             PanelContent.Controls.Add(userControl);
             userControl.Dock = DockStyle.Fill;
             userControl.BringToFront();
+        }
+        internal void CreateCenterDisplayFor(Art art, Panel panelContent)
+        {
+            //Create center display
+            CenterDisplay centerDisplay = new CenterDisplay(art);
+            //Panel panelContent = (Panel)this.Parent;
+
+            //Set the paddding of this userControl to 20% of the form's dimensions (x and y)
+            int xPadding = (int)(panelContent.Width * 0.1);
+            int yPadding = (int)(panelContent.Height * 0.1);
+            centerDisplay.Padding = new Padding(xPadding, (yPadding / 2), xPadding, yPadding);
+
+            centerDisplay.Dock = DockStyle.Fill;
+
+            panelContent.Controls.Add(centerDisplay);
+            centerDisplay.BringToFront();
+
+        }
+        internal static List<VisualArt> GetDummyObjects()
+        {
+            //For testing purposes
+            VisualArt? p;
+            List<VisualArt>? visuals;
+
+            p = new VisualArt();
+            p.Title = "The Total Liberation of Africa";
+            p.Image = Properties.Resources.TheTotalLiberationOfAfrica;
+            p.Description = "In 1958, Ethiopian multi-disciplinary artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
+            p.Shape = VisualArtShape.Rectangle;
+
+            User afewerk = new User();
+            afewerk.Username = "afewerk_tekle";
+            afewerk.FirstName = "Afewerk";
+            afewerk.LastName = "Tekle";
+            afewerk.Bio = "The Shit.";
+            afewerk.Works = new List<Art>();
+            afewerk.Works.Add(p);
+
+            p.Artists = new List<User> { afewerk };
+
+            visuals = new List<VisualArt>();
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+            visuals.Add(p);
+
+            return visuals;
+        }
+        internal static List<Button> CreateButtonsFromVisualArtworks(List<VisualArt> visualArts)
+        {
+            List<Button> buttonList = new List<Button>();
+            for (int i = 0; i < visualArts.Count(); i++)
+            {
+                Button button = new Button();
+                button.BackgroundImage = visualArts.ElementAt(i).Image;
+                button.Text = "";
+                button.Tag = visualArts[i];
+                buttonList.Add(button);
+            }
+
+            return buttonList;
         }
 
         private void BtnMyFeed_Click(object sender, EventArgs e)
