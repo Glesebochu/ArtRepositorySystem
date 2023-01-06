@@ -69,7 +69,7 @@
             this.ovalPictureBox1.BackColor = System.Drawing.Color.White;
             this.ovalPictureBox1.Image = global::ArtRepositorySystem.Properties.Resources.profile1;
             this.ovalPictureBox1.InitialImage = global::ArtRepositorySystem.Properties.Resources.profile1;
-            this.ovalPictureBox1.Location = new System.Drawing.Point(554, 12);
+            this.ovalPictureBox1.Location = new System.Drawing.Point(544, 14);
             this.ovalPictureBox1.Name = "ovalPictureBox1";
             this.ovalPictureBox1.Size = new System.Drawing.Size(109, 97);
             this.ovalPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
