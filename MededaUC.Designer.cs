@@ -1,4 +1,4 @@
-﻿namespace IntPg_UC
+﻿namespace ArtRepositorySystem
 {
     partial class MededaUC
     {

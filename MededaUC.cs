@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IntPg_UC
+namespace ArtRepositorySystem
 {
     public partial class MededaUC : UserControl
     {
