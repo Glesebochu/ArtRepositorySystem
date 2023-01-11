@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    enum QuestionType
+    public enum QuestionType
     {
         YesOrNo,
         SingleSelect,
@@ -14,7 +14,7 @@ namespace ArtRepositorySystem
         ShortAnswer,
         LongAnswer
     }
-    internal class QnA
+    public class QnA
     {
         string Prompt { get; set; }
         QuestionType Type { get; set; }

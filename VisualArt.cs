@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    enum VisualArtShape
+    public enum VisualArtShape
     {
         Square,
         Rectangle,
         Circle,
     }
-    enum VisualArtType
+    public enum VisualArtType
     {
         Painting,
         Photograph
@@ -40,7 +40,7 @@ namespace ArtRepositorySystem
         Editorial,
         Architectural
     }
-    internal class VisualArt : Art
+    public class VisualArt : Art
     {
         public Image Image { get; set; }
         public VisualArtShape Shape { get; set;}

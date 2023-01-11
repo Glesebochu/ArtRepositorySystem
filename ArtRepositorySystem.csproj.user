@@ -4,6 +4,12 @@
     <Compile Update="App.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ConsumerExperienceUI\ResultsGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\CategoryTemplateDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ConsumerExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -14,6 +20,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\CenterDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\SearchDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\TopArtistsPage.cs">

@@ -18,7 +18,7 @@ namespace ArtRepositorySystem
         Music,
         Theater
     }
-    internal abstract class Art
+    public abstract class Art
     {
         public string Title { get; set; }
         public string Description { get; set; }

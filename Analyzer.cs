@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    internal class Analyzer
+    public class Analyzer
     {
         static Analytic Analyze(Art art)
         {

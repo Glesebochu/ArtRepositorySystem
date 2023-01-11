@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    enum UserMode
+    public enum UserMode
     {
         Consumer,
         Artist
     }
-    internal partial class User
+    public class User
     {
         public string Username { get; set; }
         public UserMode userMode { get; set; }

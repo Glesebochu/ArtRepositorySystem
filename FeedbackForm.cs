@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    internal class FeedbackForm
+    public class FeedbackForm
     {
         public List<QnA> Questions { get; set; }
     }

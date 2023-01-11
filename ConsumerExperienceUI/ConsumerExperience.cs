@@ -36,13 +36,12 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             userControl.Dock = DockStyle.Fill;
             userControl.BringToFront();
         }
-        internal void CreateCenterDisplayFor(Art art, Panel panelContent)
+        internal static void CreateCenterDisplayFor(Art art, Panel panelContent)
         {
             //Create center display
             CenterDisplay centerDisplay = new CenterDisplay(art);
-            //Panel panelContent = (Panel)this.Parent;
 
-            //Set the paddding of this userControl to 20% of the form's dimensions (x and y)
+            //Set the paddding to 10% of the form's dimensions (x and y)
             int xPadding = (int)(panelContent.Width * 0.1);
             int yPadding = (int)(panelContent.Height * 0.1);
             centerDisplay.Padding = new Padding(xPadding, (yPadding / 2), xPadding, yPadding);
@@ -53,11 +52,11 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             centerDisplay.BringToFront();
 
         }
-        internal static List<VisualArt> GetDummyObjects()
+        internal static List<VisualArt> GetDummyVisualArts()
         {
             //For testing purposes
-            VisualArt? p;
-            List<VisualArt>? visuals;
+            VisualArt p;
+            List<VisualArt> visuals;
 
             p = new VisualArt();
             p.Title = "The Total Liberation of Africa";
@@ -73,7 +72,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             afewerk.Works = new List<Art>();
             afewerk.Works.Add(p);
 
-            p.Artists = new List<User> { afewerk };
+            p.Artists = new List<User> { afewerk};
 
             visuals = new List<VisualArt>();
             visuals.Add(p);
@@ -91,6 +90,26 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             return visuals;
         }
+        internal static List<User> GetDummyUsers()
+        {
+            User afewerk = new User();
+            afewerk.Username = "afewerk_tekle";
+            afewerk.FirstName = "Afewerk";
+            afewerk.LastName = "Tekle";
+            afewerk.Bio = "The Shit.";
+            afewerk.ProfilePic = Properties.Resources.Afewerk_Tekle;
+
+            List<User> userList = new List<User>();
+            userList.Add(afewerk);
+            userList.Add(afewerk);
+            userList.Add(afewerk);
+            userList.Add(afewerk);
+            userList.Add(afewerk);
+            userList.Add(afewerk);
+            userList.Add(afewerk);
+
+            return userList;
+        }
         internal static List<Button> CreateButtonsFromVisualArtworks(List<VisualArt> visualArts)
         {
             List<Button> buttonList = new List<Button>();
@@ -100,6 +119,20 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 button.BackgroundImage = visualArts.ElementAt(i).Image;
                 button.Text = "";
                 button.Tag = visualArts[i];
+                buttonList.Add(button);
+            }
+
+            return buttonList;
+        }
+        internal static List<Button> CreateButtonsFromUsers(List<User> users)
+        {
+            List<Button> buttonList = new List<Button>();
+            for (int i = 0; i < users.Count(); i++)
+            {
+                Button button = new Button();
+                button.BackgroundImage = users[i].ProfilePic;
+                button.Text = "";
+                button.Tag = users[i];
                 buttonList.Add(button);
             }
 
@@ -147,6 +180,10 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             }
         }
 
-
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+            addUserControl(new SearchDisplay());
+            //BtnSearch.Hide();
+        }
     }
 }
