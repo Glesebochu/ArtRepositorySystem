@@ -55,7 +55,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         internal static List<VisualArt> GetDummyVisualArts()
         {
             //For testing purposes
-            VisualArt p;
+            VisualArt p, x;
             List<VisualArt> visuals;
 
             p = new VisualArt();
@@ -64,29 +64,29 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             p.Description = "In 1958, Ethiopian multi-disciplinary artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
             p.Shape = VisualArtShape.Rectangle;
 
+            x = new VisualArt();
+            x.Title = "Defender of His Country";
+            x.Image = Properties.Resources.DefenderOfHisCountry;
+            x.Description = "Defender of His Country.";
+            x.Shape = VisualArtShape.Rectangle;
+
             User afewerk = new User();
             afewerk.Username = "afewerk_tekle";
             afewerk.FirstName = "Afewerk";
             afewerk.LastName = "Tekle";
             afewerk.Bio = "The Shit.";
-            afewerk.Works = new List<Art>();
-            afewerk.Works.Add(p);
+            afewerk.Works = new List<Art>() { p, x};
 
             p.Artists = new List<User> { afewerk};
+            x.Artists = new List<User> { afewerk};
 
             visuals = new List<VisualArt>();
             visuals.Add(p);
+            visuals.Add(x);
             visuals.Add(p);
+            visuals.Add(x);
             visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
-            visuals.Add(p);
+            visuals.Add(x);
 
             return visuals;
         }
@@ -100,9 +100,6 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             afewerk.ProfilePic = Properties.Resources.Afewerk_Tekle;
 
             List<User> userList = new List<User>();
-            userList.Add(afewerk);
-            userList.Add(afewerk);
-            userList.Add(afewerk);
             userList.Add(afewerk);
             userList.Add(afewerk);
             userList.Add(afewerk);

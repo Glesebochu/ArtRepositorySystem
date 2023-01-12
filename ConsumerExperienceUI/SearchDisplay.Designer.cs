@@ -62,7 +62,7 @@
             this.TextBoxSearchBar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.TextBoxSearchBar.Name = "TextBoxSearchBar";
             this.TextBoxSearchBar.PlaceholderText = "Interested in...";
-            this.TextBoxSearchBar.Size = new System.Drawing.Size(1027, 36);
+            this.TextBoxSearchBar.Size = new System.Drawing.Size(1054, 36);
             this.TextBoxSearchBar.TabIndex = 0;
             this.TextBoxSearchBar.Click += new System.EventHandler(this.TextBoxSearchBar_Click);
             this.TextBoxSearchBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchBar_KeyUp);
@@ -74,62 +74,73 @@
             this.PanelSearchBar.Location = new System.Drawing.Point(0, 0);
             this.PanelSearchBar.Name = "PanelSearchBar";
             this.PanelSearchBar.Padding = new System.Windows.Forms.Padding(40);
-            this.PanelSearchBar.Size = new System.Drawing.Size(1107, 112);
+            this.PanelSearchBar.Size = new System.Drawing.Size(1134, 112);
             this.PanelSearchBar.TabIndex = 1;
             // 
             // PanelSearchResults
             // 
+            this.PanelSearchResults.AutoScroll = true;
+            this.PanelSearchResults.AutoSize = true;
             this.PanelSearchResults.Controls.Add(this.TableLayoutPanelSearchResults);
             this.PanelSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelSearchResults.Location = new System.Drawing.Point(0, 112);
+            this.PanelSearchResults.MinimumSize = new System.Drawing.Size(400, 400);
             this.PanelSearchResults.Name = "PanelSearchResults";
             this.PanelSearchResults.Padding = new System.Windows.Forms.Padding(40, 0, 40, 40);
-            this.PanelSearchResults.Size = new System.Drawing.Size(1107, 649);
+            this.PanelSearchResults.Size = new System.Drawing.Size(1134, 2040);
             this.PanelSearchResults.TabIndex = 2;
             // 
             // TableLayoutPanelSearchResults
             // 
+            this.TableLayoutPanelSearchResults.AutoSize = true;
             this.TableLayoutPanelSearchResults.ColumnCount = 1;
-            this.TableLayoutPanelSearchResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TableLayoutPanelSearchResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TableLayoutPanelSearchResults.Controls.Add(this.PanelArtistsSection, 0, 0);
             this.TableLayoutPanelSearchResults.Controls.Add(this.PanelArtworksSection, 0, 1);
-            this.TableLayoutPanelSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TableLayoutPanelSearchResults.Dock = System.Windows.Forms.DockStyle.Top;
             this.TableLayoutPanelSearchResults.Location = new System.Drawing.Point(40, 0);
+            this.TableLayoutPanelSearchResults.MinimumSize = new System.Drawing.Size(700, 400);
             this.TableLayoutPanelSearchResults.Name = "TableLayoutPanelSearchResults";
             this.TableLayoutPanelSearchResults.RowCount = 2;
-            this.TableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TableLayoutPanelSearchResults.Size = new System.Drawing.Size(1027, 609);
+            this.TableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.TableLayoutPanelSearchResults.Size = new System.Drawing.Size(1054, 1440);
             this.TableLayoutPanelSearchResults.TabIndex = 0;
             // 
             // PanelArtistsSection
             // 
+            this.PanelArtistsSection.AutoScroll = true;
+            this.PanelArtistsSection.AutoSize = true;
             this.PanelArtistsSection.Controls.Add(this.resultsGridArtists);
             this.PanelArtistsSection.Controls.Add(this.PanelHeaderArtistsSection);
             this.PanelArtistsSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelArtistsSection.Location = new System.Drawing.Point(3, 3);
             this.PanelArtistsSection.Name = "PanelArtistsSection";
-            this.PanelArtistsSection.Size = new System.Drawing.Size(1021, 298);
+            this.PanelArtistsSection.Size = new System.Drawing.Size(1048, 714);
             this.PanelArtistsSection.TabIndex = 0;
             // 
             // resultsGridArtists
             // 
+            this.resultsGridArtists.AutoScroll = true;
+            this.resultsGridArtists.AutoSize = true;
             this.resultsGridArtists.BackColor = System.Drawing.Color.Transparent;
-            this.resultsGridArtists.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.resultsGridArtists.Dock = System.Windows.Forms.DockStyle.Top;
             this.resultsGridArtists.Location = new System.Drawing.Point(0, 74);
+            this.resultsGridArtists.MinimumSize = new System.Drawing.Size(700, 400);
             this.resultsGridArtists.Name = "resultsGridArtists";
             this.resultsGridArtists.Padding = new System.Windows.Forms.Padding(20);
-            this.resultsGridArtists.Size = new System.Drawing.Size(1021, 224);
+            this.resultsGridArtists.Size = new System.Drawing.Size(1048, 640);
             this.resultsGridArtists.TabIndex = 2;
             // 
             // PanelHeaderArtistsSection
             // 
+            this.PanelHeaderArtistsSection.AutoScroll = true;
             this.PanelHeaderArtistsSection.Controls.Add(this.LblArtists);
             this.PanelHeaderArtistsSection.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeaderArtistsSection.Location = new System.Drawing.Point(0, 0);
             this.PanelHeaderArtistsSection.Name = "PanelHeaderArtistsSection";
             this.PanelHeaderArtistsSection.Padding = new System.Windows.Forms.Padding(0, 20, 20, 20);
-            this.PanelHeaderArtistsSection.Size = new System.Drawing.Size(1021, 74);
+            this.PanelHeaderArtistsSection.Size = new System.Drawing.Size(1048, 74);
             this.PanelHeaderArtistsSection.TabIndex = 1;
             // 
             // LblArtists
@@ -146,32 +157,38 @@
             // 
             // PanelArtworksSection
             // 
+            this.PanelArtworksSection.AutoScroll = true;
+            this.PanelArtworksSection.AutoSize = true;
             this.PanelArtworksSection.Controls.Add(this.resultsGridArtworks);
             this.PanelArtworksSection.Controls.Add(this.PanelHeaderArtworksSection);
             this.PanelArtworksSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelArtworksSection.Location = new System.Drawing.Point(3, 307);
+            this.PanelArtworksSection.Location = new System.Drawing.Point(3, 723);
             this.PanelArtworksSection.Name = "PanelArtworksSection";
-            this.PanelArtworksSection.Size = new System.Drawing.Size(1021, 299);
+            this.PanelArtworksSection.Size = new System.Drawing.Size(1048, 714);
             this.PanelArtworksSection.TabIndex = 1;
             // 
             // resultsGridArtworks
             // 
+            this.resultsGridArtworks.AutoScroll = true;
+            this.resultsGridArtworks.AutoSize = true;
             this.resultsGridArtworks.BackColor = System.Drawing.Color.Transparent;
             this.resultsGridArtworks.Dock = System.Windows.Forms.DockStyle.Fill;
             this.resultsGridArtworks.Location = new System.Drawing.Point(0, 74);
+            this.resultsGridArtworks.MinimumSize = new System.Drawing.Size(700, 400);
             this.resultsGridArtworks.Name = "resultsGridArtworks";
             this.resultsGridArtworks.Padding = new System.Windows.Forms.Padding(20);
-            this.resultsGridArtworks.Size = new System.Drawing.Size(1021, 225);
+            this.resultsGridArtworks.Size = new System.Drawing.Size(1048, 640);
             this.resultsGridArtworks.TabIndex = 3;
             // 
             // PanelHeaderArtworksSection
             // 
+            this.PanelHeaderArtworksSection.AutoScroll = true;
             this.PanelHeaderArtworksSection.Controls.Add(this.LblArtworks);
             this.PanelHeaderArtworksSection.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeaderArtworksSection.Location = new System.Drawing.Point(0, 0);
             this.PanelHeaderArtworksSection.Name = "PanelHeaderArtworksSection";
             this.PanelHeaderArtworksSection.Padding = new System.Windows.Forms.Padding(0, 20, 20, 20);
-            this.PanelHeaderArtworksSection.Size = new System.Drawing.Size(1021, 74);
+            this.PanelHeaderArtworksSection.Size = new System.Drawing.Size(1048, 74);
             this.PanelHeaderArtworksSection.TabIndex = 1;
             // 
             // LblArtworks
@@ -212,23 +229,30 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.PanelSearchResults);
             this.Controls.Add(this.PanelSearchBar);
             this.Name = "SearchDisplay";
-            this.Size = new System.Drawing.Size(1107, 761);
+            this.Size = new System.Drawing.Size(1134, 2152);
             this.Load += new System.EventHandler(this.SearchDisplay_Load);
             this.PanelSearchBar.ResumeLayout(false);
             this.PanelSearchBar.PerformLayout();
             this.PanelSearchResults.ResumeLayout(false);
+            this.PanelSearchResults.PerformLayout();
             this.TableLayoutPanelSearchResults.ResumeLayout(false);
+            this.TableLayoutPanelSearchResults.PerformLayout();
             this.PanelArtistsSection.ResumeLayout(false);
+            this.PanelArtistsSection.PerformLayout();
             this.PanelHeaderArtistsSection.ResumeLayout(false);
             this.PanelHeaderArtistsSection.PerformLayout();
             this.PanelArtworksSection.ResumeLayout(false);
+            this.PanelArtworksSection.PerformLayout();
             this.PanelHeaderArtworksSection.ResumeLayout(false);
             this.PanelHeaderArtworksSection.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -33,35 +33,37 @@
             // 
             // tableLayoutPanelResults
             // 
-            this.tableLayoutPanelResults.AutoScroll = true;
+            this.tableLayoutPanelResults.AutoSize = true;
+            this.tableLayoutPanelResults.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelResults.ColumnCount = 3;
-            this.tableLayoutPanelResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanelResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelResults.Location = new System.Drawing.Point(20, 20);
-            this.tableLayoutPanelResults.Margin = new System.Windows.Forms.Padding(10);
+            this.tableLayoutPanelResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
+            this.tableLayoutPanelResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanelResults.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanelResults.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanelResults.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanelResults.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelResults.MinimumSize = new System.Drawing.Size(400, 400);
             this.tableLayoutPanelResults.Name = "tableLayoutPanelResults";
             this.tableLayoutPanelResults.RowCount = 3;
-            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanelResults.Size = new System.Drawing.Size(957, 554);
+            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelResults.Size = new System.Drawing.Size(1074, 400);
             this.tableLayoutPanelResults.TabIndex = 3;
             // 
             // ResultsGrid
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanelResults);
+            this.MinimumSize = new System.Drawing.Size(700, 500);
             this.Name = "ResultsGrid";
-            this.Padding = new System.Windows.Forms.Padding(20);
-            this.Size = new System.Drawing.Size(997, 594);
+            this.Size = new System.Drawing.Size(1074, 609);
             this.Load += new System.EventHandler(this.ResultsGrid_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

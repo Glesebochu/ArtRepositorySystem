@@ -21,18 +21,18 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         {
             //This will be replaced by a database fetch
             //Maybe a list of the recent searches the user made
+            this.PanelArtistsSection.Controls.Remove(resultsGridArtists);
             resultsGridArtists = new ResultsGrid(ConsumerExperience.GetDummyUsers());
             resultsGridArtists.Dock = DockStyle.Fill;
             this.PanelArtistsSection.Controls.Add(resultsGridArtists);
             resultsGridArtists.BringToFront();
 
+            this.PanelArtworksSection.Controls.Remove(resultsGridArtworks);
             resultsGridArtworks = new ResultsGrid(ConsumerExperience.GetDummyVisualArts());
             resultsGridArtworks.Dock = DockStyle.Fill;
             this.PanelArtworksSection.Controls.Add(resultsGridArtworks);
             resultsGridArtworks.BringToFront();
 
-            
-            //TextBoxSearchBar.Focus();
         }
 
         private void TextBoxSearchBar_Click(object sender, EventArgs e)

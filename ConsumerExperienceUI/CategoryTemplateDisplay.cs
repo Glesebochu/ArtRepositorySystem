@@ -22,10 +22,11 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             InitializeComponent();
             LblCategoryName.Text = categoryName;
 
-            resultsGridArtworks = new ResultsGrid(visualArts);
-            resultsGridArtworks.Dock = DockStyle.Fill;
-            this.Controls.Add(resultsGridArtworks);
-            resultsGridArtworks.BringToFront();
+            this.Controls.Remove(resultsGridCategoryResults);
+            resultsGridCategoryResults = new ResultsGrid(visualArts);
+            resultsGridCategoryResults.Dock = DockStyle.Fill;
+            this.Controls.Add(resultsGridCategoryResults);
+            resultsGridCategoryResults.BringToFront();
         }
 
     }
