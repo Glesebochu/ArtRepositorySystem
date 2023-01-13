@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IP_UC_Latest
+namespace ArtRepositorySystem
 {
     public partial class INTROPAGE_UC_LATEST : UserControl
     {

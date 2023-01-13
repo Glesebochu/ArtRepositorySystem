@@ -1,6 +1,6 @@
 ﻿namespace IP_UC_Latest
 {
-    partial class INTROPAGE_UC_LATEST
+    partial class ArtRepositorySystem
     {
         /// <summary> 
         /// Required designer variable.
