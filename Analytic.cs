@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    internal class Analytic
+    public class Analytic
     {
         public string Name { get; set; }
         public bool Visibility { get; set; }

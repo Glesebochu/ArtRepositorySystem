@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ArtRepositorySystem
 {
-    enum ReactionType
+    public enum ReactionType
     {
         Vote,
         Accuracy,
         Feeling,
     }
-    internal class Reaction
+    public class Reaction
     {
         public ReactionType Type { get; set; }
     }
