@@ -4,6 +4,9 @@
     <Compile Update="App.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ResultsGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -19,7 +22,7 @@
     <Compile Update="ConsumerExperienceUI\MyPlaylistsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ConsumerExperienceUI\CenterDisplay.cs">
+    <Compile Update="ConsumerExperienceUI\ArtworkCenterDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\SearchDisplay.cs">

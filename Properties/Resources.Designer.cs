@@ -73,6 +73,26 @@ namespace ArtRepositorySystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AfricanHeritage {
+            get {
+                object obj = ResourceManager.GetObject("AfricanHeritage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Asabet {
+            get {
+                object obj = ResourceManager.GetObject("Asabet", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap DefenderOfHisCountry {
             get {
                 object obj = ResourceManager.GetObject("DefenderOfHisCountry", resourceCulture);

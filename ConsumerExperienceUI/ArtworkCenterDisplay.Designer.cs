@@ -1,6 +1,6 @@
 ﻿namespace ArtRepositorySystem.ConsumerExperienceUI
 {
-    partial class CenterDisplay
+    partial class ArtworkCenterDisplay
     {
         /// <summary> 
         /// Required designer variable.
@@ -53,7 +53,7 @@
             // 
             // tabControlArtworkInfo
             // 
-            this.tabControlArtworkInfo.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.tabControlArtworkInfo.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlArtworkInfo.Controls.Add(this.artPage);
             this.tabControlArtworkInfo.Controls.Add(this.descriptionPage);
             this.tabControlArtworkInfo.Controls.Add(this.feedbackPage);
@@ -71,7 +71,7 @@
             // artPage
             // 
             this.artPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.artPage.Location = new System.Drawing.Point(4, 4);
+            this.artPage.Location = new System.Drawing.Point(4, 44);
             this.artPage.Name = "artPage";
             this.artPage.Size = new System.Drawing.Size(850, 335);
             this.artPage.TabIndex = 0;
@@ -81,7 +81,7 @@
             // 
             this.descriptionPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.descriptionPage.Controls.Add(this.textBoxDescription);
-            this.descriptionPage.Location = new System.Drawing.Point(4, 4);
+            this.descriptionPage.Location = new System.Drawing.Point(4, 44);
             this.descriptionPage.Name = "descriptionPage";
             this.descriptionPage.Size = new System.Drawing.Size(850, 335);
             this.descriptionPage.TabIndex = 1;
@@ -103,7 +103,7 @@
             // feedbackPage
             // 
             this.feedbackPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.feedbackPage.Location = new System.Drawing.Point(4, 4);
+            this.feedbackPage.Location = new System.Drawing.Point(4, 44);
             this.feedbackPage.Name = "feedbackPage";
             this.feedbackPage.Size = new System.Drawing.Size(850, 335);
             this.feedbackPage.TabIndex = 2;
@@ -112,13 +112,13 @@
             // analyticsPage
             // 
             this.analyticsPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.analyticsPage.Location = new System.Drawing.Point(4, 4);
+            this.analyticsPage.Location = new System.Drawing.Point(4, 44);
             this.analyticsPage.Name = "analyticsPage";
             this.analyticsPage.Size = new System.Drawing.Size(850, 335);
             this.analyticsPage.TabIndex = 3;
             this.analyticsPage.Text = "Analytics";
             // 
-            // CenterDisplay
+            // ArtworkCenterDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +126,7 @@
             this.Controls.Add(this.tabControlArtworkInfo);
             this.Controls.Add(this.LblArtworkTitle);
             this.ForeColor = System.Drawing.Color.Black;
-            this.Name = "CenterDisplay";
+            this.Name = "ArtworkCenterDisplay";
             this.Padding = new System.Windows.Forms.Padding(120);
             this.Size = new System.Drawing.Size(1098, 718);
             this.Load += new System.EventHandler(this.CenterDisplay_Load);

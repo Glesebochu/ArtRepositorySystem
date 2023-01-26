@@ -33,11 +33,9 @@
             this.PanelSearchResults = new System.Windows.Forms.Panel();
             this.TableLayoutPanelSearchResults = new System.Windows.Forms.TableLayoutPanel();
             this.PanelArtistsSection = new System.Windows.Forms.Panel();
-            this.resultsGridArtists = new ArtRepositorySystem.ConsumerExperienceUI.ResultsGrid();
             this.PanelHeaderArtistsSection = new System.Windows.Forms.Panel();
             this.LblArtists = new System.Windows.Forms.Label();
             this.PanelArtworksSection = new System.Windows.Forms.Panel();
-            this.resultsGridArtworks = new ArtRepositorySystem.ConsumerExperienceUI.ResultsGrid();
             this.PanelHeaderArtworksSection = new System.Windows.Forms.Panel();
             this.LblArtworks = new System.Windows.Forms.Label();
             this.PanelContent = new System.Windows.Forms.Panel();
@@ -104,33 +102,19 @@
             this.TableLayoutPanelSearchResults.RowCount = 2;
             this.TableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.TableLayoutPanelSearchResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.TableLayoutPanelSearchResults.Size = new System.Drawing.Size(1054, 1440);
+            this.TableLayoutPanelSearchResults.Size = new System.Drawing.Size(1054, 400);
             this.TableLayoutPanelSearchResults.TabIndex = 0;
             // 
             // PanelArtistsSection
             // 
             this.PanelArtistsSection.AutoScroll = true;
             this.PanelArtistsSection.AutoSize = true;
-            this.PanelArtistsSection.Controls.Add(this.resultsGridArtists);
             this.PanelArtistsSection.Controls.Add(this.PanelHeaderArtistsSection);
             this.PanelArtistsSection.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelArtistsSection.Location = new System.Drawing.Point(3, 3);
             this.PanelArtistsSection.Name = "PanelArtistsSection";
-            this.PanelArtistsSection.Size = new System.Drawing.Size(1048, 714);
+            this.PanelArtistsSection.Size = new System.Drawing.Size(1048, 74);
             this.PanelArtistsSection.TabIndex = 0;
-            // 
-            // resultsGridArtists
-            // 
-            this.resultsGridArtists.AutoScroll = true;
-            this.resultsGridArtists.AutoSize = true;
-            this.resultsGridArtists.BackColor = System.Drawing.Color.Transparent;
-            this.resultsGridArtists.Dock = System.Windows.Forms.DockStyle.Top;
-            this.resultsGridArtists.Location = new System.Drawing.Point(0, 74);
-            this.resultsGridArtists.MinimumSize = new System.Drawing.Size(700, 400);
-            this.resultsGridArtists.Name = "resultsGridArtists";
-            this.resultsGridArtists.Padding = new System.Windows.Forms.Padding(20);
-            this.resultsGridArtists.Size = new System.Drawing.Size(1048, 640);
-            this.resultsGridArtists.TabIndex = 2;
             // 
             // PanelHeaderArtistsSection
             // 
@@ -159,26 +143,12 @@
             // 
             this.PanelArtworksSection.AutoScroll = true;
             this.PanelArtworksSection.AutoSize = true;
-            this.PanelArtworksSection.Controls.Add(this.resultsGridArtworks);
             this.PanelArtworksSection.Controls.Add(this.PanelHeaderArtworksSection);
             this.PanelArtworksSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelArtworksSection.Location = new System.Drawing.Point(3, 723);
+            this.PanelArtworksSection.Location = new System.Drawing.Point(3, 83);
             this.PanelArtworksSection.Name = "PanelArtworksSection";
-            this.PanelArtworksSection.Size = new System.Drawing.Size(1048, 714);
+            this.PanelArtworksSection.Size = new System.Drawing.Size(1048, 314);
             this.PanelArtworksSection.TabIndex = 1;
-            // 
-            // resultsGridArtworks
-            // 
-            this.resultsGridArtworks.AutoScroll = true;
-            this.resultsGridArtworks.AutoSize = true;
-            this.resultsGridArtworks.BackColor = System.Drawing.Color.Transparent;
-            this.resultsGridArtworks.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultsGridArtworks.Location = new System.Drawing.Point(0, 74);
-            this.resultsGridArtworks.MinimumSize = new System.Drawing.Size(700, 400);
-            this.resultsGridArtworks.Name = "resultsGridArtworks";
-            this.resultsGridArtworks.Padding = new System.Windows.Forms.Padding(20);
-            this.resultsGridArtworks.Size = new System.Drawing.Size(1048, 640);
-            this.resultsGridArtworks.TabIndex = 3;
             // 
             // PanelHeaderArtworksSection
             // 
@@ -244,11 +214,9 @@
             this.TableLayoutPanelSearchResults.ResumeLayout(false);
             this.TableLayoutPanelSearchResults.PerformLayout();
             this.PanelArtistsSection.ResumeLayout(false);
-            this.PanelArtistsSection.PerformLayout();
             this.PanelHeaderArtistsSection.ResumeLayout(false);
             this.PanelHeaderArtistsSection.PerformLayout();
             this.PanelArtworksSection.ResumeLayout(false);
-            this.PanelArtworksSection.PerformLayout();
             this.PanelHeaderArtworksSection.ResumeLayout(false);
             this.PanelHeaderArtworksSection.PerformLayout();
             this.ResumeLayout(false);
@@ -270,7 +238,5 @@
         private Label LblArtworks;
         private Panel PanelHeaderArtistsSection;
         private Label LblArtists;
-        private ResultsGrid resultsGridArtists;
-        private ResultsGrid resultsGridArtworks;
     }
 }

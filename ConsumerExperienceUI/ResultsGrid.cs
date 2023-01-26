@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ArtRepositorySystem.ArtForms;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
@@ -46,7 +47,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         }
         private void PopulateResultsGrid()
         {
-            //If the object created was an empty one
+            //If the object created was not empty
             if (visuals != null || artists != null)
             {
                 //Check which constructor was used to create the object
@@ -56,7 +57,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                     buttonList = ConsumerExperience.CreateButtonsFromVisualArtworks(visuals);
                     for (int i = 0; i < buttonList.Count(); i++)
                     {
-                        //Associate the specific visual art with the button to make the artist accessible in the event
+                        //Associate the specific visual art with the button to make the Artist accessible in the event
                         buttonList[i].Tag = visuals[i];
                     }
                 }
@@ -66,7 +67,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                     buttonList = ConsumerExperience.CreateButtonsFromUsers(artists);
                     for (int i = 0; i < buttonList.Count(); i++)
                     {
-                        //Associate the specific artist with the button to make the artist accessible in the event
+                        //Associate the specific Artist with the button to make the Artist accessible in the event
                         buttonList[i].Tag = artists[i];
                     }
                 }
@@ -76,7 +77,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                     //Adding the buttonResult_Click event to the button's list of events
                     buttonList[i].Click += new System.EventHandler(buttonResult_Click);
                     //Defining the minimum size of the button to avoid unnecessary shrinking
-                    buttonList[i].MinimumSize = new Size(200,200);
+                    buttonList[i].MinimumSize = new Size(250,200);
                     //Adding the button to the table layout panel
                     tableLayoutPanelResults.Controls.Add(buttonList[i]);
                     //Setting the button's Dock property to Fill (so that it can occupy all the space in the cell)
@@ -90,30 +91,27 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         }
         private void buttonResult_Click(object sender, EventArgs e)
         {
+            //Get the PanelContent that is found in ConsumerExperience
+            Panel requiredPanel = (Panel)(this.FindForm().Controls.Find("PanelContent", true)[0]);
+
             Button btn = (Button)sender;
             if (typeOfDataToBeDisplayed == TypeOfDataToBeDisplayed.VisualArt)
             {
                 //VisualArts were sent
                 //Code for extracting an Art object from a button
                 VisualArt visualArt = (VisualArt)btn.Tag;
-
-                //Get the PanelContent that is found in ConsumerExperience
-                Panel requiredPanel = (Panel)(this.FindForm().Controls.Find("PanelContent", true)[0]);
                 
                 //Create a center display for the visual art
-                ConsumerExperience.CreateCenterDisplayFor(visualArt, requiredPanel);
+                ConsumerExperience.CreateCenterDisplayForArt(visualArt, requiredPanel);
             }
             else
             {
                 //Users were sent
                 //Code for extracting a User object from a button
-                User user = (User)btn.Tag;
+                User artist = (User)btn.Tag;
 
-                //Get the PanelContent that is found in ConsumerExperience
-                Panel requiredPanel = (Panel)(this.FindForm().Controls.Find("PanelContent", true)[0]);
-
-                //Code for displaying an artist on the center of the screen
-                //...
+                //Code for displaying an Artist on the center of the screen
+                ConsumerExperience.CreateCenterDisplayForArtist(artist, requiredPanel);
             }
 
         }

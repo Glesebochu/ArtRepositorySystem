@@ -30,7 +30,6 @@
         {
             this.PanelCategoryHeader = new System.Windows.Forms.Panel();
             this.LblCategoryName = new System.Windows.Forms.Label();
-            this.resultsGridCategoryResults = new ArtRepositorySystem.ConsumerExperienceUI.ResultsGrid();
             this.PanelCategoryHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,7 +40,7 @@
             this.PanelCategoryHeader.Location = new System.Drawing.Point(0, 0);
             this.PanelCategoryHeader.Name = "PanelCategoryHeader";
             this.PanelCategoryHeader.Padding = new System.Windows.Forms.Padding(0, 20, 20, 20);
-            this.PanelCategoryHeader.Size = new System.Drawing.Size(1074, 74);
+            this.PanelCategoryHeader.Size = new System.Drawing.Size(800, 74);
             this.PanelCategoryHeader.TabIndex = 3;
             // 
             // LblCategoryName
@@ -56,32 +55,20 @@
             this.LblCategoryName.TabIndex = 1;
             this.LblCategoryName.Text = "Category_Name";
             // 
-            // resultsGridCategoryResults
-            // 
-            this.resultsGridCategoryResults.AutoSize = true;
-            this.resultsGridCategoryResults.BackColor = System.Drawing.Color.Transparent;
-            this.resultsGridCategoryResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.resultsGridCategoryResults.Location = new System.Drawing.Point(0, 74);
-            this.resultsGridCategoryResults.MinimumSize = new System.Drawing.Size(700, 400);
-            this.resultsGridCategoryResults.Name = "resultsGridCategoryResults";
-            this.resultsGridCategoryResults.Padding = new System.Windows.Forms.Padding(20);
-            this.resultsGridCategoryResults.Size = new System.Drawing.Size(1074, 640);
-            this.resultsGridCategoryResults.TabIndex = 4;
-            // 
             // CategoryTemplateDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
-            this.Controls.Add(this.resultsGridCategoryResults);
             this.Controls.Add(this.PanelCategoryHeader);
+            this.MinimumSize = new System.Drawing.Size(800, 300);
             this.Name = "CategoryTemplateDisplay";
-            this.Size = new System.Drawing.Size(1074, 714);
+            this.Size = new System.Drawing.Size(800, 300);
             this.PanelCategoryHeader.ResumeLayout(false);
             this.PanelCategoryHeader.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -89,6 +76,5 @@
 
         private Panel PanelCategoryHeader;
         private Label LblCategoryName;
-        private ResultsGrid resultsGridCategoryResults;
     }
 }

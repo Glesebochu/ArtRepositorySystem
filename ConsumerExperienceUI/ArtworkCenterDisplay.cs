@@ -7,18 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ArtRepositorySystem.ArtForms;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
-    public partial class CenterDisplay : UserControl
+    public partial class ArtworkCenterDisplay : UserControl
     {
-        Art? Art { get; set; }
-        public CenterDisplay()
-        {
-            InitializeComponent();
-        }
-
-        internal CenterDisplay(Art art)
+        Art Art { get; set; }
+        public ArtworkCenterDisplay(Art art)
         {
             InitializeComponent();
             Art = art;
@@ -27,15 +23,15 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         private void CenterDisplay_Load(object sender, EventArgs e)
         {
             LblArtworkTitle.Text = Art.Title;
-            VisualArt p = (VisualArt)Art;
+            VisualArt visualArt = (VisualArt)Art;
 
-            //tabControlArtworkInfo.Size = new Size(p.Image.Width,p.Image.Height);
+            //tabControlArtworkInfo.Size = new Size(visualArt.Image.Width,visualArt.Image.Height);
             //The above wont work because the tab control is docked to fill.
 
-            //picBoxArtwork.BackgroundImage = p.Image;
-            artPage.BackgroundImage = p.Image;
+            //picBoxArtwork.BackgroundImage = visualArt.Image;
+            artPage.BackgroundImage = visualArt.Image;
             artPage.BackgroundImageLayout = ImageLayout.Zoom;
-            textBoxDescription.Text = p.Description;
+            textBoxDescription.Text = visualArt.Description;
             
             //Stopped here...
             

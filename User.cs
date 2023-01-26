@@ -1,9 +1,9 @@
-﻿using ArtRepositorySystem;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ArtRepositorySystem.ArtForms;
 
 namespace ArtRepositorySystem
 {
@@ -12,18 +12,29 @@ namespace ArtRepositorySystem
         Consumer,
         Artist
     }
+    public struct AllArtistWorks
+    {
+        public List<VisualArt> visualArts;
+        public List<PerformedArt> performedArts;
+        public List<LiteraryArt> literaryArts;
+    }
     public class User
     {
         public string Username { get; set; }
         public UserMode userMode { get; set; }
-        public Image ProfilePic;
-        public string FirstName;
-        public string LastName;
-        public string Bio;
+        public Image ProfilePic { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        private string password { get; set; }
+        public string Bio { get; set; }
+        public List<User> Followers { get; set; }
+        public List<Art> Works { get; set; }
 
-        public List<User> Followers;
-        public List<Art> Works;
-
+        public User()
+        {
+            Followers = new List<User>();
+            Works = new List<Art>();
+        }
         public void SwitchMode()
         {
             if(this.userMode == UserMode.Consumer)
@@ -57,13 +68,47 @@ namespace ArtRepositorySystem
         public List<User> SearchArtist(String artistName)
         {
             List<User> artists = new List<User>();
-            //Search the DB for an artist with this name
+            //Search the DB for an Artist with this name
             return artists;
         }
         public Reaction React(Art art)
         {
             return new Reaction();
         }
-    
+        public AllArtistWorks? GetWorksByType()
+        {
+            if (this.userMode == UserMode.Artist)
+            {
+                AllArtistWorks allWorks = new AllArtistWorks();
+                //Filter through the works of this artist and categorize them by type.
+
+                List<VisualArt> visualArts = new List<VisualArt>();
+
+                List<LiteraryArt> literaryArts = new List<LiteraryArt>();
+
+                List<PerformedArt> performedArts = new List<PerformedArt>();
+                foreach (Art art in this.Works)
+                {
+                    if (art.Type == ArtForm.Visual)
+                        visualArts.Add(art as VisualArt);
+                    else if (art.Type == ArtForm.Literary)
+                        literaryArts.Add(art as LiteraryArt);
+                    else if (art.Type == ArtForm.Performed)
+                        performedArts.Add(art as PerformedArt);
+                }
+
+                allWorks.visualArts = visualArts;
+                allWorks.literaryArts = literaryArts;
+                allWorks.performedArts = performedArts;
+
+                //Return the list of lists
+                return allWorks;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

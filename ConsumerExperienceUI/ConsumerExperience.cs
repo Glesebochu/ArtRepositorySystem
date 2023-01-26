@@ -1,5 +1,8 @@
 using System.Globalization;
+using System.Net;
 using System.Runtime.CompilerServices;
+using ArtRepositorySystem.ArtForms;
+using ArtRepositorySystem.ArtForms.VisualArts;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
@@ -18,17 +21,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         {
             InitializeComponent();
         }
-        private void ConsumerExperience_Load(object sender, EventArgs e)
-        {
-            ekele = new User();
-            ekele.FirstName = "Yelelew";
-            ekele.LastName = "Aymertim";
-            ekele.Username = "ekele";
-            LblUserMode.Text = ekele.userMode.ToString();
-            LblFullName.Text = ekele.FirstName + " " + ekele.LastName;
-            LblUsername.Text = "@" + ekele.Username;
-            addUserControl(new MyFeedPage());
-        }
+
+        #region Custom Methods
         private void addUserControl(UserControl userControl)
         {
             PanelContent.Controls.Clear();
@@ -36,12 +30,12 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             userControl.Dock = DockStyle.Fill;
             userControl.BringToFront();
         }
-        internal static void CreateCenterDisplayFor(Art art, Panel panelContent)
+        internal static void CreateCenterDisplayForArt(Art art, Panel panelContent)
         {
             //Create center display
-            CenterDisplay centerDisplay = new CenterDisplay(art);
+            ArtworkCenterDisplay centerDisplay = new ArtworkCenterDisplay(art);
 
-            //Set the paddding to 10% of the form's dimensions (x and y)
+            //Set the paddding to 10% of the panel's dimensions (x and y)
             int xPadding = (int)(panelContent.Width * 0.1);
             int yPadding = (int)(panelContent.Height * 0.1);
             centerDisplay.Padding = new Padding(xPadding, (yPadding / 2), xPadding, yPadding);
@@ -52,43 +46,83 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             centerDisplay.BringToFront();
 
         }
-        internal static List<VisualArt> GetDummyVisualArts()
+        internal static void CreateCenterDisplayForArtist(User artist, Panel panelContent)
+        {
+
+            ArtistCenterDisplay centerDisplay = new ArtistCenterDisplay(artist);
+
+            //Set the padding to 10% of the panel's dimensions
+            int xPadding = (int)(panelContent.Width * 0.1);
+            int yPadding = (int)(panelContent.Height * 0.1);
+            centerDisplay.Padding = new Padding(xPadding, (yPadding / 2), xPadding, yPadding);
+
+            centerDisplay.Dock = DockStyle.Fill;
+
+            panelContent.Controls.Add(centerDisplay);
+            centerDisplay.BringToFront();
+            
+        }
+        internal static List<Art> GetDummyArts()
         {
             //For testing purposes
-            VisualArt p, x;
-            List<VisualArt> visuals;
+            VisualArt p, x, y, z;
+            List<Art> arts;
 
             p = new VisualArt();
             p.Title = "The Total Liberation of Africa";
             p.Image = Properties.Resources.TheTotalLiberationOfAfrica;
-            p.Description = "In 1958, Ethiopian multi-disciplinary artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
-            p.Shape = VisualArtShape.Rectangle;
+            p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
+            p.VisualArtShape = VisualArtShape.Rectangle;
+            p.VisualArtType = VisualArtType.Painting;
+            p.Genre = PaintingGenre.Expressionism;
 
             x = new VisualArt();
             x.Title = "Defender of His Country";
             x.Image = Properties.Resources.DefenderOfHisCountry;
             x.Description = "Defender of His Country.";
-            x.Shape = VisualArtShape.Rectangle;
+            x.VisualArtShape = VisualArtShape.Rectangle;
+            x.VisualArtType = VisualArtType.Painting;
+            x.Genre = PaintingGenre.Abstract;
+
+            y = new VisualArt();
+            y.Title = "African Heritage";
+            y.Image = Properties.Resources.AfricanHeritage;
+            y.Description = "African Heritage.";
+            y.VisualArtShape = VisualArtShape.Rectangle;
+            y.VisualArtType = VisualArtType.Painting;
+            y.Genre = PaintingGenre.Surrealism;
+
+            z = new VisualArt();
+            z.Title = "Asabet Meal";
+            z.Image = Properties.Resources.Asabet;
+            z.Description = "Asabet Meal.";
+            z.VisualArtShape = VisualArtShape.Rectangle;
+            z.VisualArtType = VisualArtType.Photograph;
+            z.Genre = PhotographGenre.Still;
 
             User afewerk = new User();
             afewerk.Username = "afewerk_tekle";
             afewerk.FirstName = "Afewerk";
             afewerk.LastName = "Tekle";
             afewerk.Bio = "The Shit.";
-            afewerk.Works = new List<Art>() { p, x};
+            afewerk.Works.AddRange(new[] { x, p, y });
 
-            p.Artists = new List<User> { afewerk};
-            x.Artists = new List<User> { afewerk};
+            p.Artists = new List<User> {afewerk};
+            x.Artists = new List<User> {afewerk};
+            y.Artists = new List<User> {afewerk};
+            z.Artists = new List<User> { new User() };
 
-            visuals = new List<VisualArt>();
-            visuals.Add(p);
-            visuals.Add(x);
-            visuals.Add(p);
-            visuals.Add(x);
-            visuals.Add(p);
-            visuals.Add(x);
+            arts = new List<Art>();
+            arts.Add(p);
+            arts.Add(x);
+            arts.Add(y);
+            arts.Add(z);
+            arts.Add(p);
+            arts.Add(x);
+            arts.Add(y);
+            //arts.Add(z);
 
-            return visuals;
+            return arts;
         }
         internal static List<User> GetDummyUsers()
         {
@@ -98,6 +132,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             afewerk.LastName = "Tekle";
             afewerk.Bio = "The Shit.";
             afewerk.ProfilePic = Properties.Resources.Afewerk_Tekle;
+            afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
 
             List<User> userList = new List<User>();
             userList.Add(afewerk);
@@ -113,7 +148,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             for (int i = 0; i < visualArts.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = visualArts.ElementAt(i).Image;
+                button.BackgroundImage = visualArts[i].Image;
+                button.BackgroundImageLayout = ImageLayout.None;
                 button.Text = "";
                 button.Tag = visualArts[i];
                 buttonList.Add(button);
@@ -135,10 +171,61 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             return buttonList;
         }
+        public static void AddToPanel(Control c, Panel panel)
+        {
+            panel.Controls.Add(c);
+            //panel.AutoScroll = true;
+            c.Dock = DockStyle.Fill;
+            //c.AutoScroll = true;
+            c.AutoSize = true;
+            c.BackColor = System.Drawing.Color.Transparent;
+            c.BringToFront();
+        }
+        public static List<CategoryTemplateDisplay> GetCategoriesFromVisualArts(List<VisualArt> visuals)
+        {
+            List<CategoryTemplateDisplay> categories = new List<CategoryTemplateDisplay>();
 
+            List<Object> genres = new List<Object>();
+            //Identify all the genres in the list
+            foreach (VisualArt v in visuals)
+            {
+                //Stopped here...
+                genres.Add(v.Genre);
+            }
+            genres = genres.Distinct().ToList();
+            //Create one CategoryTemplateDisplay for each genre
+            foreach(Object genre in genres)
+            {
+                List<VisualArt> visualsOfGenre = visuals.FindAll(visual => visual.Genre == genre);
+                CategoryTemplateDisplay categoryTemplateDisplay = new CategoryTemplateDisplay(genre.ToString(), visualsOfGenre);
+                categories.Add(categoryTemplateDisplay);
+            }
+            //Add that CategoryTemplateDisplay to categories
+
+            return categories;
+        }
+        #endregion
+
+        #region Events
+        private void ConsumerExperience_Load(object sender, EventArgs e)
+        {
+            ekele = new User();
+            ekele.FirstName = "Yelelew";
+            ekele.LastName = "Aymertim";
+            ekele.Username = "ekele";
+            LblUserMode.Text = ekele.userMode.ToString();
+            LblFullName.Text = ekele.FirstName + " " + ekele.LastName;
+            LblUsername.Text = "@" + ekele.Username;
+
+            //To be replaced with a database fetch
+            addUserControl(new MyFeedPage(GetDummyArts()));
+        }
         private void BtnMyFeed_Click(object sender, EventArgs e)
         {
-            addUserControl(new MyFeedPage());
+            //Database fetch for the specific feed of this user
+            List<Art> arts = GetDummyArts();
+
+            addUserControl(new MyFeedPage(arts));
         }
 
         private void BtnTopArtists_Click(object sender, EventArgs e)
@@ -161,8 +248,6 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             ekele.SwitchMode();
             LblUserMode.Text = ekele.userMode.ToString();
         }
-
-
         private void BtnNavigation_Click(object sender, EventArgs e)
         {
             if(SplitContainerAll.Panel1.Visible == true)
@@ -176,11 +261,12 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 SplitContainerAll.Panel2.Dock = DockStyle.None;
             }
         }
-
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             addUserControl(new SearchDisplay());
             //BtnSearch.Hide();
         }
+
+        #endregion
     }
 }
