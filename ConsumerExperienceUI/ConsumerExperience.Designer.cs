@@ -53,7 +53,7 @@
             this.PanelNavUserInfo = new System.Windows.Forms.Panel();
             this.LblUsername = new System.Windows.Forms.Label();
             this.LblFullName = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBoxProfilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.ToggleSwitchMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.LblUserMode = new System.Windows.Forms.Label();
             this.PanelContent = new System.Windows.Forms.Panel();
@@ -67,7 +67,7 @@
             this.PanelNavButtons.SuspendLayout();
             this.PanelNavAppInfo.SuspendLayout();
             this.PanelNavUserInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxProfilePic)).BeginInit();
             this.PanelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,7 +262,7 @@
             this.PanelNavUserInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PanelNavUserInfo.Controls.Add(this.LblUsername);
             this.PanelNavUserInfo.Controls.Add(this.LblFullName);
-            this.PanelNavUserInfo.Controls.Add(this.guna2CirclePictureBox1);
+            this.PanelNavUserInfo.Controls.Add(this.guna2CirclePictureBoxProfilePic);
             this.PanelNavUserInfo.Controls.Add(this.ToggleSwitchMode);
             this.PanelNavUserInfo.Controls.Add(this.LblUserMode);
             this.PanelNavUserInfo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -273,42 +273,46 @@
             // 
             // LblUsername
             // 
+            this.LblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblUsername.AutoSize = true;
             this.LblUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblUsername.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LblUsername.Location = new System.Drawing.Point(88, 121);
+            this.LblUsername.Location = new System.Drawing.Point(113, 126);
             this.LblUsername.Name = "LblUsername";
-            this.LblUsername.Size = new System.Drawing.Size(62, 18);
+            this.LblUsername.Size = new System.Drawing.Size(19, 18);
             this.LblUsername.TabIndex = 17;
-            this.LblUsername.Text = "@ekele";
+            this.LblUsername.Text = "@";
             this.LblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblFullName
             // 
+            this.LblFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblFullName.AutoSize = true;
             this.LblFullName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblFullName.Location = new System.Drawing.Point(52, 89);
+            this.LblFullName.Location = new System.Drawing.Point(51, 91);
             this.LblFullName.Name = "LblFullName";
             this.LblFullName.Size = new System.Drawing.Size(142, 18);
             this.LblFullName.TabIndex = 17;
             this.LblFullName.Text = "Yelelew Aymertim";
             this.LblFullName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2CirclePictureBox1
+            // guna2CirclePictureBoxProfilePic
             // 
-            this.guna2CirclePictureBox1.Image = global::ArtRepositorySystem.Properties.Resources.user_icon;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(95, 16);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(55, 58);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 16;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBoxProfilePic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2CirclePictureBoxProfilePic.Image = global::ArtRepositorySystem.Properties.Resources.user_icon;
+            this.guna2CirclePictureBoxProfilePic.ImageRotate = 0F;
+            this.guna2CirclePictureBoxProfilePic.Location = new System.Drawing.Point(95, 16);
+            this.guna2CirclePictureBoxProfilePic.Name = "guna2CirclePictureBoxProfilePic";
+            this.guna2CirclePictureBoxProfilePic.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            this.guna2CirclePictureBoxProfilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBoxProfilePic.Size = new System.Drawing.Size(55, 58);
+            this.guna2CirclePictureBoxProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBoxProfilePic.TabIndex = 16;
+            this.guna2CirclePictureBoxProfilePic.TabStop = false;
             // 
             // ToggleSwitchMode
             // 
+            this.ToggleSwitchMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ToggleSwitchMode.Animated = true;
             this.ToggleSwitchMode.AutoRoundedCorners = true;
             this.ToggleSwitchMode.BackColor = System.Drawing.Color.Transparent;
@@ -319,7 +323,7 @@
             this.ToggleSwitchMode.CheckedState.InnerBorderRadius = 11;
             this.ToggleSwitchMode.CheckedState.InnerColor = System.Drawing.Color.White;
             this.ToggleSwitchMode.CustomizableEdges = customizableEdges10;
-            this.ToggleSwitchMode.Location = new System.Drawing.Point(86, 160);
+            this.ToggleSwitchMode.Location = new System.Drawing.Point(90, 161);
             this.ToggleSwitchMode.Name = "ToggleSwitchMode";
             this.ToggleSwitchMode.ShadowDecoration.CustomizableEdges = customizableEdges11;
             this.ToggleSwitchMode.Size = new System.Drawing.Size(64, 32);
@@ -334,13 +338,14 @@
             // 
             // LblUserMode
             // 
+            this.LblUserMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblUserMode.AutoSize = true;
             this.LblUserMode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblUserMode.Location = new System.Drawing.Point(76, 210);
+            this.LblUserMode.Location = new System.Drawing.Point(111, 210);
             this.LblUserMode.Name = "LblUserMode";
-            this.LblUserMode.Size = new System.Drawing.Size(93, 19);
+            this.LblUserMode.Size = new System.Drawing.Size(22, 19);
             this.LblUserMode.TabIndex = 14;
-            this.LblUserMode.Text = "Consumer";
+            this.LblUserMode.Text = "C";
             this.LblUserMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PanelContent
@@ -423,7 +428,7 @@
             this.PanelNavAppInfo.PerformLayout();
             this.PanelNavUserInfo.ResumeLayout(false);
             this.PanelNavUserInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxProfilePic)).EndInit();
             this.PanelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -444,7 +449,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton BtnNavigation;
         private Guna.UI2.WinForms.Guna2ImageButton BtnSearch;
         private Label LblFullName;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBoxProfilePic;
         private Label label1;
         private Label LblAppName;
         private Panel PanelNavButtons;

@@ -20,7 +20,14 @@ namespace ArtRepositorySystem
 
         private void App_Load(object sender, EventArgs e)
         {
-            ConsumerExperience consumerExperience = new ConsumerExperience();
+            //Get user object from login page
+            User ekele = new User();
+            ekele.FirstName = "Yelelew";
+            ekele.LastName = "Aymertim";
+            ekele.Username = "ekele";
+            ekele.ProfilePic = Properties.Resources.Afewerk_Tekle;
+
+            ConsumerExperience consumerExperience = new ConsumerExperience(ekele);
             this.Controls.Add(consumerExperience);
             consumerExperience.Dock = DockStyle.Fill;
         }

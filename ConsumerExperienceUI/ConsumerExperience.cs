@@ -1,6 +1,7 @@
 using System.Globalization;
 using System.Net;
 using System.Runtime.CompilerServices;
+using System.Windows.Forms;
 using ArtRepositorySystem.ArtForms;
 using ArtRepositorySystem.ArtForms.VisualArts;
 
@@ -15,11 +16,12 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
     public partial class ConsumerExperience : UserControl
     {
         //For testing purposes
-        User? ekele;
+        User currentUser;
         
-        public ConsumerExperience()
+        public ConsumerExperience(User ekele)
         {
             InitializeComponent();
+            this.currentUser = ekele;
         }
 
         #region Custom Methods
@@ -204,20 +206,22 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             return categories;
         }
+
         #endregion
 
         #region Events
         private void ConsumerExperience_Load(object sender, EventArgs e)
         {
-            ekele = new User();
-            ekele.FirstName = "Yelelew";
-            ekele.LastName = "Aymertim";
-            ekele.Username = "ekele";
-            LblUserMode.Text = ekele.userMode.ToString();
-            LblFullName.Text = ekele.FirstName + " " + ekele.LastName;
-            LblUsername.Text = "@" + ekele.Username;
+            LblUserMode.Text = currentUser.userMode.ToString();
+            LblUserMode.CenterHorizontally();
+            LblFullName.Text = currentUser.FirstName + " " + currentUser.LastName;
+            LblFullName.CenterHorizontally();
+            LblUsername.Text = $"@{currentUser.Username}";
+            LblUsername.CenterHorizontally();
 
-            //To be replaced with a database fetch
+            guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
+
+            //To be replaced with a database fetch of content specific to the user
             addUserControl(new MyFeedPage(GetDummyArts()));
         }
         private void BtnMyFeed_Click(object sender, EventArgs e)
@@ -245,8 +249,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         private void ToggleSwitchMode_CheckedChanged(object sender, EventArgs e)
         {
-            ekele.SwitchMode();
-            LblUserMode.Text = ekele.userMode.ToString();
+            currentUser.SwitchMode();
+            LblUserMode.Text = currentUser.userMode.ToString();
         }
         private void BtnNavigation_Click(object sender, EventArgs e)
         {

@@ -152,7 +152,6 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePicBoxProfilePic;
         private RichTextBox richTextBoxBio;
         private TabControl tabControlArtistInfo;
         private TabPage tabPageProfilePic;
