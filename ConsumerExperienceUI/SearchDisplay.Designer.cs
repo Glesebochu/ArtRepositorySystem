@@ -55,14 +55,13 @@
             this.TextBoxSearchBar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TextBoxSearchBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TextBoxSearchBar.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TextBoxSearchBar.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.TextBoxSearchBar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.TextBoxSearchBar.Location = new System.Drawing.Point(40, 40);
             this.TextBoxSearchBar.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.TextBoxSearchBar.Name = "TextBoxSearchBar";
             this.TextBoxSearchBar.PlaceholderText = "Interested in...";
             this.TextBoxSearchBar.Size = new System.Drawing.Size(1054, 36);
             this.TextBoxSearchBar.TabIndex = 0;
-            this.TextBoxSearchBar.Click += new System.EventHandler(this.TextBoxSearchBar_Click);
             this.TextBoxSearchBar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TextBoxSearchBar_KeyUp);
             // 
             // PanelSearchBar

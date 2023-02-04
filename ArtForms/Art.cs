@@ -18,6 +18,9 @@ namespace ArtRepositorySystem.ArtForms
         public DateOnly EndDate { get; set; }
         public DateTime PostedOn { get; set; }
         public ArtForm Type { get; set; }
+
+        //Take in a list of Art objects and return only 
+        //the objects that are of type VisualArt.
         public static List<VisualArt> ToVisualArt(List<Art> arts)
         {
             List<VisualArt> visualArts = new List<VisualArt>();
@@ -30,6 +33,8 @@ namespace ArtRepositorySystem.ArtForms
             }
             return visualArts;
         }
+        //Take in a list of Art objects and return only 
+        //the objects that are of type LiteraryArt.
         public static List<LiteraryArt> ToLiteraryArt(List<Art> arts)
         {
             List<LiteraryArt> literaryArts = new List<LiteraryArt>();
@@ -42,6 +47,8 @@ namespace ArtRepositorySystem.ArtForms
             }
             return literaryArts;
         }
+        //Take in a list of Art objects and return only 
+        //the objects that are of type PerformedArt.
         public static List<PerformedArt> ToPerformedArt(List<Art> arts)
         {
             List<PerformedArt> performedArts = new List<PerformedArt>();

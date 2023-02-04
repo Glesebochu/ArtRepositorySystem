@@ -35,6 +35,7 @@ namespace ArtRepositorySystem
             Followers = new List<User>();
             Works = new List<Art>();
         }
+        //Function for switching the mode of consumption from Consumer to Artist or vice versa.
         public void SwitchMode()
         {
             if(this.userMode == UserMode.Consumer)
@@ -50,6 +51,7 @@ namespace ArtRepositorySystem
         {
             return null;
         }
+        //Function for making a specific Analytic object visible to consumers.
         public void MakeAnalyticVisible(Analytic analytic, Art art)
         {
             //Check if this user made or collaborated on the art
@@ -62,31 +64,41 @@ namespace ArtRepositorySystem
         public List<Art> SearchArt(String artName)
         {
             List<Art> art = new List<Art>();
+
+
             //Search the DB for an art with this name
+
+
             return art;
         }
         public List<User> SearchArtist(String artistName)
         {
             List<User> artists = new List<User>();
+
+
             //Search the DB for an Artist with this name
+
+
             return artists;
         }
         public Reaction React(Art art)
         {
             return new Reaction();
         }
+        //Get a bundle of the Artist's artworks categorized by type.
         public AllArtistWorks? GetWorksByType()
         {
             if (this.userMode == UserMode.Artist)
             {
                 AllArtistWorks allWorks = new AllArtistWorks();
-                //Filter through the works of this artist and categorize them by type.
 
                 List<VisualArt> visualArts = new List<VisualArt>();
 
                 List<LiteraryArt> literaryArts = new List<LiteraryArt>();
 
                 List<PerformedArt> performedArts = new List<PerformedArt>();
+                
+                //Filter through the works of this artist and categorize them by type.
                 foreach (Art art in this.Works)
                 {
                     if (art.Type == ArtForm.Visual)

@@ -17,6 +17,8 @@ namespace ArtRepositorySystem.ArtForms
         public readonly new ArtForm Type = ArtForm.Visual;
         public Object Genre { get; set; }
 
+        //From a list of VisualArt objects, select and return those that correspond to 
+        //the specified VisualArtType.
         public static List<VisualArt> GetByVisualArtType(List<VisualArt> visuals, VisualArtType type)
         {
             return visuals.FindAll(t => t.VisualArtType == type);

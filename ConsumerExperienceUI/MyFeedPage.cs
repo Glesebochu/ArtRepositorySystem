@@ -15,11 +15,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
     public partial class MyFeedPage : UserControl
     {
-        List<Art>? arts;
-        //public MyFeedPage()
-        //{
-        //    InitializeComponent();
-        //}
+        List<Art> arts;
         public MyFeedPage(List<Art> arts)
         {
             InitializeComponent();

@@ -11,6 +11,7 @@ using ArtRepositorySystem.ArtForms;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
+    //An enumeration for holding the type of data to be displayed by the ResultsGrid.
     enum TypeOfDataToBeDisplayed
     {
         VisualArt,
@@ -22,23 +23,19 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         private List<User>? artists;
         private List<VisualArt>? visuals;
         private TypeOfDataToBeDisplayed typeOfDataToBeDisplayed;
-        public ResultsGrid()
-        {
-            InitializeComponent();
-        }
         public ResultsGrid(List<User> toBeDisplayed)
         {
             InitializeComponent();
             artists = toBeDisplayed;
+            //Set the typeOfDataToBeDisplayed property to User.
             typeOfDataToBeDisplayed = TypeOfDataToBeDisplayed.User;
-            PopulateResultsGrid();
         }
         public ResultsGrid(List<VisualArt> toBeDisplayed)
         {
             InitializeComponent();
             visuals = toBeDisplayed;
+            //Set the typeOfDataToBeDisplayed property to VisualArt.
             typeOfDataToBeDisplayed = TypeOfDataToBeDisplayed.VisualArt;
-            PopulateResultsGrid();
         }
 
         private void ResultsGrid_Load(object sender, EventArgs e)
@@ -54,6 +51,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 if (typeOfDataToBeDisplayed == TypeOfDataToBeDisplayed.VisualArt)
                 {
                     //VisualArts were sent
+                    //Use the ConsumerExperience.CreateButtonsFromVisualArtworks() function to create Buttons from VisualArt objects.
                     buttonList = ConsumerExperience.CreateButtonsFromVisualArtworks(visuals);
                     for (int i = 0; i < buttonList.Count(); i++)
                     {
@@ -64,6 +62,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 else
                 {
                     //Users were sent
+                    //Use the ConsumerExperience.CreateButtonsFromVisualArtworks() function to create Buttons from User objects.
                     buttonList = ConsumerExperience.CreateButtonsFromUsers(artists);
                     for (int i = 0; i < buttonList.Count(); i++)
                     {
@@ -89,6 +88,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             }
 
         }
+        //Event that is associated with all artwork or artist buttons.
+        //It displays the artist or the artwork in the center of the screen.
         private void buttonResult_Click(object sender, EventArgs e)
         {
             //Get the PanelContent that is found in ConsumerExperience
@@ -98,7 +99,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             if (typeOfDataToBeDisplayed == TypeOfDataToBeDisplayed.VisualArt)
             {
                 //VisualArts were sent
-                //Code for extracting an Art object from a button
+                //Code for extracting a VisualArt object from a button
                 VisualArt visualArt = (VisualArt)btn.Tag;
                 
                 //Create a center display for the visual art
@@ -110,7 +111,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 //Code for extracting a User object from a button
                 User artist = (User)btn.Tag;
 
-                //Code for displaying an Artist on the center of the screen
+                //Create a center display for the artist
                 ConsumerExperience.CreateCenterDisplayForArtist(artist, requiredPanel);
             }
 
