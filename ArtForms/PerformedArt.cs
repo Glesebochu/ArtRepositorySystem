@@ -8,6 +8,7 @@ namespace ArtRepositorySystem.ArtForms
 {
     public class PerformedArt : Art
     {
+        public int PerformedArtId { get; set; }
         public readonly new ArtForm Type = ArtForm.Performed;
     }
 }

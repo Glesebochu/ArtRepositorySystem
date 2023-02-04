@@ -16,6 +16,7 @@ namespace ArtRepositorySystem
     }
     public class QnA
     {
+        public int QnAId { get; set; }
         string Prompt { get; set; }
         QuestionType Type { get; set; }
         string Answer { get; set; }

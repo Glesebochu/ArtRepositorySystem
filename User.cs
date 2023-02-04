@@ -20,6 +20,7 @@ namespace ArtRepositorySystem
     }
     public class User
     {
+        public int UserId { get; set; }
         public string Username { get; set; }
         public UserMode userMode { get; set; }
         public Image ProfilePic { get; set; }
