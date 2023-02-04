@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArtRepositorySystem.ArtForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,33 +20,32 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         private void SearchDisplay_Load(object sender, EventArgs e)
         {
-            //This will be replaced by a database fetch
-            //Maybe a list of the recent searches the user made
-            this.PanelArtistsSection.Controls.Remove(resultsGridArtists);
-            resultsGridArtists = new ResultsGrid(ConsumerExperience.GetDummyUsers());
-            resultsGridArtists.Dock = DockStyle.Fill;
-            this.PanelArtistsSection.Controls.Add(resultsGridArtists);
-            resultsGridArtists.BringToFront();
+            //This will be replaced by a database fetch of a list of the recent searches the user made.
+            List<User> artists = ConsumerExperience.GetDummyUsers();
+            //Create a ResultsGrid object from the list of Users.
+            ResultsGrid resultsGridArtists = new ResultsGrid(artists);
+            //Add the ResultsGrid object to PanelArtistsSection.
+            ConsumerExperience.AddToPanel(resultsGridArtists, PanelArtistsSection);
 
-            this.PanelArtworksSection.Controls.Remove(resultsGridArtworks);
-            resultsGridArtworks = new ResultsGrid(ConsumerExperience.GetDummyVisualArts());
-            resultsGridArtworks.Dock = DockStyle.Fill;
-            this.PanelArtworksSection.Controls.Add(resultsGridArtworks);
-            resultsGridArtworks.BringToFront();
+            //This will be replaced by a database fetch of a list of the recent searches the user made.
+            List<VisualArt> visuals = Art.ToVisualArt(ConsumerExperience.GetDummyArts());
+            //Create a ResultsGrid object from the list of VisualArts.
+            ResultsGrid resultsGridArtworks = new ResultsGrid(visuals);
+            //Add the ResultsGrid object to PanelArtworksSection.
+            ConsumerExperience.AddToPanel(resultsGridArtworks, PanelArtworksSection);
 
         }
-
-        private void TextBoxSearchBar_Click(object sender, EventArgs e)
-        {
-            TextBoxSearchBar.ForeColor = Color.Black;
-        }
-
+        //Event for hitting "Enter" after typing in a few characters in the text box.
         private void TextBoxSearchBar_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                //Call the search algorithm with the user's input
-                MessageBox.Show("You searched for: " + TextBoxSearchBar.Text);
+
+
+                //Call the search algorithm with the user's input here...
+
+                //For confirmation purposes.
+                MessageBox.Show($"You searched for: {TextBoxSearchBar.Text}.");
                 
             }
         }

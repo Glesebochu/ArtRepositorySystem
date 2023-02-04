@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ArtRepositorySystem.ArtForms;
+using ArtRepositorySystem.ArtForms.VisualArts;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
     public partial class TopArtworksPage : UserControl
     {
-        List<VisualArt>? visuals;
+        List<Art>? arts;
         public TopArtworksPage()
         {
             InitializeComponent();
@@ -20,28 +22,23 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         private void TopArtworksPage_Load(object sender, EventArgs e)
         {
-            //This will be replaced by a database fetch for the visuals that are rated as the top
-            visuals = ConsumerExperience.GetDummyVisualArts();
+            //This will be replaced by a database fetch for the arts that are specific to the user
+            arts = ConsumerExperience.GetDummyArts();
 
-            tableLayoutPanelAllArtworks.Controls.Remove(categoryTemplateDisplay1);
-            tableLayoutPanelAllArtworks.Controls.Remove(categoryTemplateDisplay2);
-            tableLayoutPanelAllArtworks.Controls.Remove(categoryTemplateDisplay3);
+            //Convert art objects into visual art objects
+            List<VisualArt> visuals = Art.ToVisualArt(arts);
 
-            categoryTemplateDisplay1 = new CategoryTemplateDisplay(PaintingGenre.Renaissance.ToString(), visuals);
-            tableLayoutPanelAllArtworks.Controls.Add(categoryTemplateDisplay1);
-            categoryTemplateDisplay1.Dock = DockStyle.Fill;
-            categoryTemplateDisplay1.BringToFront();
+            //Possible algorithm for picking the top ranking artworks
+            //ConsumerExperience.GetDummyArts().FindAll(top => top.Analytics[0] > 500);
 
-            categoryTemplateDisplay2 = new CategoryTemplateDisplay(PaintingGenre.Rococo.ToString(), visuals);
-            tableLayoutPanelAllArtworks.Controls.Add(categoryTemplateDisplay2);
-            categoryTemplateDisplay2.Dock = DockStyle.Fill;
-            categoryTemplateDisplay2.BringToFront();
+            //Get a list of categories based on the visual arts sent
+            List<CategoryTemplateDisplay> categories = ConsumerExperience.GetCategoriesFromVisualArts(visuals);
 
-            categoryTemplateDisplay3 = new CategoryTemplateDisplay(PaintingGenre.Surrealism.ToString(), visuals);
-            tableLayoutPanelAllArtworks.Controls.Add(categoryTemplateDisplay3);
-            categoryTemplateDisplay3.Dock = DockStyle.Fill;
-            categoryTemplateDisplay3.BringToFront();
-
+            //Add each category to the table layout panel
+            foreach (CategoryTemplateDisplay c in categories)
+            {
+                ConsumerExperience.AddToPanel(c, tableLayoutPanelAllArtworks);
+            }
         }
     }
 }

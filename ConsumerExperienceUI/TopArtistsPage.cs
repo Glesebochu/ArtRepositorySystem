@@ -19,7 +19,14 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         private void TopArtistsPage_Load(object sender, EventArgs e)
         {
+            //Will be replaced by a databse fetch of the top artists
+            List<User> artists = ConsumerExperience.GetDummyUsers();
 
+            //Create results grid of the top artists
+            ResultsGrid resultsGrid = new ResultsGrid(artists);
+
+            //Add the results grid to the content panel
+            ConsumerExperience.AddToPanel(resultsGrid, PanelContentTopArtists);
         }
     }
 }

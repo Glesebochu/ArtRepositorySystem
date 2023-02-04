@@ -41,19 +41,22 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.SplitContainerAll = new System.Windows.Forms.SplitContainer();
             this.PanelNavButtons = new System.Windows.Forms.Panel();
             this.BtnMyPlaylist = new Guna.UI2.WinForms.Guna2Button();
             this.BtnTopArtworks = new Guna.UI2.WinForms.Guna2Button();
             this.BtnTopArtists = new Guna.UI2.WinForms.Guna2Button();
             this.BtnMyFeed = new Guna.UI2.WinForms.Guna2Button();
+            this.BtnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.PanelNavAppInfo = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.LblAppName = new System.Windows.Forms.Label();
             this.PanelNavUserInfo = new System.Windows.Forms.Panel();
             this.LblUsername = new System.Windows.Forms.Label();
             this.LblFullName = new System.Windows.Forms.Label();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.guna2CirclePictureBoxProfilePic = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.ToggleSwitchMode = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.LblUserMode = new System.Windows.Forms.Label();
             this.PanelContent = new System.Windows.Forms.Panel();
@@ -67,7 +70,7 @@
             this.PanelNavButtons.SuspendLayout();
             this.PanelNavAppInfo.SuspendLayout();
             this.PanelNavUserInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxProfilePic)).BeginInit();
             this.PanelHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,16 +101,18 @@
             // 
             // PanelNavButtons
             // 
+            this.PanelNavButtons.AutoScroll = true;
             this.PanelNavButtons.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PanelNavButtons.Controls.Add(this.BtnMyPlaylist);
             this.PanelNavButtons.Controls.Add(this.BtnTopArtworks);
             this.PanelNavButtons.Controls.Add(this.BtnTopArtists);
             this.PanelNavButtons.Controls.Add(this.BtnMyFeed);
+            this.PanelNavButtons.Controls.Add(this.BtnSettings);
             this.PanelNavButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelNavButtons.Location = new System.Drawing.Point(0, 248);
             this.PanelNavButtons.Name = "PanelNavButtons";
             this.PanelNavButtons.Padding = new System.Windows.Forms.Padding(0, 20, 0, 20);
-            this.PanelNavButtons.Size = new System.Drawing.Size(244, 341);
+            this.PanelNavButtons.Size = new System.Drawing.Size(244, 368);
             this.PanelNavButtons.TabIndex = 17;
             // 
             // BtnMyPlaylist
@@ -226,22 +231,51 @@
             this.BtnMyFeed.Text = "My Feed";
             this.BtnMyFeed.Click += new System.EventHandler(this.BtnMyFeed_Click);
             // 
+            // BtnSettings
+            // 
+            this.BtnSettings.BackColor = System.Drawing.Color.Transparent;
+            this.BtnSettings.BorderColor = System.Drawing.Color.LightCoral;
+            this.BtnSettings.CheckedState.FillColor = System.Drawing.Color.LightCoral;
+            this.BtnSettings.CustomBorderColor = System.Drawing.Color.Gray;
+            this.BtnSettings.CustomBorderThickness = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.BtnSettings.CustomizableEdges = customizableEdges9;
+            this.BtnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.BtnSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.BtnSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.BtnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.BtnSettings.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnSettings.FillColor = System.Drawing.Color.Transparent;
+            this.BtnSettings.FocusedColor = System.Drawing.Color.Gray;
+            this.BtnSettings.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSettings.ForeColor = System.Drawing.Color.Black;
+            this.BtnSettings.HoverState.FillColor = System.Drawing.Color.Gray;
+            this.BtnSettings.HoverState.ForeColor = System.Drawing.Color.White;
+            this.BtnSettings.Location = new System.Drawing.Point(0, 285);
+            this.BtnSettings.Margin = new System.Windows.Forms.Padding(10);
+            this.BtnSettings.Name = "BtnSettings";
+            this.BtnSettings.Padding = new System.Windows.Forms.Padding(5);
+            this.BtnSettings.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            this.BtnSettings.Size = new System.Drawing.Size(244, 63);
+            this.BtnSettings.TabIndex = 10;
+            this.BtnSettings.Text = "Settings";
+            this.BtnSettings.Click += new System.EventHandler(this.BtnSettings_Click);
+            // 
             // PanelNavAppInfo
             // 
             this.PanelNavAppInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PanelNavAppInfo.Controls.Add(this.label1);
             this.PanelNavAppInfo.Controls.Add(this.LblAppName);
             this.PanelNavAppInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelNavAppInfo.Location = new System.Drawing.Point(0, 589);
+            this.PanelNavAppInfo.Location = new System.Drawing.Point(0, 616);
             this.PanelNavAppInfo.Name = "PanelNavAppInfo";
-            this.PanelNavAppInfo.Size = new System.Drawing.Size(244, 125);
+            this.PanelNavAppInfo.Size = new System.Drawing.Size(244, 98);
             this.PanelNavAppInfo.TabIndex = 16;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 94);
+            this.label1.Location = new System.Drawing.Point(6, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 17);
             this.label1.TabIndex = 0;
@@ -251,7 +285,7 @@
             // 
             this.LblAppName.AutoSize = true;
             this.LblAppName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblAppName.Location = new System.Drawing.Point(3, 71);
+            this.LblAppName.Location = new System.Drawing.Point(3, 47);
             this.LblAppName.Name = "LblAppName";
             this.LblAppName.Size = new System.Drawing.Size(86, 22);
             this.LblAppName.TabIndex = 0;
@@ -262,7 +296,7 @@
             this.PanelNavUserInfo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.PanelNavUserInfo.Controls.Add(this.LblUsername);
             this.PanelNavUserInfo.Controls.Add(this.LblFullName);
-            this.PanelNavUserInfo.Controls.Add(this.guna2CirclePictureBox1);
+            this.PanelNavUserInfo.Controls.Add(this.guna2CirclePictureBoxProfilePic);
             this.PanelNavUserInfo.Controls.Add(this.ToggleSwitchMode);
             this.PanelNavUserInfo.Controls.Add(this.LblUserMode);
             this.PanelNavUserInfo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -273,42 +307,46 @@
             // 
             // LblUsername
             // 
+            this.LblUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblUsername.AutoSize = true;
             this.LblUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblUsername.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LblUsername.Location = new System.Drawing.Point(88, 121);
+            this.LblUsername.Location = new System.Drawing.Point(76, 126);
             this.LblUsername.Name = "LblUsername";
-            this.LblUsername.Size = new System.Drawing.Size(62, 18);
+            this.LblUsername.Size = new System.Drawing.Size(92, 18);
             this.LblUsername.TabIndex = 17;
-            this.LblUsername.Text = "@ekele";
+            this.LblUsername.Text = "@username";
             this.LblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblFullName
             // 
+            this.LblFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblFullName.AutoSize = true;
             this.LblFullName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblFullName.Location = new System.Drawing.Point(52, 89);
+            this.LblFullName.Location = new System.Drawing.Point(44, 91);
             this.LblFullName.Name = "LblFullName";
-            this.LblFullName.Size = new System.Drawing.Size(142, 18);
+            this.LblFullName.Size = new System.Drawing.Size(155, 18);
             this.LblFullName.TabIndex = 17;
-            this.LblFullName.Text = "Yelelew Aymertim";
+            this.LblFullName.Text = "FirstName LastName";
             this.LblFullName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // guna2CirclePictureBox1
+            // guna2CirclePictureBoxProfilePic
             // 
-            this.guna2CirclePictureBox1.Image = global::ArtRepositorySystem.Properties.Resources.user_icon;
-            this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(95, 16);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(55, 58);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 16;
-            this.guna2CirclePictureBox1.TabStop = false;
+            this.guna2CirclePictureBoxProfilePic.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.guna2CirclePictureBoxProfilePic.Image = global::ArtRepositorySystem.Properties.Resources.user_icon;
+            this.guna2CirclePictureBoxProfilePic.ImageRotate = 0F;
+            this.guna2CirclePictureBoxProfilePic.Location = new System.Drawing.Point(95, 16);
+            this.guna2CirclePictureBoxProfilePic.Name = "guna2CirclePictureBoxProfilePic";
+            this.guna2CirclePictureBoxProfilePic.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.guna2CirclePictureBoxProfilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBoxProfilePic.Size = new System.Drawing.Size(55, 58);
+            this.guna2CirclePictureBoxProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBoxProfilePic.TabIndex = 16;
+            this.guna2CirclePictureBoxProfilePic.TabStop = false;
             // 
             // ToggleSwitchMode
             // 
+            this.ToggleSwitchMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ToggleSwitchMode.Animated = true;
             this.ToggleSwitchMode.AutoRoundedCorners = true;
             this.ToggleSwitchMode.BackColor = System.Drawing.Color.Transparent;
@@ -318,10 +356,10 @@
             this.ToggleSwitchMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.ToggleSwitchMode.CheckedState.InnerBorderRadius = 11;
             this.ToggleSwitchMode.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.ToggleSwitchMode.CustomizableEdges = customizableEdges10;
-            this.ToggleSwitchMode.Location = new System.Drawing.Point(86, 160);
+            this.ToggleSwitchMode.CustomizableEdges = customizableEdges12;
+            this.ToggleSwitchMode.Location = new System.Drawing.Point(90, 161);
             this.ToggleSwitchMode.Name = "ToggleSwitchMode";
-            this.ToggleSwitchMode.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            this.ToggleSwitchMode.ShadowDecoration.CustomizableEdges = customizableEdges13;
             this.ToggleSwitchMode.Size = new System.Drawing.Size(64, 32);
             this.ToggleSwitchMode.TabIndex = 9;
             this.ToggleSwitchMode.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -334,13 +372,14 @@
             // 
             // LblUserMode
             // 
+            this.LblUserMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblUserMode.AutoSize = true;
             this.LblUserMode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblUserMode.Location = new System.Drawing.Point(76, 210);
+            this.LblUserMode.Location = new System.Drawing.Point(111, 210);
             this.LblUserMode.Name = "LblUserMode";
-            this.LblUserMode.Size = new System.Drawing.Size(93, 19);
+            this.LblUserMode.Size = new System.Drawing.Size(22, 19);
             this.LblUserMode.TabIndex = 14;
-            this.LblUserMode.Text = "Consumer";
+            this.LblUserMode.Text = "C";
             this.LblUserMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PanelContent
@@ -379,7 +418,7 @@
             this.BtnNavigation.Margin = new System.Windows.Forms.Padding(6);
             this.BtnNavigation.Name = "BtnNavigation";
             this.BtnNavigation.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnNavigation.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            this.BtnNavigation.ShadowDecoration.CustomizableEdges = customizableEdges14;
             this.BtnNavigation.Size = new System.Drawing.Size(57, 46);
             this.BtnNavigation.TabIndex = 9;
             this.BtnNavigation.Click += new System.EventHandler(this.BtnNavigation_Click);
@@ -399,7 +438,7 @@
             this.BtnSearch.Margin = new System.Windows.Forms.Padding(6);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.PressedState.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnSearch.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            this.BtnSearch.ShadowDecoration.CustomizableEdges = customizableEdges15;
             this.BtnSearch.Size = new System.Drawing.Size(57, 46);
             this.BtnSearch.TabIndex = 9;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
@@ -423,7 +462,7 @@
             this.PanelNavAppInfo.PerformLayout();
             this.PanelNavUserInfo.ResumeLayout(false);
             this.PanelNavUserInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBoxProfilePic)).EndInit();
             this.PanelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -444,10 +483,11 @@
         private Guna.UI2.WinForms.Guna2ImageButton BtnNavigation;
         private Guna.UI2.WinForms.Guna2ImageButton BtnSearch;
         private Label LblFullName;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBoxProfilePic;
         private Label label1;
         private Label LblAppName;
         private Panel PanelNavButtons;
         private Label LblUsername;
+        private Guna.UI2.WinForms.Guna2Button BtnSettings;
     }
 }

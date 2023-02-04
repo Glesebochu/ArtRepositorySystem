@@ -42,13 +42,11 @@
             this.tableLayoutPanelResults.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanelResults.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanelResults.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanelResults.MinimumSize = new System.Drawing.Size(400, 400);
+            this.tableLayoutPanelResults.MinimumSize = new System.Drawing.Size(400, 200);
             this.tableLayoutPanelResults.Name = "tableLayoutPanelResults";
-            this.tableLayoutPanelResults.RowCount = 3;
+            this.tableLayoutPanelResults.RowCount = 1;
             this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelResults.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelResults.Size = new System.Drawing.Size(1074, 400);
+            this.tableLayoutPanelResults.Size = new System.Drawing.Size(500, 200);
             this.tableLayoutPanelResults.TabIndex = 3;
             // 
             // ResultsGrid
@@ -56,11 +54,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.tableLayoutPanelResults);
-            this.MinimumSize = new System.Drawing.Size(700, 500);
+            this.MinimumSize = new System.Drawing.Size(500, 200);
             this.Name = "ResultsGrid";
-            this.Size = new System.Drawing.Size(1074, 609);
+            this.Size = new System.Drawing.Size(500, 200);
             this.Load += new System.EventHandler(this.ResultsGrid_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
