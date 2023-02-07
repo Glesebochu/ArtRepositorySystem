@@ -8,6 +8,7 @@ namespace ArtRepositorySystem
 {
     public class Analytic
     {
+        public int AnalyticId { get; set; }
         public string Name { get; set; }
         public bool Visibility { get; set; }
     }

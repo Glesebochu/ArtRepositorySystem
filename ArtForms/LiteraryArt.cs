@@ -8,6 +8,7 @@ namespace ArtRepositorySystem.ArtForms
 {
     public class LiteraryArt : Art
     {
+        public int LiteraryArtId { get; set; }
         public readonly new ArtForm Type = ArtForm.Literary;
     }
 }

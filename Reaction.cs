@@ -14,6 +14,7 @@ namespace ArtRepositorySystem
     }
     public class Reaction
     {
+        public int ReactionId { get; set; }
         public ReactionType Type { get; set; }
     }
 }

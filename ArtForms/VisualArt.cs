@@ -10,6 +10,7 @@ namespace ArtRepositorySystem.ArtForms
 {
     public class VisualArt : Art
     {
+        public int VisualArtId { get; set; }
         public Image Image { get; set; }
         public VisualArtShape VisualArtShape { get; set; }
         public VisualArtType VisualArtType { get; set; }
