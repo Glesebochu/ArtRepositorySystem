@@ -79,6 +79,7 @@
             this.btnMyWorks.Size = new System.Drawing.Size(244, 47);
             this.btnMyWorks.TabIndex = 1;
             this.btnMyWorks.Text = "My Works";
+            this.btnMyWorks.Click += new System.EventHandler(this.btnMyWorks_Click);
             // 
             // btnCreate
             // 
