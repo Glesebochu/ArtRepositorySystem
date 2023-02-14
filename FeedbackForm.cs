@@ -8,7 +8,11 @@ namespace ArtRepositorySystem
 {
     public class FeedbackForm
     {
-        public int FeedbackFromId { get; set; }
+        public int? FeedbackFromId { get; set; }
         public List<QnA> Questions { get; set; }
+
+        public FeedbackForm(List<QnA> questions) { 
+            this.Questions = questions;
+        }
     }
 }
