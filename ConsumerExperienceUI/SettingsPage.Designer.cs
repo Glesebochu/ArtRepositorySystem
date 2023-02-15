@@ -171,6 +171,7 @@
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             this.guna2PictureBox1.Size = new System.Drawing.Size(204, 196);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 4;
             this.guna2PictureBox1.TabStop = false;
             // 
@@ -469,6 +470,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(180, 45);
             this.guna2Button4.TabIndex = 12;
             this.guna2Button4.Text = "Save";
+            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2TextBox15
             // 
@@ -717,12 +719,12 @@
             this.guna2TextBox16.TabIndex = 2;
             this.guna2TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // settingsUc
+            // SettingsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.Change);
-            this.Name = "settingsUc";
+            this.Name = "SettingsPage";
             this.Size = new System.Drawing.Size(873, 427);
             this.Change.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

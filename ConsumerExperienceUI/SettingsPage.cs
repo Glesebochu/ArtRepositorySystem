@@ -19,10 +19,28 @@ namespace ArtRepositorySystem
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
+            string imagelocation;
+
             OpenFileDialog op = new OpenFileDialog();
-            op.Filter = "(choose a picture) | *.jpg; *.png; *.jpeg";
-            if (op.ShowDialog() == DialogResult.OK) { 
-            profilepicture.BackgroundImage = Image.FromFile(op.FileName);
+            op.Filter = "jpg files(*.jpg)|*.jpg| png files(*.png)|*.png| all files(*.*)|*.*";
+
+            if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK) { 
+                imagelocation = op.FileName;
+                guna2PictureBox1.ImageLocation = imagelocation;
+                 //guna2PictureBox1.BackgroundImage = Image.FromFile(op.FileName);
+            }
+        }
+
+        private void guna2Button4_Click(object sender, EventArgs e)
+        {
+            if (guna2TextBox14.Text == guna2TextBox13.Text)
+            {
+                //update db
+                MessageBox.Show("Password change confirmed.");
+
+            }
+            else {
+                MessageBox.Show("Make sure the passwords you have entered match and try again.");
             }
         }
     }
