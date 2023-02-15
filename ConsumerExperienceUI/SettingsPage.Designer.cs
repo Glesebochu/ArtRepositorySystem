@@ -191,6 +191,7 @@
             this.guna2Button2.Size = new System.Drawing.Size(180, 45);
             this.guna2Button2.TabIndex = 3;
             this.guna2Button2.Text = "Save";
+            this.guna2Button2.Click += new System.EventHandler(this.saveChangedProfilePicture);
             // 
             // guna2TextBox1
             // 
@@ -230,7 +231,7 @@
             this.profilepicture.Size = new System.Drawing.Size(180, 45);
             this.profilepicture.TabIndex = 0;
             this.profilepicture.Text = "Upload Picture";
-            this.profilepicture.Click += new System.EventHandler(this.guna2Button1_Click);
+            this.profilepicture.Click += new System.EventHandler(this.updatePictureClick);
             // 
             // tabPage2
             // 
@@ -470,7 +471,7 @@
             this.guna2Button4.Size = new System.Drawing.Size(180, 45);
             this.guna2Button4.TabIndex = 12;
             this.guna2Button4.Text = "Save";
-            this.guna2Button4.Click += new System.EventHandler(this.guna2Button4_Click);
+            this.guna2Button4.Click += new System.EventHandler(this.saveChangedPassword);
             // 
             // guna2TextBox15
             // 

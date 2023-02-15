@@ -17,7 +17,7 @@ namespace ArtRepositorySystem
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void updatePictureClick(object sender, EventArgs e)
         {
             string imagelocation;
 
@@ -31,7 +31,7 @@ namespace ArtRepositorySystem
             }
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void saveChangedPassword(object sender, EventArgs e)
         {
             if (guna2TextBox14.Text == guna2TextBox13.Text)
             {
@@ -42,6 +42,11 @@ namespace ArtRepositorySystem
             else {
                 MessageBox.Show("Make sure the passwords you have entered match and try again.");
             }
+        }
+
+        private void saveChangedProfilePicture(object sender, EventArgs e)
+        {
+
         }
     }
 }
