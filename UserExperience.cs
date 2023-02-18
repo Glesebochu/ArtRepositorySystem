@@ -1,11 +1,13 @@
 using System.Globalization;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using ArtRepositorySystem.ArtForms;
 using ArtRepositorySystem.ArtForms.VisualArts;
+using ArtRepositorySystem.ConsumerExperienceUI;
 
-namespace ArtRepositorySystem.ConsumerExperienceUI
+namespace ArtRepositorySystem
 {
     //Struct for storing the colors of the app's theme.
     public struct ColorThemes
@@ -13,11 +15,11 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         public static Color NavigationPanel = Color.LightGray;
         public static Color ContentPanel = Color.White;
     }
-    public partial class ConsumerExperience : UserControl
+    public partial class UserExperience : UserControl
     {
         User currentUser;
         
-        public ConsumerExperience(User ekele)
+        public UserExperience(User ekele)
         {
             InitializeComponent();
             this.currentUser = ekele;
@@ -25,8 +27,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         #region Custom Methods
         
-        //Add a UserControl to the content Panel.
-        private void addUserControl(UserControl userControl)
+        //Add a UserControl to PanelContent.
+        public void AddToPanelContent(UserControl userControl)
         {
             //Remove all the controls from PanelContent.
             PanelContent.Controls.Clear();
@@ -246,12 +248,10 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             return categories;
         }
 
-        #endregion
-
-        #region Events
-        private void ConsumerExperience_Load(object sender, EventArgs e)
+        //A private function that I can call from anywhere to refresh the UserExperience.
+        //This is very useful for easily switching between the consumer and artist experiences.
+        private void LoadUserExperience()
         {
-
             //Set the text property of the labels for UserMode, FullName and Username and center them horizontally.
             LblUserMode.Text = currentUser.userMode.ToString();
             LblUserMode.CenterHorizontally();
@@ -263,36 +263,45 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             //Set the image of the profile picture from the currentUser.
             guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
 
-            //To be replaced with a database fetch of content specific to the user
-            addUserControl(new MyFeedPage(GetDummyArts()));
+            //Check which user mode the user is in: consumer or artist.
+            if (currentUser.userMode == UserMode.Consumer)
+            {
+                //The user is in consumer mode.
+                //Create a new ConsumerExperienceNavButtons object and add it to the navigation panel.
+                AddToPanel(new ConsumerNavButtons(), SplitContainerAll.Panel1);
+
+                //Show the MyFeed page by default.
+                //To be replaced with a database fetch of content specific to the user
+                AddToPanelContent(new MyFeedPage(GetDummyArts()));
+            }
+            else
+            {
+                //The user is in consumer mode.
+                //Create a new ConsumerExperienceNavButtons object and add it to the navigation panel.
+                //AddToPanel(new ArtistExperienceNavButtons(), SplitContainerAll.Panel1);
+
+                //Show the Home page by default.
+                //To be replaced with a database fetch of content specific to the user
+                //AddToPanelContent(new HomePage());
+            }
         }
-        private void BtnMyFeed_Click(object sender, EventArgs e)
+        
+        #endregion
+
+        #region Events
+        private void UserExperience_Load(object sender, EventArgs e)
         {
-            //Database fetch for the specific feed of this user
-            List<Art> arts = GetDummyArts();
-
-            addUserControl(new MyFeedPage(arts));
+            LoadUserExperience();
         }
-
-        private void BtnTopArtists_Click(object sender, EventArgs e)
-        {
-            addUserControl(new TopArtistsPage());
-        }
-
-        private void BtnTopArtworks_Click(object sender, EventArgs e)
-        {
-            addUserControl(new TopArtworksPage());
-        }
-
-        private void BtnMyPlaylist_Click(object sender, EventArgs e)
-        {
-            addUserControl(new MyPlaylistsPage());
-        }
-
         private void ToggleSwitchMode_CheckedChanged(object sender, EventArgs e)
         {
             //Switch the user's mode.
             currentUser.SwitchMode();
+
+            //Reload this UserExperience.
+            this.Controls.Clear();
+            LoadUserExperience();
+
             //Change the text of the label representing the usermode.
             LblUserMode.Text = currentUser.userMode.ToString();
             //Center the label horizontally.
@@ -315,12 +324,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         }
         private void BtnSearch_Click(object sender, EventArgs e)
         {
-            addUserControl(new SearchDisplay());
-        }
-
-        private void BtnSettings_Click(object sender, EventArgs e)
-        {
-            addUserControl(new SettingsPage());
+            AddToPanelContent(new SearchDisplay());
         }
 
         #endregion

@@ -7,13 +7,16 @@
     <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ConsumerExperienceUI\ConsumerExperienceNavButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ResultsGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\CategoryTemplateDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ConsumerExperienceUI\ConsumerExperience.cs">
+    <Compile Update="UserExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\MyFeedPage.cs">

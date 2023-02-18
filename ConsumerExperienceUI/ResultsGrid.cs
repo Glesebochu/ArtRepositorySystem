@@ -52,7 +52,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 {
                     //VisualArts were sent
                     //Use the ConsumerExperience.CreateButtonsFromVisualArtworks() function to create Buttons from VisualArt objects.
-                    buttonList = ConsumerExperience.CreateButtonsFromVisualArtworks(visuals);
+                    buttonList = UserExperience.CreateButtonsFromVisualArtworks(visuals);
                     for (int i = 0; i < buttonList.Count(); i++)
                     {
                         //Associate the specific visual art with the button to make the Artist accessible in the event
@@ -63,7 +63,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 {
                     //Users were sent
                     //Use the ConsumerExperience.CreateButtonsFromVisualArtworks() function to create Buttons from User objects.
-                    buttonList = ConsumerExperience.CreateButtonsFromUsers(artists);
+                    buttonList = UserExperience.CreateButtonsFromUsers(artists);
                     for (int i = 0; i < buttonList.Count(); i++)
                     {
                         //Associate the specific Artist with the button to make the Artist accessible in the event
@@ -103,7 +103,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 VisualArt visualArt = (VisualArt)btn.Tag;
                 
                 //Create a center display for the visual art
-                ConsumerExperience.CreateCenterDisplayForArt(visualArt, requiredPanel);
+                UserExperience.CreateCenterDisplayForArt(visualArt, requiredPanel);
             }
             else
             {
@@ -112,7 +112,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 User artist = (User)btn.Tag;
 
                 //Create a center display for the artist
-                ConsumerExperience.CreateCenterDisplayForArtist(artist, requiredPanel);
+                UserExperience.CreateCenterDisplayForArtist(artist, requiredPanel);
             }
 
         }

@@ -82,9 +82,9 @@ namespace ArtRepositorySystem
 
             return artists;
         }
-        public Reaction React(Art art)
+        public Reaction React(Art art, String response)
         {
-            return new Reaction();
+            return new Reaction(this, art, response);
         }
         //Get a bundle of the Artist's artworks categorized by type.
         public AllArtistWorks? GetWorksByType()

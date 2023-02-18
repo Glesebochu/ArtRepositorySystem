@@ -38,11 +38,11 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             //Get a list of CategoryTemplateDisplay objects from a list of VisualArt objects using 
             //the ConsumerExperience.GetCategoriesFromVisualArts() function.
-            List<CategoryTemplateDisplay> categories = ConsumerExperience.GetCategoriesFromVisualArts(visualsFromArtist);
+            List<CategoryTemplateDisplay> categories = UserExperience.GetCategoriesFromVisualArts(visualsFromArtist);
             foreach (CategoryTemplateDisplay category in categories)
             {
                 //Add each category to the TableLayoutPanel in this UserControl.
-                ConsumerExperience.AddToPanel(category, tableLayoutPanelArtistWorkCategories);
+                UserExperience.AddToPanel(category, tableLayoutPanelArtistWorkCategories);
             }
 
         }
