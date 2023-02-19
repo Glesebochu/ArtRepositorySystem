@@ -324,5 +324,10 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         }
 
         #endregion
+
+        private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("C:\\Users\\hp\\Desktop\\NPN\\ArtRepositorySystem\\Resources");
+        }
     }
 }

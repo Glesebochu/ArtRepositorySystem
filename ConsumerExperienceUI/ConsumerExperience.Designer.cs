@@ -51,6 +51,7 @@
             this.BtnMyFeed = new Guna.UI2.WinForms.Guna2Button();
             this.BtnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.PanelNavAppInfo = new System.Windows.Forms.Panel();
+            this.linkLabelAboutPage = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.LblAppName = new System.Windows.Forms.Label();
             this.PanelNavUserInfo = new System.Windows.Forms.Panel();
@@ -63,7 +64,6 @@
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.BtnNavigation = new Guna.UI2.WinForms.Guna2ImageButton();
             this.BtnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.linkLabelAboutPage = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerAll)).BeginInit();
             this.SplitContainerAll.Panel1.SuspendLayout();
             this.SplitContainerAll.Panel2.SuspendLayout();
@@ -273,6 +273,19 @@
             this.PanelNavAppInfo.Size = new System.Drawing.Size(244, 98);
             this.PanelNavAppInfo.TabIndex = 16;
             // 
+            // linkLabelAboutPage
+            // 
+            this.linkLabelAboutPage.AutoSize = true;
+            this.linkLabelAboutPage.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.linkLabelAboutPage.Location = new System.Drawing.Point(118, 68);
+            this.linkLabelAboutPage.Name = "linkLabelAboutPage";
+            this.linkLabelAboutPage.Size = new System.Drawing.Size(50, 20);
+            this.linkLabelAboutPage.TabIndex = 1;
+            this.linkLabelAboutPage.TabStop = true;
+            this.linkLabelAboutPage.Text = "About";
+            this.linkLabelAboutPage.VisitedLinkColor = System.Drawing.Color.DarkOrchid;
+            this.linkLabelAboutPage.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelAboutPage_LinkClicked);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -444,18 +457,6 @@
             this.BtnSearch.Size = new System.Drawing.Size(57, 46);
             this.BtnSearch.TabIndex = 9;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
-            // linkLabelAboutPage
-            // 
-            this.linkLabelAboutPage.AutoSize = true;
-            this.linkLabelAboutPage.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabelAboutPage.Location = new System.Drawing.Point(118, 68);
-            this.linkLabelAboutPage.Name = "linkLabelAboutPage";
-            this.linkLabelAboutPage.Size = new System.Drawing.Size(50, 20);
-            this.linkLabelAboutPage.TabIndex = 1;
-            this.linkLabelAboutPage.TabStop = true;
-            this.linkLabelAboutPage.Text = "About";
-            this.linkLabelAboutPage.VisitedLinkColor = System.Drawing.Color.DarkOrchid;
             // 
             // ConsumerExperience
             // 
