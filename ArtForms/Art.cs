@@ -8,6 +8,7 @@ namespace ArtRepositorySystem.ArtForms
 {
     public abstract class Art
     {
+        public int ArtId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public List<User> Artists { get; set; }

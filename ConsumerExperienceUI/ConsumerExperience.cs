@@ -37,8 +37,24 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             //Bring the UserControl to the front.
             userControl.BringToFront();
         }
-        
+
         //Create a center display for an Artwork.
+
+        public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        public static Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
         public static void CreateCenterDisplayForArt(Art art, Panel panelContent)
         {
             //Create CenterDisplay object.
@@ -86,7 +102,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             p = new VisualArt();
             p.Title = "The Total Liberation of Africa";
-            p.Image = Properties.Resources.TheTotalLiberationOfAfrica;
+            Image DispalayedImage = Properties.Resources.TheTotalLiberationOfAfrica;
+            byte[] byteImage = ImageToByteArray(DispalayedImage);
+            p.Image = byteImage;
             p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
             p.VisualArtShape = VisualArtShape.Rectangle;
             p.VisualArtType = VisualArtType.Painting;
@@ -94,7 +112,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             x = new VisualArt();
             x.Title = "Defender of His Country";
-            x.Image = Properties.Resources.DefenderOfHisCountry;
+            Image DispalayedImage2 = Properties.Resources.DefenderOfHisCountry; ;
+            byte[] byteImage2 = ImageToByteArray(DispalayedImage2);
+            x.Image = byteImage2;
             x.Description = "Defender of His Country.";
             x.VisualArtShape = VisualArtShape.Rectangle;
             x.VisualArtType = VisualArtType.Painting;
@@ -102,7 +122,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             y = new VisualArt();
             y.Title = "African Heritage";
-            y.Image = Properties.Resources.AfricanHeritage;
+            Image DispalayedImage3 = Properties.Resources.AfricanHeritage;
+            byte[] byteImage3 = ImageToByteArray(DispalayedImage3);
+            y.Image = byteImage3;
             y.Description = "African Heritage.";
             y.VisualArtShape = VisualArtShape.Rectangle;
             y.VisualArtType = VisualArtType.Painting;
@@ -110,7 +132,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             z = new VisualArt();
             z.Title = "Asabet Meal";
-            z.Image = Properties.Resources.Asabet;
+            Image DispalayedImage4 = Properties.Resources.Asabet;
+            byte[] byteImage4 = ImageToByteArray(DispalayedImage4);
+            z.Image = byteImage4 ;
             z.Description = "Asabet Meal.";
             z.VisualArtShape = VisualArtShape.Rectangle;
             z.VisualArtType = VisualArtType.Photograph;
@@ -153,7 +177,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             afewerk.FirstName = "Afewerk";
             afewerk.LastName = "Tekle";
             afewerk.Bio = "The Shit.";
-            afewerk.ProfilePic = Properties.Resources.Afewerk_Tekle;
+            Image DispalayedImage5 = Properties.Resources.Afewerk_Tekle;
+            byte[] byteImage5 = ImageToByteArray(DispalayedImage5);
+            afewerk.ProfilePic = byteImage5;
             afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
 
             List<User> userList = new List<User>();
@@ -172,7 +198,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             for (int i = 0; i < visualArts.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = visualArts[i].Image;
+                Image buttonImage = byteArrayToImage(visualArts[i].Image);
+                button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Tile;
                 button.Text = "";
                 button.Tag = visualArts[i];
@@ -189,7 +216,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             for (int i = 0; i < users.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = users[i].ProfilePic;
+               
+                Image buttonImage = byteArrayToImage(users[i].ProfilePic);
+                button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Center;
                 button.Text = "";
                 button.Tag = users[i];
@@ -261,7 +290,10 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             LblUsername.CenterHorizontally();
 
             //Set the image of the profile picture from the currentUser.
-            guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
+            Image ProfileImage = byteArrayToImage(currentUser.ProfilePic);
+           
+
+            guna2CirclePictureBoxProfilePic.Image = ProfileImage;
 
             //To be replaced with a database fetch of content specific to the user
             addUserControl(new MyFeedPage(GetDummyArts()));

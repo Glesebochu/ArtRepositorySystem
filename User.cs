@@ -23,7 +23,7 @@ namespace ArtRepositorySystem
         public int UserId { get; set; }
         public string Username { get; set; }
         public UserMode userMode { get; set; }
-        public Image ProfilePic { get; set; }
+        public byte[] ProfilePic { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         private string password { get; set; }
@@ -82,10 +82,10 @@ namespace ArtRepositorySystem
 
             return artists;
         }
-        public Reaction React(Art art)
-        {
-            return new Reaction();
-        }
+        //public Reaction React(Art art)
+        //{
+        //    return new Reaction();
+        //}
         //Get a bundle of the Artist's artworks categorized by type.
         public AllArtistWorks? GetWorksByType()
         {

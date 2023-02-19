@@ -4,6 +4,9 @@
     <Compile Update="App.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ArtistExperienceUI\ArtistNavigation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>

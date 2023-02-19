@@ -20,6 +20,13 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             this.Artist = artist;
             
         }
+        public static Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
+
 
         private void ArtistCenterDisplay_Load(object sender, EventArgs e)
         {
@@ -27,7 +34,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             LblArtistName.Text = $"{Artist.FirstName} {Artist.LastName}";
 
             //Fill the profile tab.
-            tabPageProfilePic.BackgroundImage = Artist.ProfilePic;
+            Image ProfileImage = byteArrayToImage(Artist.ProfilePic);
+            tabPageProfilePic.BackgroundImage = ProfileImage;
             tabPageProfilePic.BackgroundImageLayout = ImageLayout.Zoom;
 
             //Fill the bio tab.
