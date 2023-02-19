@@ -327,7 +327,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("C:\\Users\\hp\\Desktop\\NPN\\ArtRepositorySystem\\Resources");
+            System.Diagnostics.Process.Start("http://127.0.0.1:5500/index.html");
         }
     }
 }
