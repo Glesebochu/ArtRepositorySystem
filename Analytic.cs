@@ -1,14 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using DrakeUI.Framework;
+using Chart.Mvc.SimpleChart;
 namespace ArtRepositorySystem
 {
-    public class Analytic
+    public partial class Analytic : UserControl
     {
-        public string Name { get; set; }
         public bool Visibility { get; set; }
+        private int numberOflike;
+        private int numberOfDislike;
+        private int numberOfView;
+        private Feedback feedback;
+
+        public Analytic()
+        {
+            InitializeComponent();
+        }
+
+        private List<Dictionary<String,object>> getQuestionRatio()
+        {
+            return new List<Dictionary<string, object>> { new Dictionary<string, object> { } };
+        }
+
+
+        public void plotPieChart()
+        {
+            
+        // plots a pieChart
+            
+        }
+
+
+        public void plotBarChart()
+        {
+               // plots a barChart
+        }
+
     }
 }
+

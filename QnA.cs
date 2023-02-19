@@ -16,8 +16,26 @@ namespace ArtRepositorySystem
     }
     public class QnA
     {
-        string Prompt { get; set; }
-        QuestionType Type { get; set; }
-        string Answer { get; set; }
+        string _Prompt { get; set; }
+        QuestionType _Type { get; set; }
+        string _Answer { get; set; }
+
+        public string Prompt
+        { 
+            get { return _Prompt; } 
+            set { _Prompt = value; } 
+        }
+
+        public QuestionType Type
+        { 
+            get { return _Type; } 
+            set { _Type = value; } 
+        }
+
+        public string Answer
+        { 
+            get { return _Answer; } 
+            set { _Answer = value; } 
+        }
     }
 }

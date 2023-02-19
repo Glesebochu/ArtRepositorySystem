@@ -47,7 +47,7 @@ namespace ArtRepositorySystem
                 this.userMode = UserMode.Consumer;
             }
         }
-        public FeedbackForm CreateFeedackForm()
+        public Feedback CreateFeedackForm()
         {
             return null;
         }

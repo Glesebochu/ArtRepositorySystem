@@ -45,5 +45,19 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             this.Hide();
         }
 
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void feedbackPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void analyticsPage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

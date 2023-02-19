@@ -48,10 +48,10 @@
             this.LblCategoryName.AutoSize = true;
             this.LblCategoryName.BackColor = System.Drawing.Color.Transparent;
             this.LblCategoryName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblCategoryName.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblCategoryName.Location = new System.Drawing.Point(0, 20);
             this.LblCategoryName.Name = "LblCategoryName";
-            this.LblCategoryName.Size = new System.Drawing.Size(258, 37);
+            this.LblCategoryName.Size = new System.Drawing.Size(242, 36);
             this.LblCategoryName.TabIndex = 1;
             this.LblCategoryName.Text = "Category_Name";
             // 
