@@ -40,11 +40,8 @@
     <Compile Update="ConsumerExperienceUI\TopArtworksPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="FeedBackForm.cs">
+    <Compile Update="FeedbackForm.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="test.cs">
-      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 </Project>

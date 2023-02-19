@@ -43,7 +43,7 @@
             // 
             this.LblArtworkTitle.AutoEllipsis = true;
             this.LblArtworkTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblArtworkTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblArtworkTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblArtworkTitle.Location = new System.Drawing.Point(5, 5);
             this.LblArtworkTitle.Name = "LblArtworkTitle";
             this.LblArtworkTitle.Size = new System.Drawing.Size(864, 95);
@@ -59,7 +59,7 @@
             this.tabControlArtworkInfo.Controls.Add(this.feedbackPage);
             this.tabControlArtworkInfo.Controls.Add(this.analyticsPage);
             this.tabControlArtworkInfo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlArtworkInfo.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tabControlArtworkInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tabControlArtworkInfo.ItemSize = new System.Drawing.Size(64, 40);
             this.tabControlArtworkInfo.Location = new System.Drawing.Point(5, 100);
             this.tabControlArtworkInfo.Name = "tabControlArtworkInfo";
@@ -67,6 +67,7 @@
             this.tabControlArtworkInfo.SelectedIndex = 0;
             this.tabControlArtworkInfo.Size = new System.Drawing.Size(864, 525);
             this.tabControlArtworkInfo.TabIndex = 2;
+            this.tabControlArtworkInfo.SelectedIndexChanged += new System.EventHandler(this.tabControlArtworkInfo_TabIndexChanged);
             // 
             // artPage
             // 
@@ -83,20 +84,20 @@
             this.descriptionPage.Controls.Add(this.textBoxDescription);
             this.descriptionPage.Location = new System.Drawing.Point(4, 44);
             this.descriptionPage.Name = "descriptionPage";
-            this.descriptionPage.Size = new System.Drawing.Size(132, 0);
+            this.descriptionPage.Size = new System.Drawing.Size(856, 477);
             this.descriptionPage.TabIndex = 1;
             this.descriptionPage.Text = "Description";
             // 
             // textBoxDescription
             // 
             this.textBoxDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxDescription.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxDescription.Location = new System.Drawing.Point(0, 0);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxDescription.Size = new System.Drawing.Size(132, 0);
+            this.textBoxDescription.Size = new System.Drawing.Size(856, 477);
             this.textBoxDescription.TabIndex = 0;
             this.textBoxDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -105,16 +106,17 @@
             this.feedbackPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.feedbackPage.Location = new System.Drawing.Point(4, 44);
             this.feedbackPage.Name = "feedbackPage";
-            this.feedbackPage.Size = new System.Drawing.Size(132, 0);
+            this.feedbackPage.Size = new System.Drawing.Size(856, 477);
             this.feedbackPage.TabIndex = 2;
             this.feedbackPage.Text = "Feedback";
+            this.feedbackPage.Click += new System.EventHandler(this.feedbackPage_Click_1);
             // 
             // analyticsPage
             // 
             this.analyticsPage.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.analyticsPage.Location = new System.Drawing.Point(4, 44);
             this.analyticsPage.Name = "analyticsPage";
-            this.analyticsPage.Size = new System.Drawing.Size(132, 0);
+            this.analyticsPage.Size = new System.Drawing.Size(856, 477);
             this.analyticsPage.TabIndex = 3;
             this.analyticsPage.Text = "Analytics";
             // 

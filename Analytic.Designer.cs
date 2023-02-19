@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Analytic";
             this.Size = new System.Drawing.Size(982, 450);
-            this.Load += new System.EventHandler(this.Analytic_Load);
+            //this.Load += new System.EventHandler(this.Analytic_Load);
             this.ResumeLayout(false);
 
         }
