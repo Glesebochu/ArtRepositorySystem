@@ -98,6 +98,8 @@ namespace ArtRepositorySystem
         //Get a list of Art objects for testing purposes.
         public static List<Art> GetDummyArts()
         {
+
+            MededaContext mededaContext = new MededaContext();
             //For testing purposes
             VisualArt p, x, y, z;
             List<Art> arts;
@@ -121,6 +123,7 @@ namespace ArtRepositorySystem
             x.VisualArtShape = VisualArtShape.Rectangle;
             x.VisualArtType = VisualArtType.Painting;
             x.Genre = PaintingGenre.Abstract.ToString();
+            
 
             y = new VisualArt();
             y.Title = "African Heritage";
@@ -142,6 +145,8 @@ namespace ArtRepositorySystem
             z.VisualArtType = VisualArtType.Photograph;
             z.Genre = PhotographGenre.Still.ToString();
 
+            //creating new User
+
             User afewerk = new User();
             afewerk.Username = "afewerk_tekle";
             afewerk.FirstName = "Afewerk";
@@ -149,10 +154,37 @@ namespace ArtRepositorySystem
             afewerk.Bio = "The Shit.";
             afewerk.Works.AddRange(new[] { x, p, y });
 
+            //adding the user to the context class
+            mededaContext.Users.Add(afewerk);
+
             p.Artists = new List<User> {afewerk};
             x.Artists = new List<User> {afewerk};
             y.Artists = new List<User> {afewerk};
             z.Artists = new List<User> { new User() };
+
+            FeedbackForm feedback1 = new FeedbackForm();
+            mededaContext.FeedbackForm.Add(feedback1);
+
+
+            p.FeedbackForm= feedback1;
+            x.FeedbackForm = feedback1 ; 
+            y.FeedbackForm = feedback1 ;
+            z.FeedbackForm = feedback1 ; 
+
+            //Creating new FeedbackForm
+           
+
+            //adding the artworks to the context class
+
+            mededaContext.VisualArts.Add(x);
+            mededaContext.VisualArts.Add(y);
+            mededaContext.VisualArts.Add(p);
+            mededaContext.VisualArts.Add(z);
+
+            //mededaContext.SaveChanges();
+
+
+            
 
             arts = new List<Art>();
             arts.Add(p);
@@ -174,6 +206,7 @@ namespace ArtRepositorySystem
         //Get a list of User objects for testing purposes.
         public static List<User> GetDummyUsers()
         {
+            
             User afewerk = new User();
             afewerk.Username = "afewerk_tekle";
             afewerk.FirstName = "Afewerk";
@@ -182,7 +215,7 @@ namespace ArtRepositorySystem
             Image DispalayedImage5 = Properties.Resources.Afewerk_Tekle;
             byte[] byteImage5 = ImageToByteArray(DispalayedImage5);
             afewerk.ProfilePic = byteImage5;
-            afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
+            afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");     
 
             List<User> userList = new List<User>();
             userList.Add(afewerk);
