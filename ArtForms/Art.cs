@@ -18,7 +18,7 @@ namespace ArtRepositorySystem.ArtForms
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
         public DateTime? PostedOn { get; set; }
-        public ArtForm? Type { get; set; }
+        public ArtForm Type { get; set; }
         public FeedbackForm FeedbackForm { get; set; }
 
         //Take in a list of Art objects and return only 
@@ -62,6 +62,11 @@ namespace ArtRepositorySystem.ArtForms
                 }
             }
             return performedArts;
+        }
+
+        public static explicit operator Art(List<VisualArt> v)
+        {
+            throw new NotImplementedException();
         }
     }
 }
