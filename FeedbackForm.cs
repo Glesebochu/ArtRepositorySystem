@@ -1,63 +1,22 @@
-﻿using System.Drawing;
-using System.Windows.Forms;
-using MaterialSkin.Controls;
-using DrakeUI.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ArtRepositorySystem.DbClasses;
 
 namespace ArtRepositorySystem
 {
-    internal class FeedBackForm : UserControl
+    public class FeedbackForm
     {
-        private DrakeUITitlePanel panel;
-        private List<DrakeUITitlePanel> listOfGeneratedPanels;
-        private DrakeUITextBox answerBox = new DrakeUITextBox();
-        private MaterialFlatButton submit = new MaterialFlatButton();
-        private List<string> listOfQuestions = Questions.feedBackQuestions;
-        private List<MaterialRadioButton> choice1 = new List<MaterialRadioButton>() { new MaterialRadioButton(), new MaterialRadioButton(), new MaterialRadioButton(), new MaterialRadioButton()};
-        private List<MaterialRadioButton> choice2 = new List<MaterialRadioButton>() { new MaterialRadioButton(), new MaterialRadioButton()};
-        private List<MaterialRadioButton> choice3 = new List<MaterialRadioButton>() { new MaterialRadioButton(), new MaterialRadioButton()};
-        private List<MaterialRadioButton> choice4 = new List<MaterialRadioButton>() { new MaterialRadioButton(), new MaterialRadioButton()};
+        public List<QnA> Questions = new List<QnA>();
+        private FeedbackDb fdb = new FeedbackDb();
 
 
-        public FeedBackForm()
+        // takes the feedBack data that is associated with the current art from layer1 and sends it to the layer3
+        public void saveFeedBack()
         {
-            // call the InitializeComponent Method
-            InitializeComponent();
-
-            // generate a list of panal based on the number of question you have
-            listOfGeneratedPanels = this.generatePanels(listOfQuestions.Count);
-
-            // populate the list of generated panels with some data
-            this.populatePanels();
-
-            // pass the populated panels to a method to populate the parentContol ( parentControl -> is the place where the populated panels reside ).
-            this.populateParentControl(listOfGeneratedPanels);
-
-
-
-        }
-
-        // Create a method that generate a panels
-        private List<DrakeUITitlePanel> generatePanels(int numberOfPanels)
-        {
-            // create a local variavble to store a list of generated panels.
-            List <DrakeUITitlePanel> result = new List<DrakeUITitlePanel>();
-
-            // loop numberOfPanels times and create the panels
-            for (int i = 0; i < numberOfPanels; i++)
-            {
-                panel = new DrakeUITitlePanel();
-                panel.Location = new Point((this.Width/2 - 30), 20 + i * 220);
-                panel.Width = 600;
-                panel.Height = 200;
-                panel.Radius = 30;
-                panel.TitleColor = Color.Gray;
-                panel.Font = new Font("Segoe UI", 9, FontStyle.Bold);
-                panel.FillColor = Color.LightGray;
-                result.Add(panel);
-            }
-
-            // return a list that holds (contains) the generated panels.
-            return result;
+            fdb.saveFeedBackToDb(this);
         }
 
 
@@ -266,3 +225,23 @@ namespace ArtRepositorySystem
 
 
 
+=========
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ArtRepositorySystem
+{
+    public class FeedbackForm
+    {
+        public int? FeedbackFromId { get; set; }
+        public List<QnA> Questions { get; set; }
+
+        public FeedbackForm(List<QnA> questions) { 
+            this.Questions = questions;
+        }
+    }
+}
+>>>>>>>>> Temporary merge branch 2
