@@ -55,9 +55,10 @@
             this.btnDashboard.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDashboard.ForeColor = System.Drawing.Color.Black;
             this.btnDashboard.Location = new System.Drawing.Point(0, 0);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            this.btnDashboard.Size = new System.Drawing.Size(244, 47);
+            this.btnDashboard.Size = new System.Drawing.Size(244, 63);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.Text = "Dashboard";
             // 
@@ -73,10 +74,11 @@
             this.btnMyWorks.FillColor = System.Drawing.Color.Transparent;
             this.btnMyWorks.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnMyWorks.ForeColor = System.Drawing.Color.Black;
-            this.btnMyWorks.Location = new System.Drawing.Point(0, 47);
+            this.btnMyWorks.Location = new System.Drawing.Point(0, 63);
+            this.btnMyWorks.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMyWorks.Name = "btnMyWorks";
             this.btnMyWorks.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.btnMyWorks.Size = new System.Drawing.Size(244, 47);
+            this.btnMyWorks.Size = new System.Drawing.Size(244, 63);
             this.btnMyWorks.TabIndex = 1;
             this.btnMyWorks.Text = "My Works";
             this.btnMyWorks.Click += new System.EventHandler(this.btnMyWorks_Click);
@@ -93,10 +95,11 @@
             this.btnCreate.FillColor = System.Drawing.Color.Transparent;
             this.btnCreate.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCreate.ForeColor = System.Drawing.Color.Black;
-            this.btnCreate.Location = new System.Drawing.Point(0, 94);
+            this.btnCreate.Location = new System.Drawing.Point(0, 126);
+            this.btnCreate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            this.btnCreate.Size = new System.Drawing.Size(244, 47);
+            this.btnCreate.Size = new System.Drawing.Size(244, 63);
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Create";
             // 
@@ -112,23 +115,25 @@
             this.btnSettings.FillColor = System.Drawing.Color.Transparent;
             this.btnSettings.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSettings.ForeColor = System.Drawing.Color.Black;
-            this.btnSettings.Location = new System.Drawing.Point(0, 141);
+            this.btnSettings.Location = new System.Drawing.Point(0, 189);
+            this.btnSettings.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            this.btnSettings.Size = new System.Drawing.Size(244, 47);
+            this.btnSettings.Size = new System.Drawing.Size(244, 63);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "Settings";
             // 
             // ArtistNavigation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnMyWorks);
             this.Controls.Add(this.btnDashboard);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ArtistNavigation";
-            this.Size = new System.Drawing.Size(244, 276);
+            this.Size = new System.Drawing.Size(244, 368);
             this.ResumeLayout(false);
 
         }
