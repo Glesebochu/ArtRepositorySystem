@@ -11,7 +11,10 @@ namespace ArtRepositorySystem
     {
         [Key]
         public int? FeedbackFromId { get; set; }
-        public List<QnA> Questions { get; set; }
+        public List<QnA>? Questions { get; set; }
+
+        public FeedbackForm() { }
+
 
         public FeedbackForm(List<QnA> questions) { 
             this.Questions = questions;

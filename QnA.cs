@@ -22,6 +22,8 @@ namespace ArtRepositorySystem
         List<Option> OptionsSuppliedByArtist { get; set; }
         List<Reaction>? ConsumersReactions { get; set; }
 
+        public QnA() { }
+
         public QnA (string prompt, QuestionType type, List<Option> optionsSuppliedByArtist)
         {
             this.Prompt = prompt;

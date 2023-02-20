@@ -108,7 +108,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
             p.VisualArtShape = VisualArtShape.Rectangle;
             p.VisualArtType = VisualArtType.Painting;
-            p.Genre = PaintingGenre.Expressionism;
+            p.Genre = PaintingGenre.Expressionism.ToString();
 
             x = new VisualArt();
             x.Title = "Defender of His Country";
@@ -118,7 +118,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             x.Description = "Defender of His Country.";
             x.VisualArtShape = VisualArtShape.Rectangle;
             x.VisualArtType = VisualArtType.Painting;
-            x.Genre = PaintingGenre.Abstract;
+            x.Genre = PaintingGenre.Abstract.ToString();
 
             y = new VisualArt();
             y.Title = "African Heritage";
@@ -128,7 +128,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             y.Description = "African Heritage.";
             y.VisualArtShape = VisualArtShape.Rectangle;
             y.VisualArtType = VisualArtType.Painting;
-            y.Genre = PaintingGenre.Surrealism;
+            y.Genre = PaintingGenre.Surrealism.ToString();
 
             z = new VisualArt();
             z.Title = "Asabet Meal";
@@ -138,7 +138,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             z.Description = "Asabet Meal.";
             z.VisualArtShape = VisualArtShape.Rectangle;
             z.VisualArtType = VisualArtType.Photograph;
-            z.Genre = PhotographGenre.Still;
+            z.Genre = PhotographGenre.Still.ToString();
 
             User afewerk = new User();
             afewerk.Username = "afewerk_tekle";

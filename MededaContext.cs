@@ -1,7 +1,8 @@
 ﻿using ArtRepositorySystem.ArtForms;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,7 +20,10 @@ namespace ArtRepositorySystem
         public DbSet<FeedbackForm> FeedbackForm { get; set; }
         public DbSet<Analytic> Analytic { get; set; }
         
-
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"server=.;database=dbMededaEF;integrated security=true;encrypt=false");
+        }
       
 
     }

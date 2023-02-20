@@ -16,7 +16,7 @@ namespace ArtRepositorySystem.ArtForms
         public VisualArtType VisualArtType { get; set; }
 
         public readonly new ArtForm Type = ArtForm.Visual;
-        public Object Genre { get; set; }
+        public String Genre { get; set; }
 
         //From a list of VisualArt objects, select and return those that correspond to 
         //the specified VisualArtType.
