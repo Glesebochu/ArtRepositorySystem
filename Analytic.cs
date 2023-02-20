@@ -20,3 +20,25 @@ namespace ArtRepositorySystem
     }
 
 }
+        private List<Dictionary<String,object>> getQuestionRatio()
+        {
+            return new List<Dictionary<string, object>> { new Dictionary<string, object> { } };
+        }
+
+
+        public void plotPieChart()
+        {
+            
+        // plots a pieChart
+            
+        }
+
+
+        public void plotBarChart()
+        {
+               // plots a barChart
+        }
+
+    }
+}
+

@@ -67,7 +67,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
         private void tabControlArtworkInfo_TabIndexChanged(object sender, EventArgs e)
         {
-            FeedBackForm feedbackForm = new FeedBackForm();
+            FeedBackFormUi feedbackForm = new FeedBackFormUi();
             feedbackPage.BackColor = Color.LightGray;
             feedbackForm.Width = 850;
             feedbackForm.Height = 290;
