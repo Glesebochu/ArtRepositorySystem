@@ -10,13 +10,13 @@
     <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ConsumerExperienceUI\ConsumerNavButtons.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ResultsGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\CategoryTemplateDisplay.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ConsumerExperienceUI\ConsumerExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\MyFeedPage.cs">
@@ -31,13 +31,19 @@
     <Compile Update="ConsumerExperienceUI\SearchDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ConsumerExperienceUI\SettingsPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="ConsumerExperienceUI\TopArtistsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\TopArtworksPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="IntroductoryPageUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\SettingsPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

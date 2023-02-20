@@ -39,7 +39,7 @@ namespace ArtRepositorySystem
             ekele.ProfilePic = byteImage5;
 
             //Create a ConsumerExperience object from the User object.
-            ConsumerExperience consumerExperience = new ConsumerExperience(ekele);
+            UserExperience consumerExperience = new UserExperience(ekele);
             //Add the ConsumerExperience object to this Form.
             this.Controls.Add(consumerExperience);
             //Set the Dock property of the ConsumerExperience object to Fill.

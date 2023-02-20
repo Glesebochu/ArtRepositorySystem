@@ -21,18 +21,18 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         private void SearchDisplay_Load(object sender, EventArgs e)
         {
             //This will be replaced by a database fetch of a list of the recent searches the user made.
-            List<User> artists = ConsumerExperience.GetDummyUsers();
+            List<User> artists = UserExperience.GetDummyUsers();
             //Create a ResultsGrid object from the list of Users.
             ResultsGrid resultsGridArtists = new ResultsGrid(artists);
             //Add the ResultsGrid object to PanelArtistsSection.
-            ConsumerExperience.AddToPanel(resultsGridArtists, PanelArtistsSection);
+            UserExperience.AddToPanel(resultsGridArtists, PanelArtistsSection);
 
             //This will be replaced by a database fetch of a list of the recent searches the user made.
-            List<VisualArt> visuals = Art.ToVisualArt(ConsumerExperience.GetDummyArts());
+            List<VisualArt> visuals = Art.ToVisualArt(UserExperience.GetDummyArts());
             //Create a ResultsGrid object from the list of VisualArts.
             ResultsGrid resultsGridArtworks = new ResultsGrid(visuals);
             //Add the ResultsGrid object to PanelArtworksSection.
-            ConsumerExperience.AddToPanel(resultsGridArtworks, PanelArtworksSection);
+            UserExperience.AddToPanel(resultsGridArtworks, PanelArtworksSection);
 
         }
         //Event for hitting "Enter" after typing in a few characters in the text box.

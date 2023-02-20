@@ -20,7 +20,7 @@ namespace ArtRepositorySystem.ArtistExperienceUI
 
         private void btnMyWorks_Click(object sender, EventArgs e)
         {
-            ConsumerExperience currentExperience = Application.OpenForms.OfType<ConsumerExperience>().FirstOrDefault();
+            UserExperience currentExperience = Application.OpenForms.OfType<UserExperience>().FirstOrDefault();
             currentExperience.Visible = false;
             
             
