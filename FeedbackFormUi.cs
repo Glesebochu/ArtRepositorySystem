@@ -5,7 +5,7 @@ using DrakeUI.Framework;
 
 namespace ArtRepositorySystem
 {
-    public class FeedBackForm : UserControl
+    public class FeedBackFormUi : UserControl
     {
         private DrakeUITitlePanel panel;
         private List<DrakeUITitlePanel> listOfGeneratedPanels;
@@ -18,7 +18,7 @@ namespace ArtRepositorySystem
         private List<MaterialRadioButton> choice4 = new List<MaterialRadioButton>() { new MaterialRadioButton(), new MaterialRadioButton()};
 
 
-        public FeedBackForm()
+        public FeedBackFormUi()
         {
             // call the InitializeComponent Method
             InitializeComponent();
