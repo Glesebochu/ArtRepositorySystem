@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using ArtRepositorySystem.ArtForms;
 using ArtRepositorySystem.ArtForms.VisualArts;
 using ArtRepositorySystem.ConsumerExperienceUI;
+using ArtRepositorySystem.ArtistExperienceUI;
 
 namespace ArtRepositorySystem
 {
@@ -17,12 +18,12 @@ namespace ArtRepositorySystem
     }
     public partial class UserExperience : UserControl
     {
-        User currentUser;
+        public static User currentUser;
         
         public UserExperience(User ekele)
         {
             InitializeComponent();
-            this.currentUser = ekele;
+            currentUser = ekele;
         }
 
         #region Custom Methods
@@ -260,8 +261,11 @@ namespace ArtRepositorySystem
             LblUsername.Text = $"@{currentUser.Username}";
             LblUsername.CenterHorizontally();
 
-            //Set the image of the profile picture from the currentUser.
-            guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
+            if(currentUser.ProfilePic != null)
+            {
+                //Set the image of the profile picture from the currentUser.
+                guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
+            }
 
             //Check which user mode the user is in: consumer or artist.
             if (currentUser.userMode == UserMode.Consumer)
@@ -278,11 +282,11 @@ namespace ArtRepositorySystem
             {
                 //The user is in consumer mode.
                 //Create a new ConsumerExperienceNavButtons object and add it to the navigation panel.
-                //AddToPanel(new ArtistExperienceNavButtons(), SplitContainerAll.Panel1);
+                AddToPanel(new ArtistNavButtons(), SplitContainerAll.Panel1);
 
                 //Show the Home page by default.
                 //To be replaced with a database fetch of content specific to the user
-                //AddToPanelContent(new HomePage());
+                AddToPanelContent(new MyWorksPage(GetDummyArts()));
             }
         }
         
@@ -299,7 +303,9 @@ namespace ArtRepositorySystem
             currentUser.SwitchMode();
 
             //Reload this UserExperience.
-            this.Controls.Clear();
+
+            this.PanelNavButtons.Controls.Clear();
+            this.PanelContent.Controls.Clear();
             LoadUserExperience();
 
             //Change the text of the label representing the usermode.

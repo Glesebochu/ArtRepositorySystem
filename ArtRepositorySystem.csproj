@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="ArtistExperienceUI\ArtistHome.cs">
+    <Compile Update="ArtistExperienceUI\MyWorksPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Properties\Resources.Designer.cs">

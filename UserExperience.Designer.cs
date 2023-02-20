@@ -48,6 +48,7 @@
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.BtnNavigation = new Guna.UI2.WinForms.Guna2ImageButton();
             this.BtnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.PanelNavButtons = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerAll)).BeginInit();
             this.SplitContainerAll.Panel1.SuspendLayout();
             this.SplitContainerAll.Panel2.SuspendLayout();
@@ -69,6 +70,7 @@
             // SplitContainerAll.Panel1
             // 
             this.SplitContainerAll.Panel1.AccessibleName = "PanelNavigation";
+            this.SplitContainerAll.Panel1.Controls.Add(this.PanelNavButtons);
             this.SplitContainerAll.Panel1.Controls.Add(this.PanelNavAppInfo);
             this.SplitContainerAll.Panel1.Controls.Add(this.PanelNavUserInfo);
             // 
@@ -278,6 +280,15 @@
             this.BtnSearch.TabIndex = 9;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // PanelNavButtons
+            // 
+            this.PanelNavButtons.BackColor = System.Drawing.Color.Transparent;
+            this.PanelNavButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelNavButtons.Location = new System.Drawing.Point(0, 248);
+            this.PanelNavButtons.Name = "PanelNavButtons";
+            this.PanelNavButtons.Size = new System.Drawing.Size(244, 368);
+            this.PanelNavButtons.TabIndex = 17;
+            // 
             // UserExperience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -318,5 +329,6 @@
         private Label LblAppName;
         private Label LblUsername;
         private LinkLabel linkLabelAboutPage;
+        private Panel PanelNavButtons;
     }
 }

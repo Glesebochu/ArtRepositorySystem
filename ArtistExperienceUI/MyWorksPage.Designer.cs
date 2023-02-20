@@ -1,6 +1,6 @@
 ﻿namespace ArtRepositorySystem.ArtistExperienceUI
 {
-    partial class ArtistHome
+    partial class MyWorksPage
     {
         /// <summary> 
         /// Required designer variable.
@@ -86,7 +86,7 @@
             this.Controls.Add(this.PanelHeader);
             this.Name = "Home";
             this.Size = new System.Drawing.Size(1129, 2284);
-            this.Load += new System.EventHandler(this.ArtistHome_Load);
+            this.Load += new System.EventHandler(this.MyWorks_Load);
             this.PanelHeader.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

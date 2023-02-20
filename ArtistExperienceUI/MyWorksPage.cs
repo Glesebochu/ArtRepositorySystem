@@ -14,16 +14,16 @@ using ArtRepositorySystem.ArtForms.VisualArts;
 namespace ArtRepositorySystem.ArtistExperienceUI
 {
 
-    public partial class ArtistHome : UserControl
+    public partial class MyWorksPage : UserControl
     {
         List<Art> arts;
-        public ArtistHome(List<Art> arts)
+        public MyWorksPage(List<Art> arts)
         {
             InitializeComponent();
             this.arts = arts;
         }
 
-        private void ArtistHome_Load(object sender, EventArgs e)
+        private void MyWorks_Load(object sender, EventArgs e)
         {
             //This will be replaced by a database fetch for the arts that are specific to the user
             arts = UserExperience.GetDummyArts();
