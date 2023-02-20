@@ -79,10 +79,10 @@
             // 
             this.LblPageTitle.AutoSize = true;
             this.LblPageTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblPageTitle.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblPageTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblPageTitle.Location = new System.Drawing.Point(20, 20);
             this.LblPageTitle.Name = "LblPageTitle";
-            this.LblPageTitle.Size = new System.Drawing.Size(179, 37);
+            this.LblPageTitle.Size = new System.Drawing.Size(185, 36);
             this.LblPageTitle.TabIndex = 1;
             this.LblPageTitle.Text = "My Playlists";
             // 

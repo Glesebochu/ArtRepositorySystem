@@ -16,17 +16,26 @@ namespace ArtRepositorySystem
     }
     public class QnA
     {
-        public int? QnAId { get; set; }
-        string Prompt { get; set; }
-        QuestionType Type { get; set; }
-        List<Option> OptionsSuppliedByArtist { get; set; }
-        List<Reaction>? ConsumersReactions { get; set; }
+        string _Prompt { get; set; }
+        QuestionType _Type { get; set; }
+        string _Answer { get; set; }
 
-        public QnA (string prompt, QuestionType type, List<Option> optionsSuppliedByArtist)
-        {
-            this.Prompt = prompt;
-            this.Type = type;
-            this.OptionsSuppliedByArtist = optionsSuppliedByArtist;
+        public string Prompt
+        { 
+            get { return _Prompt; } 
+            set { _Prompt = value; } 
+        }
+
+        public QuestionType Type
+        { 
+            get { return _Type; } 
+            set { _Type = value; } 
+        }
+
+        public string Answer
+        { 
+            get { return _Answer; } 
+            set { _Answer = value; } 
         }
     }
 }

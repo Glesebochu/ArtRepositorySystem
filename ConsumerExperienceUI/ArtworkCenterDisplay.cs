@@ -45,5 +45,35 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             this.Hide();
         }
 
+        private void textBoxDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void feedbackPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void analyticsPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void feedbackPage_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControlArtworkInfo_TabIndexChanged(object sender, EventArgs e)
+        {
+            FeedBackForm feedbackForm = new FeedBackForm();
+            feedbackPage.BackColor = Color.LightGray;
+            feedbackForm.Width = 850;
+            feedbackForm.Height = 290;
+            feedbackForm.Location = new Point(0, 0);
+            feedbackPage.Controls.Add(feedbackForm);
+
+        }
     }
 }

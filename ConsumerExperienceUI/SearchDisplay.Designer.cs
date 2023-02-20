@@ -131,10 +131,10 @@
             this.LblArtists.AutoSize = true;
             this.LblArtists.BackColor = System.Drawing.Color.Transparent;
             this.LblArtists.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblArtists.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblArtists.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblArtists.Location = new System.Drawing.Point(0, 20);
             this.LblArtists.Name = "LblArtists";
-            this.LblArtists.Size = new System.Drawing.Size(100, 37);
+            this.LblArtists.Size = new System.Drawing.Size(106, 36);
             this.LblArtists.TabIndex = 1;
             this.LblArtists.Text = "Artists";
             // 
@@ -165,10 +165,10 @@
             this.LblArtworks.AutoSize = true;
             this.LblArtworks.BackColor = System.Drawing.Color.Transparent;
             this.LblArtworks.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LblArtworks.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.LblArtworks.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblArtworks.Location = new System.Drawing.Point(0, 20);
             this.LblArtworks.Name = "LblArtworks";
-            this.LblArtworks.Size = new System.Drawing.Size(141, 37);
+            this.LblArtworks.Size = new System.Drawing.Size(141, 36);
             this.LblArtworks.TabIndex = 1;
             this.LblArtworks.Text = "Artworks";
             // 

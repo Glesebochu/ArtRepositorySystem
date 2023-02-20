@@ -1,6 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="Analytic.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="App.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -8,9 +11,6 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ConsumerExperienceUI\ConsumerNavButtons.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\ResultsGrid.cs">
@@ -44,6 +44,9 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="UserExperience.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="FeedbackForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
