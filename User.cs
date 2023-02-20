@@ -20,6 +20,7 @@ namespace ArtRepositorySystem
     }
     public class User
     {
+        public int UserId { get; set; }
         public string Username { get; set; }
         public UserMode userMode { get; set; }
         public Image ProfilePic { get; set; }
@@ -81,9 +82,9 @@ namespace ArtRepositorySystem
 
             return artists;
         }
-        public Reaction React(Art art)
+        public Reaction React(Art art, String response)
         {
-            return new Reaction();
+            return new Reaction(this, art, response);
         }
         //Get a bundle of the Artist's artworks categorized by type.
         public AllArtistWorks? GetWorksByType()

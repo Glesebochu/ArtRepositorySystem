@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using DrakeUI.Framework;
@@ -262,7 +262,4 @@ namespace ArtRepositorySystem
         }
     }
 }
-
-
-
 

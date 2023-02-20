@@ -1,4 +1,4 @@
-﻿using DrakeUI.Framework;
+using DrakeUI.Framework;
 using Chart.Mvc.SimpleChart;
 namespace ArtRepositorySystem
 {
@@ -36,4 +36,3 @@ namespace ArtRepositorySystem
 
     }
 }
-
