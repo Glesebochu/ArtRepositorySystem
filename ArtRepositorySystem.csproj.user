@@ -7,16 +7,19 @@
     <Compile Update="App.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ArtistExperienceUI\ArtistNavigation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\ConsumerNavButtons.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\ResultsGrid.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\CategoryTemplateDisplay.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Update="ConsumerExperienceUI\ConsumerExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\MyFeedPage.cs">
@@ -41,6 +44,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="FeedbackForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="IntroductoryPageUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="UserExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

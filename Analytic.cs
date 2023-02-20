@@ -2,7 +2,7 @@ using DrakeUI.Framework;
 using Chart.Mvc.SimpleChart;
 namespace ArtRepositorySystem
 {
-    public partial class Analytic : UserControl
+    public partial class Analytic  
     {
         public bool Visibility { get; set; }
         private int numberOflike;
