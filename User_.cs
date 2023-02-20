@@ -24,10 +24,10 @@ namespace ArtRepositorySystem
         { 
             get { return _email; } 
         }
-        public string password
-        { 
-            get { return _password; } 
-        }
+        //public string password
+        //{ 
+        //    get { return _password; } 
+        //}
         public string userName
         { 
             get { return _userName; } 

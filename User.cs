@@ -18,7 +18,7 @@ namespace ArtRepositorySystem
         public List<PerformedArt> performedArts;
         public List<LiteraryArt> literaryArts;
     }
-    public class User
+    public partial class User
     {
         public int UserId { get; set; }
         public string Username { get; set; }
@@ -26,7 +26,7 @@ namespace ArtRepositorySystem
         public Image? ProfilePic { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        private string password { get; set; }
+        public string password { get; set; }
         public string Bio { get; set; }
         public List<User> Followers { get; set; }
         public List<Art> Works { get; set; }
@@ -48,7 +48,7 @@ namespace ArtRepositorySystem
                 this.userMode = UserMode.Consumer;
             }
         }
-        public Feedback CreateFeedackForm()
+        public FeedbackForm CreateFeedackForm()
         {
             return null;
         }

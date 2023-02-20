@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ArtRepositorySystem;
 
 namespace ArtRepositorySystem.ArtForms
 {
@@ -18,7 +19,7 @@ namespace ArtRepositorySystem.ArtForms
         public DateOnly EndDate { get; set; }
         public DateTime PostedOn { get; set; }
         public ArtForm Type { get; set; }
-        public FeedBackFormUi FeedbackForm { get; set; }
+        public FeedbackForm FeedbackForm { get; set; }
 
         //Take in a list of Art objects and return only 
         //the objects that are of type VisualArt.

@@ -40,7 +40,8 @@
     <Compile Update="ConsumerExperienceUI\TopArtworksPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="FeedbackForm.cs">
+    <Compile Update="FeedbackForm.cs" />
+    <Compile Update="FeedbackFormUi.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="IntroductoryPageUC.cs">
@@ -49,7 +50,7 @@
     <Compile Update="UserExperience.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="FeedbackForm.cs">
+    <Compile Update="UserRegistration.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>

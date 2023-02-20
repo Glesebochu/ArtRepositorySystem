@@ -22,9 +22,7 @@ namespace ArtRepositorySystem
             this.Questions = questions;
         }
 
-
-
-// takes the feedBack data that is associated with the current art from layer1 and sends it to the layer3
+        // takes the feedBack data that is associated with the current art from layer1 and sends it to the layer3
         public void saveFeedBack()
         {
             fdb.saveFeedBackToDb(this);

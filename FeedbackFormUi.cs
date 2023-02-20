@@ -185,7 +185,7 @@ namespace ArtRepositorySystem
 
         private void Submit_OnClick(object? sender, EventArgs e)
         {
-            Feedback fb = new Feedback();
+            FeedbackForm fb = new FeedbackForm();
             List<List<MaterialRadioButton>> choices = new List<List<MaterialRadioButton>> { choice1,choice2,choice3,choice4 };
             for (int index=0; index < listOfGeneratedPanels.Count; index++)
             {

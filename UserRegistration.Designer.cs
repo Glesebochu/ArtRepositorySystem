@@ -1,6 +1,6 @@
 ﻿namespace ArtRepositorySystem
 {
-    partial class UserRegistration
+    partial class UserRegistration : UserControl
     {
         /// <summary> 
         /// Required designer variable.

@@ -15,30 +15,8 @@ namespace ArtRepositorySystem
         private int numberOflike { get; set; }
         private int numberOfDislike { get; set; }
         private int numberOfView { get; set; }
-        private Feedback feedback { get; set; }
+        private FeedbackForm feedbackForm { get; set; }
 
     }
 
 }
-        private List<Dictionary<String,object>> getQuestionRatio()
-        {
-            return new List<Dictionary<string, object>> { new Dictionary<string, object> { } };
-        }
-
-
-        public void plotPieChart()
-        {
-            
-        // plots a pieChart
-            
-        }
-
-
-        public void plotBarChart()
-        {
-               // plots a barChart
-        }
-
-    }
-}
-
