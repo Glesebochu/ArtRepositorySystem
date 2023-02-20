@@ -28,13 +28,16 @@
     <Compile Update="ConsumerExperienceUI\SearchDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="ConsumerExperienceUI\SettingsPage.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="ConsumerExperienceUI\TopArtistsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="ConsumerExperienceUI\TopArtworksPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="IntroductoryPageUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="ConsumerExperienceUI\SettingsPage.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
