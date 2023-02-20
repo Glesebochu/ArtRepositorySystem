@@ -14,13 +14,18 @@ namespace ArtRepositorySystem
         public User Consumer { get; set; }
         public Art Artwork { get; set; }
         public string Response { get; set; }
-        
-        
+
+
         public Reaction(User consumer, Art artwork, string response)
         {
             Consumer = consumer;
             Artwork = artwork;
             Response = response;
+        }
+
+        public Reaction()
+        {
+
         }
     }
 }
