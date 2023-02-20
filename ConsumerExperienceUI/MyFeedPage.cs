@@ -25,18 +25,18 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
         private void MyFeedPage_Load(object sender, EventArgs e)
         {
             //This will be replaced by a database fetch for the arts that are specific to the user
-            arts = ConsumerExperience.GetDummyArts();
+            arts = UserExperience.GetDummyArts();
 
             //Convert art objects into visual art objects
             List<VisualArt> visuals = Art.ToVisualArt(arts);
 
             //Get a list of categories based on the visual arts sent
-            List<CategoryTemplateDisplay> categories = ConsumerExperience.GetCategoriesFromVisualArts(visuals);
+            List<CategoryTemplateDisplay> categories = UserExperience.GetCategoriesFromVisualArts(visuals);
 
             //Add each category to the table layout panel
             foreach(CategoryTemplateDisplay c in categories)
             {
-                ConsumerExperience.AddToPanel(c, tableLayoutPanelAllArtworks);
+                UserExperience.AddToPanel(c, tableLayoutPanelAllArtworks);
             }
 
         }
