@@ -19,7 +19,7 @@ namespace ArtRepositorySystem.ArtForms
         public DateTime? EndDate { get; set; }
         public DateTime? PostedOn { get; set; }
         public ArtForm? Type { get; set; }
-        public FeedbackForm? FeedbackForm { get; set; }
+        public FeedbackForm FeedbackForm { get; set; }
 
         //Take in a list of Art objects and return only 
         //the objects that are of type VisualArt.
