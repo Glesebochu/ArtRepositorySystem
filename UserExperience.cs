@@ -191,9 +191,9 @@ namespace ArtRepositorySystem
 
 
             arts = new List<Art>();
-            foreach (var Visulart in contextArts)
+            foreach (var Visualart in contextArts)
             {
-                arts.Add(Visulart);
+                arts.Add(Visualart);
             }
             //arts.Add(p);
             //arts.Add(x);
