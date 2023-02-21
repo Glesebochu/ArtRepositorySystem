@@ -334,5 +334,15 @@ namespace ArtRepositorySystem
         }
 
         #endregion
+
+        private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=kis7l0y1JUg&list=PLBYSdC_HMWMrAAzZ6xxkKRT1CdapFLJ-z&index=5");
+        }
+
+    //    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    //    {
+    //        System.Diagnostics.Process.Start("C:\\Users\\hp\\Desktop\\NPN\\ArtRepositorySystem\\Resources\\ABOUT\\index.html");
+    //    }
     }
 }
