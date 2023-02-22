@@ -44,7 +44,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="FeedbackForm.cs" />
-    <Compile Update="FeedbackFormUi.cs">
+    <Compile Update="ConsumerExperienceUI\FeedbackFormUi.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="IntroductoryPageUC.cs">

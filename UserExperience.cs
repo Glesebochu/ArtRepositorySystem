@@ -128,22 +128,19 @@ namespace ArtRepositorySystem
             return arts;
         }
 
-        public static List<Art> GetCurrentUsersArts()
+        public static List<Art> GetWorksOfArtist(int artistId)
         {
 
             //using Ado.Net to get the users Art
 
             //To be used when current User is initialized
-            //int CurrentUserId = UserExperience.currentUser.UserId;
-            int CurrentUserId = 1;
-            List<int> UserArtIds = new List<int>();
-
+            List<int> UserWorksIds = new List<int>();
 
             SqlConnection con = new SqlConnection();
 
             con.ConnectionString = ConfigurationManager.ConnectionStrings["MededaContext"].ToString();
             con.Open();
-            String SqlSelectQuery = "SELECT WorksArtId from ArtUser WHERE ArtistsUserId = " + CurrentUserId.ToString() + ";";
+            String SqlSelectQuery = "SELECT WorksArtId from ArtUser WHERE ArtistsUserId = " + artistId.ToString() + ";";
             SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
             SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -155,7 +152,7 @@ namespace ArtRepositorySystem
                 for(int i = 0; i < count; i++)
                 {
                     int SomeId = (int)ds.Tables[0].Rows[count - i - 1]["WorksArtId"];
-                    UserArtIds.Add(SomeId);
+                    UserWorksIds.Add(SomeId);
                      //test to see if it returns what it should and it works well
                     //MessageBox.Show(SomeId.ToString());
 
@@ -166,7 +163,7 @@ namespace ArtRepositorySystem
             MededaContext mededaContext = new MededaContext();
            
             List<VisualArt> CurrentUsersArts = (from items in mededaContext.VisualArts
-                                                where UserArtIds.Contains(items.ArtId) 
+                                                where UserWorksIds.Contains(items.ArtId) 
                                                 select items).ToList();
             List<Art> arts;
 
@@ -190,11 +187,7 @@ namespace ArtRepositorySystem
 
             List<User> userList = (from user in mededaContext.Users
                                            select user).ToList();
-            //foreach(User user in userList)
-            //{
-            //    int count = user.Works.Count();
-            //    MessageBox.Show(user.FirstName+": "+count.ToString());
-            //}
+            
            
 
             return userList;
@@ -228,7 +221,7 @@ namespace ArtRepositorySystem
                
                 Image buttonImage = byteArrayToImage(users[i].ProfilePic);
                 button.BackgroundImage = buttonImage;
-                button.BackgroundImageLayout = ImageLayout.Center;
+                button.BackgroundImageLayout = ImageLayout.Tile;
                 button.Text = "";
                 button.Tag = users[i];
                 buttonList.Add(button);

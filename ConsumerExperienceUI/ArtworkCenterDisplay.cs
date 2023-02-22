@@ -80,6 +80,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             feedbackForm.Height = 290;
             feedbackForm.Location = new Point(0, 0);
             feedbackPage.Controls.Add(feedbackForm);
+            feedbackForm.Dock = DockStyle.Fill;
 
         }
     }

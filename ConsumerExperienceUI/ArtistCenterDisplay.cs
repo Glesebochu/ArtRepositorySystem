@@ -42,7 +42,9 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             richTextBoxBio.Text = Artist.Bio;
 
             //Fill the works tab.
-            List<VisualArt> visualsFromArtist = Art.ToVisualArt(Artist.Works);
+            int artistId = Artist.UserId;
+
+            List<VisualArt> visualsFromArtist = Art.ToVisualArt(UserExperience.GetWorksOfArtist(artistId));
 
             //Get a list of CategoryTemplateDisplay objects from a list of VisualArt objects using 
             //the ConsumerExperience.GetCategoriesFromVisualArts() function.
