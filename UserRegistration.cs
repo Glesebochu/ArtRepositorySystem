@@ -36,39 +36,36 @@ namespace ArtRepositorySystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            User user = new User();
-            user.logUser(textBox5.Text, textBox6.Text);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
-            user.saveUserData();
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
             this.Hide();
+
+            //Check if the user is in the users table. 
+
+            //Create User object.
 
             //User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
             //user.saveUserData();
 
-            //Code for calling the User experience from here.
+
 
             //This will be replaced by the verified User object from the Login page.
-            //Create User object.
+
+            //This is dummy data.
             User user = new User();
+            user.UserId= 1;
             user.FirstName = "Yelelew";
             user.LastName = "Aymertim";
             user.Username = "user";
-            user.ProfilePic = Properties.Resources.Afewerk_Tekle;
+            user.ProfilePic = UserExperience.ImageToByteArray(Properties.Resources.Afewerk_Tekle);
 
-            //Create a ConsumerExperience object from the User object.
-            UserExperience consumerExperience = new UserExperience(user);
-            //Add the ConsumerExperience object to this Form.
-            this.Controls.Add(consumerExperience);
-            //Set the Dock property of the ConsumerExperience object to Fill.
-            consumerExperience.Dock = DockStyle.Fill;
+
+            //Code for calling the User experience from here.
+
+            //Create a UserExperience object from the User object.
+            UserExperience userExperience = new UserExperience(user);
+            //Add the UserExperience object to this Form.
+            this.FindForm().Controls.Add(userExperience);
+            //Set the Dock property of the UserExperience object to Fill.
+            userExperience.Dock = DockStyle.Fill;
         }
 
         private void label8_Click(object sender, EventArgs e)

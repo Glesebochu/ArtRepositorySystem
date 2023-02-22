@@ -36,11 +36,13 @@
             // 
             // PanelContentTopArtists
             // 
-            this.PanelContentTopArtists.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelContentTopArtists.AutoScroll = true;
+            this.PanelContentTopArtists.AutoSize = true;
+            this.PanelContentTopArtists.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelContentTopArtists.Location = new System.Drawing.Point(0, 74);
             this.PanelContentTopArtists.Name = "PanelContentTopArtists";
             this.PanelContentTopArtists.Padding = new System.Windows.Forms.Padding(20);
-            this.PanelContentTopArtists.Size = new System.Drawing.Size(1046, 542);
+            this.PanelContentTopArtists.Size = new System.Drawing.Size(1046, 40);
             this.PanelContentTopArtists.TabIndex = 4;
             // 
             // PanelHeader
@@ -69,6 +71,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.PanelContentTopArtists);
             this.Controls.Add(this.PanelHeader);
@@ -78,6 +82,7 @@
             this.PanelHeader.ResumeLayout(false);
             this.PanelHeader.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

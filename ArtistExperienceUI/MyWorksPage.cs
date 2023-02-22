@@ -26,7 +26,7 @@ namespace ArtRepositorySystem.ArtistExperienceUI
         private void MyWorks_Load(object sender, EventArgs e)
         {
             //This will be replaced by a database fetch for the arts that are specific to the user
-            arts = UserExperience.GetCurrentUsersArts();
+            arts = UserExperience.GetWorksOfArtist(UserExperience.currentUser.UserId);
 
             //Convert art objects into visual art objects
             List<VisualArt> visuals = Art.ToVisualArt(arts);

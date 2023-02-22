@@ -23,8 +23,8 @@ namespace ArtRepositorySystem
             //Display introductory page
             IntroductoryPageUC intro = new IntroductoryPageUC();
             this.Controls.Add(intro);
-
-            
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
     }
 }

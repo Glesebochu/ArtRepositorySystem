@@ -47,9 +47,11 @@ namespace ArtRepositorySystem
             this.Hide();
 
             //Display UserRegistration page for login
-            UserRegistration userRegistration = new UserRegistration();
-            this.FindForm().Controls.Add(userRegistration);
+            this.FindForm().Controls.Add(new UserRegistration());
 
+            //Make the form resizable.
+            this.FindForm().FormBorderStyle = FormBorderStyle.Sizable;
+            this.FindForm().MaximizeBox = true;
         }
     }
 }
