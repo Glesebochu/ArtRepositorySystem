@@ -7,6 +7,11 @@ using ArtRepositorySystem.ArtForms;
 using ArtRepositorySystem.ArtForms.VisualArts;
 using ArtRepositorySystem.ConsumerExperienceUI;
 using ArtRepositorySystem.ArtistExperienceUI;
+using System.Data.SqlClient;
+using System.Configuration;
+using DrakeUI.Framework;
+using System.Data;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace ArtRepositorySystem
 {
@@ -101,115 +106,72 @@ namespace ArtRepositorySystem
         {
 
             MededaContext mededaContext = new MededaContext();
-            
-                //For testing purposes
-                VisualArt p, x, y, z;
-                List<Art> arts;
-
-                p = new VisualArt();
-                p.Title = "The Total Liberation of Africa";
-                Image DispalayedImage = Properties.Resources.TheTotalLiberationOfAfrica;
-                byte[] byteImage = ImageToByteArray(DispalayedImage);
-                p.Image = byteImage;
-                p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
-                p.VisualArtShape = VisualArtShape.Rectangle;
-                p.VisualArtType = VisualArtType.Painting;
-                p.Genre = PaintingGenre.Expressionism.ToString();
-
-                x = new VisualArt();
-                x.Title = "Defender of His Country";
-                Image DispalayedImage2 = Properties.Resources.DefenderOfHisCountry; ;
-                byte[] byteImage2 = ImageToByteArray(DispalayedImage2);
-                x.Image = byteImage2;
-                x.Description = "Defender of His Country.";
-                x.VisualArtShape = VisualArtShape.Rectangle;
-                x.VisualArtType = VisualArtType.Painting;
-                x.Genre = PaintingGenre.Abstract.ToString();
-
-
-                y = new VisualArt();
-                y.Title = "African Heritage";
-                Image DispalayedImage3 = Properties.Resources.AfricanHeritage;
-                byte[] byteImage3 = ImageToByteArray(DispalayedImage3);
-                y.Image = byteImage3;
-                y.Description = "African Heritage.";
-                y.VisualArtShape = VisualArtShape.Rectangle;
-                y.VisualArtType = VisualArtType.Painting;
-                y.Genre = PaintingGenre.Surrealism.ToString();
-
-                z = new VisualArt();
-                z.Title = "Asabet Meal";
-                Image DispalayedImage4 = Properties.Resources.Asabet;
-                byte[] byteImage4 = ImageToByteArray(DispalayedImage4);
-                z.Image = byteImage4;
-                z.Description = "Asabet Meal.";
-                z.VisualArtShape = VisualArtShape.Rectangle;
-                z.VisualArtType = VisualArtType.Photograph;
-                z.Genre = PhotographGenre.Still.ToString();
-
-                //creating new User
-
-                User afewerk = new User();
-                afewerk.Username = "afewerk_tekle";
-                afewerk.FirstName = "Afewerk";
-                afewerk.LastName = "Tekle";
-                afewerk.Bio = "The Shit.";
-                afewerk.Works.AddRange(new[] { x, p, y });
-
-                //adding the user to the context class
-                //mededaContext.Users.Add(afewerk);
-
-                p.Artists = new List<User> { afewerk };
-                x.Artists = new List<User> { afewerk };
-                y.Artists = new List<User> { afewerk };
-                z.Artists = new List<User> { afewerk };
-
-                FeedbackForm feedback1 = new FeedbackForm();
-                //mededaContext.FeedbackForm.Add(feedback1);
-
-
-                p.FeedbackForm = feedback1;
-                x.FeedbackForm = feedback1;
-                y.FeedbackForm = feedback1;
-                z.FeedbackForm = feedback1;
-
-            //Creating new FeedbackForm
-
-
-            //adding the artworks to the context class
-
-            //mededaContext.VisualArts.Add(x);
-            //mededaContext.VisualArts.Add(y);
-            //mededaContext.VisualArts.Add(p);
-            //mededaContext.VisualArts.Add(z);
-
-            //mededaContext.SaveChanges();
+            List<Art> arts;
+           
 
             List<VisualArt> contextArts = (from artwork in mededaContext.VisualArts
                                     select artwork).ToList();
-               
-
-
 
             arts = new List<Art>();
             foreach (var Visualart in contextArts)
             {
                 arts.Add(Visualart);
             }
-            //arts.Add(p);
-            //arts.Add(x);
-            //arts.Add(y);
-            //arts.Add(z);
-            //arts.Add(p);
-            //arts.Add(x);
-            //arts.Add(y);
-            //arts.Add(z);
-            //arts.Add(p);
-            //arts.Add(x);
-            //arts.Add(y);
-            //arts.Add(z);
+           
           
             return arts;
+        }
+
+        public static List<Art> GetCurrentUsersArts()
+        {
+
+            //using Ado.Net to get the users Art
+
+            //To be used when current User is initialized
+            //int CurrentUserId = UserExperience.currentUser.UserId;
+            int CurrentUserId = 1;
+            List<int> UserArtIds = new List<int>();
+
+
+            SqlConnection con = new SqlConnection();
+
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["MededaContext"].ToString();
+            con.Open();
+            String SqlSelectQuery = "SELECT WorksArtId from ArtUser WHERE ArtistsUserId = " + CurrentUserId.ToString() + ";";
+            SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dadapter.Fill(ds);
+            int count = ds.Tables[0].Rows.Count;
+
+            if(count > 0)
+            {
+                for(int i = 0; i < count; i++)
+                {
+                    int SomeId = (int)ds.Tables[0].Rows[count - i - 1]["WorksArtId"];
+                    UserArtIds.Add(SomeId);
+                     //test to see if it returns what it should and it works well
+                    //MessageBox.Show(SomeId.ToString());
+
+                }
+            }
+
+           
+            MededaContext mededaContext = new MededaContext();
+           
+            List<VisualArt> CurrentUsersArts = (from items in mededaContext.VisualArts
+                                                where UserArtIds.Contains(items.ArtId) 
+                                                select items).ToList();
+            List<Art> arts;
+
+            arts = new List<Art>();
+            foreach (var Visualart in CurrentUsersArts)
+            {
+                arts.Add(Visualart);
+            }
+
+            return arts;
+
         }
 
         //Get a list of User objects for testing purposes.
@@ -218,24 +180,16 @@ namespace ArtRepositorySystem
 
             MededaContext mededaContext = new MededaContext();
 
-            User afewerk = new User();
-            afewerk.Username = "afewerk_tekle";
-            afewerk.FirstName = "Afewerk";
-            afewerk.LastName = "Tekle";
-            afewerk.Bio = "The Shit.";
-            Image DispalayedImage5 = Properties.Resources.Afewerk_Tekle;
-            byte[] byteImage5 = ImageToByteArray(DispalayedImage5);
-            afewerk.ProfilePic = byteImage5;
-            //afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
+           
 
             List<User> userList = (from user in mededaContext.Users
                                            select user).ToList();
-
-            //List<User> userList = new List<User>();
-            //userList.Add(afewerk);
-            //userList.Add(afewerk);
-            //userList.Add(afewerk);
-            //userList.Add(afewerk);
+            foreach(User user in userList)
+            {
+                int count = user.Works.Count();
+                MessageBox.Show(user.FirstName+": "+count.ToString());
+            }
+           
 
             return userList;
         }
