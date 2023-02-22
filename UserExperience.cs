@@ -108,9 +108,9 @@ namespace ArtRepositorySystem
             MededaContext mededaContext = new MededaContext();
 
             //adding a feedbackform to the database because an art needs it to be created
-            FeedbackForm feedback1 = new FeedbackForm();
-            mededaContext.FeedbackForm.Add(feedback1);
-            mededaContext.SaveChanges();
+            //FeedbackForm feedback1 = new FeedbackForm();
+            //mededaContext.FeedbackForm.Add(feedback1);
+            //mededaContext.SaveChanges();
 
             List<Art> arts;
            
@@ -190,11 +190,11 @@ namespace ArtRepositorySystem
 
             List<User> userList = (from user in mededaContext.Users
                                            select user).ToList();
-            foreach(User user in userList)
-            {
-                int count = user.Works.Count();
-                MessageBox.Show(user.FirstName+": "+count.ToString());
-            }
+            //foreach(User user in userList)
+            //{
+            //    int count = user.Works.Count();
+            //    MessageBox.Show(user.FirstName+": "+count.ToString());
+            //}
            
 
             return userList;
@@ -259,7 +259,7 @@ namespace ArtRepositorySystem
             List<CategoryTemplateDisplay> categories = new List<CategoryTemplateDisplay>();
 
             //Create a list of objects to store the genres found in the VisualArts sent.
-            List<Object> genres = new List<Object>();
+            List<String> genres = new List<String>();
 
             //Identify all the genres in the list
             foreach (VisualArt v in visuals)
@@ -271,7 +271,7 @@ namespace ArtRepositorySystem
             genres = genres.Distinct().ToList();
 
             //Create one CategoryTemplateDisplay for each genre
-            foreach(Object genre in genres)
+            foreach(String genre in genres)
             {
                 //Create a list of VisualArts that are of the specific genre.
                 List<VisualArt> visualsOfGenre = visuals.FindAll(visual => visual.Genre == genre);
@@ -370,14 +370,16 @@ namespace ArtRepositorySystem
 
         #endregion
 
-        private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        //{
+        //    System.Diagnostics.Process.Start("http://127.0.0.1:5500/ABOUT/index.html");
+        //}
+
+       
+
+        private void linkLabelAboutPage_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("http://127.0.0.1:5500/ABOUT/index.html");
         }
-
-    //    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-    //    {
-    //        System.Diagnostics.Process.Start("C:\\Users\\hp\\Desktop\\NPN\\ArtRepositorySystem\\Resources\\ABOUT\\index.html");
-    //    }
     }
 }

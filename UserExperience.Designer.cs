@@ -34,6 +34,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             this.SplitContainerAll = new System.Windows.Forms.SplitContainer();
+            this.PanelNavButtons = new System.Windows.Forms.Panel();
             this.PanelNavAppInfo = new System.Windows.Forms.Panel();
             this.linkLabelAboutPage = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.PanelHeader = new System.Windows.Forms.Panel();
             this.BtnNavigation = new Guna.UI2.WinForms.Guna2ImageButton();
             this.BtnSearch = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.PanelNavButtons = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.SplitContainerAll)).BeginInit();
             this.SplitContainerAll.Panel1.SuspendLayout();
             this.SplitContainerAll.Panel2.SuspendLayout();
@@ -65,6 +65,7 @@
             this.SplitContainerAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.SplitContainerAll.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.SplitContainerAll.Location = new System.Drawing.Point(0, 0);
+            this.SplitContainerAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SplitContainerAll.Name = "SplitContainerAll";
             // 
             // SplitContainerAll.Panel1
@@ -80,9 +81,19 @@
             this.SplitContainerAll.Panel2.AutoScroll = true;
             this.SplitContainerAll.Panel2.Controls.Add(this.PanelContent);
             this.SplitContainerAll.Panel2.Controls.Add(this.PanelHeader);
-            this.SplitContainerAll.Size = new System.Drawing.Size(1200, 714);
+            this.SplitContainerAll.Size = new System.Drawing.Size(1050, 536);
             this.SplitContainerAll.SplitterDistance = 244;
             this.SplitContainerAll.TabIndex = 8;
+            // 
+            // PanelNavButtons
+            // 
+            this.PanelNavButtons.BackColor = System.Drawing.Color.Transparent;
+            this.PanelNavButtons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelNavButtons.Location = new System.Drawing.Point(0, 186);
+            this.PanelNavButtons.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelNavButtons.Name = "PanelNavButtons";
+            this.PanelNavButtons.Size = new System.Drawing.Size(244, 276);
+            this.PanelNavButtons.TabIndex = 17;
             // 
             // PanelNavAppInfo
             // 
@@ -91,30 +102,32 @@
             this.PanelNavAppInfo.Controls.Add(this.label1);
             this.PanelNavAppInfo.Controls.Add(this.LblAppName);
             this.PanelNavAppInfo.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelNavAppInfo.Location = new System.Drawing.Point(0, 616);
+            this.PanelNavAppInfo.Location = new System.Drawing.Point(0, 462);
+            this.PanelNavAppInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelNavAppInfo.Name = "PanelNavAppInfo";
-            this.PanelNavAppInfo.Size = new System.Drawing.Size(244, 98);
+            this.PanelNavAppInfo.Size = new System.Drawing.Size(244, 74);
             this.PanelNavAppInfo.TabIndex = 16;
             // 
             // linkLabelAboutPage
             // 
             this.linkLabelAboutPage.AutoSize = true;
             this.linkLabelAboutPage.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.linkLabelAboutPage.Location = new System.Drawing.Point(118, 68);
+            this.linkLabelAboutPage.Location = new System.Drawing.Point(103, 51);
             this.linkLabelAboutPage.Name = "linkLabelAboutPage";
-            this.linkLabelAboutPage.Size = new System.Drawing.Size(50, 20);
+            this.linkLabelAboutPage.Size = new System.Drawing.Size(40, 15);
             this.linkLabelAboutPage.TabIndex = 1;
             this.linkLabelAboutPage.TabStop = true;
             this.linkLabelAboutPage.Text = "About";
             this.linkLabelAboutPage.VisitedLinkColor = System.Drawing.Color.DarkOrchid;
+            this.linkLabelAboutPage.Click += new System.EventHandler(this.linkLabelAboutPage_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(6, 70);
+            this.label1.Location = new System.Drawing.Point(5, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 17);
+            this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Version 1.0 x64 -";
             // 
@@ -122,9 +135,9 @@
             // 
             this.LblAppName.AutoSize = true;
             this.LblAppName.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblAppName.Location = new System.Drawing.Point(3, 47);
+            this.LblAppName.Location = new System.Drawing.Point(3, 35);
             this.LblAppName.Name = "LblAppName";
-            this.LblAppName.Size = new System.Drawing.Size(86, 22);
+            this.LblAppName.Size = new System.Drawing.Size(72, 18);
             this.LblAppName.TabIndex = 0;
             this.LblAppName.Text = "Mededa";
             // 
@@ -138,8 +151,9 @@
             this.PanelNavUserInfo.Controls.Add(this.LblUserMode);
             this.PanelNavUserInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelNavUserInfo.Location = new System.Drawing.Point(0, 0);
+            this.PanelNavUserInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelNavUserInfo.Name = "PanelNavUserInfo";
-            this.PanelNavUserInfo.Size = new System.Drawing.Size(244, 248);
+            this.PanelNavUserInfo.Size = new System.Drawing.Size(244, 186);
             this.PanelNavUserInfo.TabIndex = 13;
             // 
             // LblUsername
@@ -148,9 +162,9 @@
             this.LblUsername.AutoSize = true;
             this.LblUsername.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblUsername.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.LblUsername.Location = new System.Drawing.Point(76, 126);
+            this.LblUsername.Location = new System.Drawing.Point(81, 94);
             this.LblUsername.Name = "LblUsername";
-            this.LblUsername.Size = new System.Drawing.Size(92, 18);
+            this.LblUsername.Size = new System.Drawing.Size(74, 16);
             this.LblUsername.TabIndex = 17;
             this.LblUsername.Text = "@username";
             this.LblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -160,9 +174,9 @@
             this.LblFullName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblFullName.AutoSize = true;
             this.LblFullName.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblFullName.Location = new System.Drawing.Point(44, 91);
+            this.LblFullName.Location = new System.Drawing.Point(53, 68);
             this.LblFullName.Name = "LblFullName";
-            this.LblFullName.Size = new System.Drawing.Size(155, 18);
+            this.LblFullName.Size = new System.Drawing.Size(124, 16);
             this.LblFullName.TabIndex = 17;
             this.LblFullName.Text = "FirstName LastName";
             this.LblFullName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -172,11 +186,12 @@
             this.guna2CirclePictureBoxProfilePic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.guna2CirclePictureBoxProfilePic.Image = global::ArtRepositorySystem.Properties.Resources.user_icon;
             this.guna2CirclePictureBoxProfilePic.ImageRotate = 0F;
-            this.guna2CirclePictureBoxProfilePic.Location = new System.Drawing.Point(95, 16);
+            this.guna2CirclePictureBoxProfilePic.Location = new System.Drawing.Point(98, 12);
+            this.guna2CirclePictureBoxProfilePic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2CirclePictureBoxProfilePic.Name = "guna2CirclePictureBoxProfilePic";
             this.guna2CirclePictureBoxProfilePic.ShadowDecoration.CustomizableEdges = customizableEdges1;
             this.guna2CirclePictureBoxProfilePic.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBoxProfilePic.Size = new System.Drawing.Size(55, 58);
+            this.guna2CirclePictureBoxProfilePic.Size = new System.Drawing.Size(48, 44);
             this.guna2CirclePictureBoxProfilePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2CirclePictureBoxProfilePic.TabIndex = 16;
             this.guna2CirclePictureBoxProfilePic.TabStop = false;
@@ -188,22 +203,23 @@
             this.ToggleSwitchMode.AutoRoundedCorners = true;
             this.ToggleSwitchMode.BackColor = System.Drawing.Color.Transparent;
             this.ToggleSwitchMode.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.ToggleSwitchMode.CheckedState.BorderRadius = 15;
+            this.ToggleSwitchMode.CheckedState.BorderRadius = 11;
             this.ToggleSwitchMode.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.ToggleSwitchMode.CheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.ToggleSwitchMode.CheckedState.InnerBorderRadius = 11;
+            this.ToggleSwitchMode.CheckedState.InnerBorderRadius = 7;
             this.ToggleSwitchMode.CheckedState.InnerColor = System.Drawing.Color.White;
             this.ToggleSwitchMode.CustomizableEdges = customizableEdges2;
-            this.ToggleSwitchMode.Location = new System.Drawing.Point(90, 161);
+            this.ToggleSwitchMode.Location = new System.Drawing.Point(94, 121);
+            this.ToggleSwitchMode.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ToggleSwitchMode.Name = "ToggleSwitchMode";
             this.ToggleSwitchMode.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            this.ToggleSwitchMode.Size = new System.Drawing.Size(64, 32);
+            this.ToggleSwitchMode.Size = new System.Drawing.Size(56, 24);
             this.ToggleSwitchMode.TabIndex = 9;
             this.ToggleSwitchMode.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.ToggleSwitchMode.UncheckedState.BorderRadius = 15;
+            this.ToggleSwitchMode.UncheckedState.BorderRadius = 11;
             this.ToggleSwitchMode.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.ToggleSwitchMode.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
-            this.ToggleSwitchMode.UncheckedState.InnerBorderRadius = 11;
+            this.ToggleSwitchMode.UncheckedState.InnerBorderRadius = 7;
             this.ToggleSwitchMode.UncheckedState.InnerColor = System.Drawing.Color.White;
             this.ToggleSwitchMode.CheckedChanged += new System.EventHandler(this.ToggleSwitchMode_CheckedChanged);
             // 
@@ -212,9 +228,9 @@
             this.LblUserMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LblUserMode.AutoSize = true;
             this.LblUserMode.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblUserMode.Location = new System.Drawing.Point(111, 210);
+            this.LblUserMode.Location = new System.Drawing.Point(112, 158);
             this.LblUserMode.Name = "LblUserMode";
-            this.LblUserMode.Size = new System.Drawing.Size(22, 19);
+            this.LblUserMode.Size = new System.Drawing.Size(19, 17);
             this.LblUserMode.TabIndex = 14;
             this.LblUserMode.Text = "C";
             this.LblUserMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -223,11 +239,11 @@
             // 
             this.PanelContent.AutoScroll = true;
             this.PanelContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelContent.Location = new System.Drawing.Point(0, 86);
-            this.PanelContent.Margin = new System.Windows.Forms.Padding(10);
+            this.PanelContent.Location = new System.Drawing.Point(0, 64);
+            this.PanelContent.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.PanelContent.Name = "PanelContent";
-            this.PanelContent.Padding = new System.Windows.Forms.Padding(20);
-            this.PanelContent.Size = new System.Drawing.Size(952, 628);
+            this.PanelContent.Padding = new System.Windows.Forms.Padding(18, 15, 18, 15);
+            this.PanelContent.Size = new System.Drawing.Size(802, 472);
             this.PanelContent.TabIndex = 10;
             // 
             // PanelHeader
@@ -236,9 +252,10 @@
             this.PanelHeader.Controls.Add(this.BtnSearch);
             this.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelHeader.Location = new System.Drawing.Point(0, 0);
+            this.PanelHeader.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PanelHeader.Name = "PanelHeader";
-            this.PanelHeader.Padding = new System.Windows.Forms.Padding(20);
-            this.PanelHeader.Size = new System.Drawing.Size(952, 86);
+            this.PanelHeader.Padding = new System.Windows.Forms.Padding(18, 15, 18, 15);
+            this.PanelHeader.Size = new System.Drawing.Size(802, 64);
             this.PanelHeader.TabIndex = 9;
             // 
             // BtnNavigation
@@ -251,12 +268,12 @@
             this.BtnNavigation.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnNavigation.ImageRotate = 0F;
             this.BtnNavigation.ImageSize = new System.Drawing.Size(40, 40);
-            this.BtnNavigation.Location = new System.Drawing.Point(20, 20);
-            this.BtnNavigation.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnNavigation.Location = new System.Drawing.Point(18, 15);
+            this.BtnNavigation.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BtnNavigation.Name = "BtnNavigation";
             this.BtnNavigation.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.BtnNavigation.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            this.BtnNavigation.Size = new System.Drawing.Size(57, 46);
+            this.BtnNavigation.Size = new System.Drawing.Size(50, 34);
             this.BtnNavigation.TabIndex = 9;
             this.BtnNavigation.Click += new System.EventHandler(this.BtnNavigation_Click);
             // 
@@ -271,33 +288,25 @@
             this.BtnSearch.ImageOffset = new System.Drawing.Point(0, 0);
             this.BtnSearch.ImageRotate = 0F;
             this.BtnSearch.ImageSize = new System.Drawing.Size(35, 35);
-            this.BtnSearch.Location = new System.Drawing.Point(875, 20);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(6);
+            this.BtnSearch.Location = new System.Drawing.Point(734, 15);
+            this.BtnSearch.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.BtnSearch.Name = "BtnSearch";
             this.BtnSearch.PressedState.ImageSize = new System.Drawing.Size(40, 40);
             this.BtnSearch.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            this.BtnSearch.Size = new System.Drawing.Size(57, 46);
+            this.BtnSearch.Size = new System.Drawing.Size(50, 34);
             this.BtnSearch.TabIndex = 9;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // PanelNavButtons
-            // 
-            this.PanelNavButtons.BackColor = System.Drawing.Color.Transparent;
-            this.PanelNavButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelNavButtons.Location = new System.Drawing.Point(0, 248);
-            this.PanelNavButtons.Name = "PanelNavButtons";
-            this.PanelNavButtons.Size = new System.Drawing.Size(244, 368);
-            this.PanelNavButtons.TabIndex = 17;
-            // 
             // UserExperience
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.SplitContainerAll);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UserExperience";
-            this.Size = new System.Drawing.Size(1200, 714);
+            this.Size = new System.Drawing.Size(1050, 536);
             this.Load += new System.EventHandler(this.UserExperience_Load);
             this.SplitContainerAll.Panel1.ResumeLayout(false);
             this.SplitContainerAll.Panel2.ResumeLayout(false);
