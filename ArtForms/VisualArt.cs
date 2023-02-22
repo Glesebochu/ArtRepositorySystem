@@ -10,13 +10,13 @@ namespace ArtRepositorySystem.ArtForms
 {
     public class VisualArt : Art
     {
-        public int VisualArtId { get; set; }
-        public Image Image { get; set; }
+        
+        public byte[] Image { get; set; }
         public VisualArtShape VisualArtShape { get; set; }
         public VisualArtType VisualArtType { get; set; }
 
         public readonly new ArtForm Type = ArtForm.Visual;
-        public Object Genre { get; set; }
+        public String Genre { get; set; }
 
         //From a list of VisualArt objects, select and return those that correspond to 
         //the specified VisualArtType.

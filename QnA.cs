@@ -32,6 +32,13 @@ namespace ArtRepositorySystem
             set { _Type = value; } 
         }
 
+        public QnA() { }
+
+        public QnA (string prompt, QuestionType type, List<Option> optionsSuppliedByArtist)
+        {
+            this.Prompt = prompt;
+            this.Type = type;
+            this.OptionsSuppliedByArtist = optionsSuppliedByArtist;
         public string Answer
         { 
             get { return _Answer; } 

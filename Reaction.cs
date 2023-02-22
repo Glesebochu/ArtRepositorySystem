@@ -15,7 +15,9 @@ namespace ArtRepositorySystem
         public Art Artwork { get; set; }
         public string Response { get; set; }
 
-
+        public Reaction() { }
+        
+        
         public Reaction(User consumer, Art artwork, string response)
         {
             Consumer = consumer;

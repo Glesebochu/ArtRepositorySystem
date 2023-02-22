@@ -20,6 +20,12 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             this.Art = art;
         }
 
+        public static Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
         private void CenterDisplay_Load(object sender, EventArgs e)
         {
             //Set the label representing the title of the artwork.
@@ -27,9 +33,10 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             //Convert the Art object into a VisualArt object.
             VisualArt visualArt = (VisualArt)Art;
-            
+
             //Set the background image of the artPage (tab in the TabControl) to the image of the VisualArt.
-            artPage.BackgroundImage = visualArt.Image;
+            Image artPageImage = byteArrayToImage(visualArt.Image);
+            artPage.BackgroundImage = artPageImage;
             //Set the layout of the background image of the artPage.
             artPage.BackgroundImageLayout = ImageLayout.Zoom;
             //Set the text of the TextBox representing the description of the art.

@@ -23,11 +23,11 @@ namespace ArtRepositorySystem
         public int UserId { get; set; }
         public string Username { get; set; }
         public UserMode userMode { get; set; }
-        public Image? ProfilePic { get; set; }
+        public byte[]? ProfilePic { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string password { get; set; }
-        public string Bio { get; set; }
+        public string? Bio { get; set; }
         public List<User> Followers { get; set; }
         public List<Art> Works { get; set; }
 

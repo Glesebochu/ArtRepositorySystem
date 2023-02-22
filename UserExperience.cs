@@ -40,8 +40,24 @@ namespace ArtRepositorySystem
             //Bring the UserControl to the front.
             userControl.BringToFront();
         }
-        
+
         //Create a center display for an Artwork.
+
+        public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        public static Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
         public static void CreateCenterDisplayForArt(Art art, Panel panelContent)
         {
             //Create CenterDisplay object.
@@ -83,87 +99,143 @@ namespace ArtRepositorySystem
         //Get a list of Art objects for testing purposes.
         public static List<Art> GetDummyArts()
         {
-            //For testing purposes
-            VisualArt p, x, y, z;
-            List<Art> arts;
 
-            p = new VisualArt();
-            p.Title = "The Total Liberation of Africa";
-            p.Image = Properties.Resources.TheTotalLiberationOfAfrica;
-            p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
-            p.VisualArtShape = VisualArtShape.Rectangle;
-            p.VisualArtType = VisualArtType.Painting;
-            p.Genre = PaintingGenre.Expressionism;
+            MededaContext mededaContext = new MededaContext();
+            
+                //For testing purposes
+                VisualArt p, x, y, z;
+                List<Art> arts;
 
-            x = new VisualArt();
-            x.Title = "Defender of His Country";
-            x.Image = Properties.Resources.DefenderOfHisCountry;
-            x.Description = "Defender of His Country.";
-            x.VisualArtShape = VisualArtShape.Rectangle;
-            x.VisualArtType = VisualArtType.Painting;
-            x.Genre = PaintingGenre.Abstract;
+                p = new VisualArt();
+                p.Title = "The Total Liberation of Africa";
+                Image DispalayedImage = Properties.Resources.TheTotalLiberationOfAfrica;
+                byte[] byteImage = ImageToByteArray(DispalayedImage);
+                p.Image = byteImage;
+                p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
+                p.VisualArtShape = VisualArtShape.Rectangle;
+                p.VisualArtType = VisualArtType.Painting;
+                p.Genre = PaintingGenre.Expressionism.ToString();
 
-            y = new VisualArt();
-            y.Title = "African Heritage";
-            y.Image = Properties.Resources.AfricanHeritage;
-            y.Description = "African Heritage.";
-            y.VisualArtShape = VisualArtShape.Rectangle;
-            y.VisualArtType = VisualArtType.Painting;
-            y.Genre = PaintingGenre.Surrealism;
+                x = new VisualArt();
+                x.Title = "Defender of His Country";
+                Image DispalayedImage2 = Properties.Resources.DefenderOfHisCountry; ;
+                byte[] byteImage2 = ImageToByteArray(DispalayedImage2);
+                x.Image = byteImage2;
+                x.Description = "Defender of His Country.";
+                x.VisualArtShape = VisualArtShape.Rectangle;
+                x.VisualArtType = VisualArtType.Painting;
+                x.Genre = PaintingGenre.Abstract.ToString();
 
-            z = new VisualArt();
-            z.Title = "Asabet Meal";
-            z.Image = Properties.Resources.Asabet;
-            z.Description = "Asabet Meal.";
-            z.VisualArtShape = VisualArtShape.Rectangle;
-            z.VisualArtType = VisualArtType.Photograph;
-            z.Genre = PhotographGenre.Still;
 
-            User afewerk = new User();
-            afewerk.Username = "afewerk_tekle";
-            afewerk.FirstName = "Afewerk";
-            afewerk.LastName = "Tekle";
-            afewerk.Bio = "The Shit.";
-            afewerk.Works.AddRange(new[] { x, p, y });
+                y = new VisualArt();
+                y.Title = "African Heritage";
+                Image DispalayedImage3 = Properties.Resources.AfricanHeritage;
+                byte[] byteImage3 = ImageToByteArray(DispalayedImage3);
+                y.Image = byteImage3;
+                y.Description = "African Heritage.";
+                y.VisualArtShape = VisualArtShape.Rectangle;
+                y.VisualArtType = VisualArtType.Painting;
+                y.Genre = PaintingGenre.Surrealism.ToString();
 
-            p.Artists = new List<User> {afewerk};
-            x.Artists = new List<User> {afewerk};
-            y.Artists = new List<User> {afewerk};
-            z.Artists = new List<User> { new User() };
+                z = new VisualArt();
+                z.Title = "Asabet Meal";
+                Image DispalayedImage4 = Properties.Resources.Asabet;
+                byte[] byteImage4 = ImageToByteArray(DispalayedImage4);
+                z.Image = byteImage4;
+                z.Description = "Asabet Meal.";
+                z.VisualArtShape = VisualArtShape.Rectangle;
+                z.VisualArtType = VisualArtType.Photograph;
+                z.Genre = PhotographGenre.Still.ToString();
+
+                //creating new User
+
+                User afewerk = new User();
+                afewerk.Username = "afewerk_tekle";
+                afewerk.FirstName = "Afewerk";
+                afewerk.LastName = "Tekle";
+                afewerk.Bio = "The Shit.";
+                afewerk.Works.AddRange(new[] { x, p, y });
+
+                //adding the user to the context class
+                //mededaContext.Users.Add(afewerk);
+
+                p.Artists = new List<User> { afewerk };
+                x.Artists = new List<User> { afewerk };
+                y.Artists = new List<User> { afewerk };
+                z.Artists = new List<User> { afewerk };
+
+                FeedbackForm feedback1 = new FeedbackForm();
+                //mededaContext.FeedbackForm.Add(feedback1);
+
+
+                p.FeedbackForm = feedback1;
+                x.FeedbackForm = feedback1;
+                y.FeedbackForm = feedback1;
+                z.FeedbackForm = feedback1;
+
+            //Creating new FeedbackForm
+
+
+            //adding the artworks to the context class
+
+            //mededaContext.VisualArts.Add(x);
+            //mededaContext.VisualArts.Add(y);
+            //mededaContext.VisualArts.Add(p);
+            //mededaContext.VisualArts.Add(z);
+
+            //mededaContext.SaveChanges();
+
+            List<VisualArt> contextArts = (from artwork in mededaContext.VisualArts
+                                    select artwork).ToList();
+               
+
+
 
             arts = new List<Art>();
-            arts.Add(p);
-            arts.Add(x);
-            arts.Add(y);
-            arts.Add(z);
-            arts.Add(p);
-            arts.Add(x);
-            arts.Add(y);
-            arts.Add(z);
-            arts.Add(p);
-            arts.Add(x);
-            arts.Add(y);
-            arts.Add(z);
-
+            foreach (var Visualart in contextArts)
+            {
+                arts.Add(Visualart);
+            }
+            //arts.Add(p);
+            //arts.Add(x);
+            //arts.Add(y);
+            //arts.Add(z);
+            //arts.Add(p);
+            //arts.Add(x);
+            //arts.Add(y);
+            //arts.Add(z);
+            //arts.Add(p);
+            //arts.Add(x);
+            //arts.Add(y);
+            //arts.Add(z);
+          
             return arts;
         }
 
         //Get a list of User objects for testing purposes.
         public static List<User> GetDummyUsers()
         {
+
+            MededaContext mededaContext = new MededaContext();
+
             User afewerk = new User();
             afewerk.Username = "afewerk_tekle";
             afewerk.FirstName = "Afewerk";
             afewerk.LastName = "Tekle";
             afewerk.Bio = "The Shit.";
-            afewerk.ProfilePic = Properties.Resources.Afewerk_Tekle;
-            afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
+            Image DispalayedImage5 = Properties.Resources.Afewerk_Tekle;
+            byte[] byteImage5 = ImageToByteArray(DispalayedImage5);
+            afewerk.ProfilePic = byteImage5;
+            //afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
 
-            List<User> userList = new List<User>();
-            userList.Add(afewerk);
-            userList.Add(afewerk);
-            userList.Add(afewerk);
-            userList.Add(afewerk);
+            List<User> userList = (from user in mededaContext.Users
+                                           select user).ToList();
+
+            //List<User> userList = new List<User>();
+            //userList.Add(afewerk);
+            //userList.Add(afewerk);
+            //userList.Add(afewerk);
+            //userList.Add(afewerk);
 
             return userList;
         }
@@ -175,7 +247,8 @@ namespace ArtRepositorySystem
             for (int i = 0; i < visualArts.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = visualArts[i].Image;
+                Image buttonImage = byteArrayToImage(visualArts[i].Image);
+                button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Tile;
                 button.Text = "";
                 button.Tag = visualArts[i];
@@ -192,7 +265,9 @@ namespace ArtRepositorySystem
             for (int i = 0; i < users.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = users[i].ProfilePic;
+               
+                Image buttonImage = byteArrayToImage(users[i].ProfilePic);
+                button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Center;
                 button.Text = "";
                 button.Tag = users[i];
@@ -261,11 +336,11 @@ namespace ArtRepositorySystem
             LblUsername.Text = $"@{currentUser.Username}";
             LblUsername.CenterHorizontally();
 
-            if(currentUser.ProfilePic != null)
-            {
-                //Set the image of the profile picture from the currentUser.
-                guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
-            }
+            //Set the image of the profile picture from the currentUser.
+            Image ProfileImage = byteArrayToImage(currentUser.ProfilePic);
+           
+
+            guna2CirclePictureBoxProfilePic.Image = ProfileImage;
 
             //Check which user mode the user is in: consumer or artist.
             if (currentUser.userMode == UserMode.Consumer)

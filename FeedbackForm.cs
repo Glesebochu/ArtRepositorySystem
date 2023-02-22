@@ -2,6 +2,7 @@
 using ArtRepositorySystem.DbClasses;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,12 @@ namespace ArtRepositorySystem
 {
     public class FeedbackForm
     {
+        [Key]
         public int? FeedbackFromId { get; set; }
-        public List<QnA> Questions { get; set; }
+        public List<QnA>? Questions { get; set; }
+
+        public FeedbackForm() { }
+
 
         private FeedbackDb fdb = new FeedbackDb();
 
