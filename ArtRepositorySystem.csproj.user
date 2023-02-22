@@ -7,6 +7,9 @@
     <Compile Update="ArtistExperienceUI\ArtistNavButtons.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="ArtistExperienceUI\Upload.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="ConsumerExperienceUI\ArtistCenterDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
