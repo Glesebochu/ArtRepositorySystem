@@ -25,9 +25,6 @@ namespace ArtRepositorySystem
             Response = response;
         }
 
-        public Reaction()
-        {
-
-        }
+       
     }
 }

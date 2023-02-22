@@ -21,7 +21,6 @@ namespace ArtRepositorySystem
 
         private FeedbackDb fdb = new FeedbackDb();
 
-        public FeedbackForm() { }
 
         public FeedbackForm(List<QnA> questions) {
             this.Questions = questions;

@@ -1,4 +1,5 @@
 ﻿using ArtRepositorySystem.ArtForms;
+
 using ArtRepositorySystem.ArtForms.VisualArts;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace ArtRepositorySystem.ArtistExperienceUI
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             VisualArt VA = new VisualArt();
-            VA.Image = pictureBox1.Image;
+            VA.Image = UserExperience.ImageToByteArray(pictureBox1.Image);
             VA.Title = drakeuiTextBox1.Text; 
             VA.Description= drakeuiRichTextBox1.Text;
             VA.Genre = guna2ComboBox1.Text;
