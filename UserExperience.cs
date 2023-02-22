@@ -104,8 +104,14 @@ namespace ArtRepositorySystem
         //Get a list of Art objects for testing purposes.
         public static List<Art> GetDummyArts()
         {
-
+            //creating the context object to get a session with the database.
             MededaContext mededaContext = new MededaContext();
+
+            //adding a feedbackform to the database because an art needs it to be created
+            FeedbackForm feedback1 = new FeedbackForm();
+            mededaContext.FeedbackForm.Add(feedback1);
+            mededaContext.SaveChanges();
+
             List<Art> arts;
            
 
