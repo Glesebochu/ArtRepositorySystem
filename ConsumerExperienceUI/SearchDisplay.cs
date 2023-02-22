@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace ArtRepositorySystem.ConsumerExperienceUI
 {
@@ -44,8 +45,29 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
                 //Call the search algorithm with the user's input here...
 
-                //For confirmation purposes.
-                MessageBox.Show($"You searched for: {TextBoxSearchBar.Text}.");
+                MededaContext searchedArtsContext= new MededaContext();
+                List<VisualArt> searchedArts = (from artworks in searchedArtsContext.VisualArts
+                                               where artworks.Description.Contains(TextBoxSearchBar.Text.ToString())
+                                               || artworks.Title.Contains(TextBoxSearchBar.Text.ToString())
+                                                select artworks).ToList();
+
+                List<User> searchedArtists = (from artists in searchedArtsContext.Users
+                                              where artists.FirstName.Contains(TextBoxSearchBar.Text.ToString())
+                                              || artists.LastName.Contains(TextBoxSearchBar.Text.ToString())
+                                              || artists.Bio.Contains(TextBoxSearchBar.Text.ToString())
+                                              select artists).ToList();
+
+                //Create a ResultsGrid object from the list of Users.
+                ResultsGrid resultsGridArtists = new ResultsGrid(searchedArtists);
+                //Add the ResultsGrid object to PanelArtistsSection.
+                UserExperience.AddToPanel(resultsGridArtists, PanelArtistsSection);
+
+                //Create a ResultsGrid object from the list of VisualArts.
+                ResultsGrid resultsGridArtworks = new ResultsGrid(searchedArts);
+                //Add the ResultsGrid object to PanelArtworksSection.
+                UserExperience.AddToPanel(resultsGridArtworks, PanelArtworksSection);
+
+
                 
             }
         }

@@ -16,9 +16,14 @@ namespace ArtRepositorySystem
     }
     public class QnA
     {
-        string _Prompt { get; set; }
-        QuestionType _Type { get; set; }
-        string _Answer { get; set; }
+        private string _Answer;
+        private QuestionType _Type;
+        private string _Prompt;
+
+        public int? QnAId { get; set; }
+    
+        List<Option> OptionsSuppliedByArtist { get; set; }
+        List<Reaction>? ConsumersReactions { get; set; }
 
         public string Prompt
         { 
@@ -32,6 +37,14 @@ namespace ArtRepositorySystem
             set { _Type = value; } 
         }
 
+        public QnA() { }
+
+        public QnA(string prompt, QuestionType type, List<Option> optionsSuppliedByArtist)
+        {
+            this.Prompt = prompt;
+            this.Type = type;
+            this.OptionsSuppliedByArtist = optionsSuppliedByArtist;
+        }
         public string Answer
         { 
             get { return _Answer; } 
@@ -39,3 +52,39 @@ namespace ArtRepositorySystem
         }
     }
 }
+
+
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
+
+//namespace ArtRepositorySystem
+//{
+//    public enum QuestionType
+//    {
+//        YesOrNo,
+//        SingleSelect,
+//        MultiSelect,
+//        ShortAnswer,
+//        LongAnswer
+//    }
+//    public class QnA
+//    {
+//        public int? QnAId { get; set; }
+//        string Prompt { get; set; }
+//        QuestionType Type { get; set; }
+//        List<Option> OptionsSuppliedByArtist { get; set; }
+//        List<Reaction>? ConsumersReactions { get; set; }
+
+//        public QnA() { }
+
+//        public QnA(string prompt, QuestionType type, List<Option> optionsSuppliedByArtist)
+//        {
+//            this.Prompt = prompt;
+//            this.Type = type;
+//            this.OptionsSuppliedByArtist = optionsSuppliedByArtist;
+//        }
+//    }
+//}

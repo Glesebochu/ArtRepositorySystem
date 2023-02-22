@@ -7,6 +7,11 @@ using ArtRepositorySystem.ArtForms;
 using ArtRepositorySystem.ArtForms.VisualArts;
 using ArtRepositorySystem.ConsumerExperienceUI;
 using ArtRepositorySystem.ArtistExperienceUI;
+using System.Data.SqlClient;
+using System.Configuration;
+using DrakeUI.Framework;
+using System.Data;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace ArtRepositorySystem
 {
@@ -40,8 +45,24 @@ namespace ArtRepositorySystem
             //Bring the UserControl to the front.
             userControl.BringToFront();
         }
-        
+
         //Create a center display for an Artwork.
+
+        public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        public static Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
+        }
         public static void CreateCenterDisplayForArt(Art art, Panel panelContent)
         {
             //Create CenterDisplay object.
@@ -83,87 +104,98 @@ namespace ArtRepositorySystem
         //Get a list of Art objects for testing purposes.
         public static List<Art> GetDummyArts()
         {
-            //For testing purposes
-            VisualArt p, x, y, z;
+            //creating the context object to get a session with the database.
+            MededaContext mededaContext = new MededaContext();
+
+            //adding a feedbackform to the database because an art needs it to be created
+            FeedbackForm feedback1 = new FeedbackForm();
+            mededaContext.FeedbackForm.Add(feedback1);
+            mededaContext.SaveChanges();
+
             List<Art> arts;
+           
 
-            p = new VisualArt();
-            p.Title = "The Total Liberation of Africa";
-            p.Image = Properties.Resources.TheTotalLiberationOfAfrica;
-            p.Description = "In 1958, Ethiopian multi-disciplinary Artist Afewerk Tekle created arguably his greatest work: a stained-glass triptych entitled 'The Total Liberation of Africa', commissioned to be installed in the newly established Africa Hall, the headquarters of the United Nations Economic Commission for Africa, in Addis Ababa.";
-            p.VisualArtShape = VisualArtShape.Rectangle;
-            p.VisualArtType = VisualArtType.Painting;
-            p.Genre = PaintingGenre.Expressionism;
-
-            x = new VisualArt();
-            x.Title = "Defender of His Country";
-            x.Image = Properties.Resources.DefenderOfHisCountry;
-            x.Description = "Defender of His Country.";
-            x.VisualArtShape = VisualArtShape.Rectangle;
-            x.VisualArtType = VisualArtType.Painting;
-            x.Genre = PaintingGenre.Abstract;
-
-            y = new VisualArt();
-            y.Title = "African Heritage";
-            y.Image = Properties.Resources.AfricanHeritage;
-            y.Description = "African Heritage.";
-            y.VisualArtShape = VisualArtShape.Rectangle;
-            y.VisualArtType = VisualArtType.Painting;
-            y.Genre = PaintingGenre.Surrealism;
-
-            z = new VisualArt();
-            z.Title = "Asabet Meal";
-            z.Image = Properties.Resources.Asabet;
-            z.Description = "Asabet Meal.";
-            z.VisualArtShape = VisualArtShape.Rectangle;
-            z.VisualArtType = VisualArtType.Photograph;
-            z.Genre = PhotographGenre.Still;
-
-            User afewerk = new User();
-            afewerk.Username = "afewerk_tekle";
-            afewerk.FirstName = "Afewerk";
-            afewerk.LastName = "Tekle";
-            afewerk.Bio = "The Shit.";
-            afewerk.Works.AddRange(new[] { x, p, y });
-
-            p.Artists = new List<User> {afewerk};
-            x.Artists = new List<User> {afewerk};
-            y.Artists = new List<User> {afewerk};
-            z.Artists = new List<User> { new User() };
+            List<VisualArt> contextArts = (from artwork in mededaContext.VisualArts
+                                    select artwork).ToList();
 
             arts = new List<Art>();
-            arts.Add(p);
-            arts.Add(x);
-            arts.Add(y);
-            arts.Add(z);
-            arts.Add(p);
-            arts.Add(x);
-            arts.Add(y);
-            arts.Add(z);
-            arts.Add(p);
-            arts.Add(x);
-            arts.Add(y);
-            arts.Add(z);
+            foreach (var Visualart in contextArts)
+            {
+                arts.Add(Visualart);
+            }
+           
+          
+            return arts;
+        }
+
+        public static List<Art> GetCurrentUsersArts()
+        {
+
+            //using Ado.Net to get the users Art
+
+            //To be used when current User is initialized
+            //int CurrentUserId = UserExperience.currentUser.UserId;
+            int CurrentUserId = 1;
+            List<int> UserArtIds = new List<int>();
+
+
+            SqlConnection con = new SqlConnection();
+
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["MededaContext"].ToString();
+            con.Open();
+            String SqlSelectQuery = "SELECT WorksArtId from ArtUser WHERE ArtistsUserId = " + CurrentUserId.ToString() + ";";
+            SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
+            SqlDataAdapter dadapter = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            dadapter.Fill(ds);
+            int count = ds.Tables[0].Rows.Count;
+
+            if(count > 0)
+            {
+                for(int i = 0; i < count; i++)
+                {
+                    int SomeId = (int)ds.Tables[0].Rows[count - i - 1]["WorksArtId"];
+                    UserArtIds.Add(SomeId);
+                     //test to see if it returns what it should and it works well
+                    //MessageBox.Show(SomeId.ToString());
+
+                }
+            }
+
+           
+            MededaContext mededaContext = new MededaContext();
+           
+            List<VisualArt> CurrentUsersArts = (from items in mededaContext.VisualArts
+                                                where UserArtIds.Contains(items.ArtId) 
+                                                select items).ToList();
+            List<Art> arts;
+
+            arts = new List<Art>();
+            foreach (var Visualart in CurrentUsersArts)
+            {
+                arts.Add(Visualart);
+            }
 
             return arts;
+
         }
 
         //Get a list of User objects for testing purposes.
         public static List<User> GetDummyUsers()
         {
-            User afewerk = new User();
-            afewerk.Username = "afewerk_tekle";
-            afewerk.FirstName = "Afewerk";
-            afewerk.LastName = "Tekle";
-            afewerk.Bio = "The Shit.";
-            afewerk.ProfilePic = Properties.Resources.Afewerk_Tekle;
-            afewerk.Works = GetDummyArts().FindAll(x => x.Artists[0].Username == "afewerk_tekle");
 
-            List<User> userList = new List<User>();
-            userList.Add(afewerk);
-            userList.Add(afewerk);
-            userList.Add(afewerk);
-            userList.Add(afewerk);
+            MededaContext mededaContext = new MededaContext();
+
+           
+
+            List<User> userList = (from user in mededaContext.Users
+                                           select user).ToList();
+            foreach(User user in userList)
+            {
+                int count = user.Works.Count();
+                MessageBox.Show(user.FirstName+": "+count.ToString());
+            }
+           
 
             return userList;
         }
@@ -175,7 +207,8 @@ namespace ArtRepositorySystem
             for (int i = 0; i < visualArts.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = visualArts[i].Image;
+                Image buttonImage = byteArrayToImage(visualArts[i].Image);
+                button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Tile;
                 button.Text = "";
                 button.Tag = visualArts[i];
@@ -192,7 +225,9 @@ namespace ArtRepositorySystem
             for (int i = 0; i < users.Count(); i++)
             {
                 Button button = new Button();
-                button.BackgroundImage = users[i].ProfilePic;
+               
+                Image buttonImage = byteArrayToImage(users[i].ProfilePic);
+                button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Center;
                 button.Text = "";
                 button.Tag = users[i];
@@ -261,11 +296,11 @@ namespace ArtRepositorySystem
             LblUsername.Text = $"@{currentUser.Username}";
             LblUsername.CenterHorizontally();
 
-            if(currentUser.ProfilePic != null)
-            {
-                //Set the image of the profile picture from the currentUser.
-                guna2CirclePictureBoxProfilePic.Image = currentUser.ProfilePic;
-            }
+            //Set the image of the profile picture from the currentUser.
+            Image ProfileImage = byteArrayToImage(currentUser.ProfilePic);
+           
+
+            guna2CirclePictureBoxProfilePic.Image = ProfileImage;
 
             //Check which user mode the user is in: consumer or artist.
             if (currentUser.userMode == UserMode.Consumer)
@@ -334,5 +369,15 @@ namespace ArtRepositorySystem
         }
 
         #endregion
+
+        private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://127.0.0.1:5500/ABOUT/index.html");
+        }
+
+    //    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+    //    {
+    //        System.Diagnostics.Process.Start("C:\\Users\\hp\\Desktop\\NPN\\ArtRepositorySystem\\Resources\\ABOUT\\index.html");
+    //    }
     }
 }

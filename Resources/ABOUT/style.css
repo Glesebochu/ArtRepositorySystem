@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto'); /** importing google's font family **/
+
+:root{ 
+	/* --font-family: 'Roboto', sans-serif; "Comic Sans MS" */
+	--font-family:Century Gothic ;
+	--body-background-color: #fff;
+	--card-background-color: rgb(190, 186, 186);
+	--font-size: 16px;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+    font-family: var(--font-family);
+	text-decoration: none;
+	font-size: var(--font-size);
+}
+
+/** about section css **/
+#about{
+	margin: 100px 200px 0px 195px;
+	height: auto;
+	max-width: 1000px;
+	padding-bottom: 30px;
+}
+
+#about div p{
+	line-height: 1.5em;
+	margin-left: 10px;
+}
+
+#about h1{
+	font-size: 3em;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.Explores{
+	border-top: 1px solid rgba(166, 163, 163, 0.3);
+	padding-top: 20px;
+}
+
+/** navbar section css **/
+.sticky-nav {
+	position: fixed;
+	top: 0; 
+	width: 100%; 
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: white;
+	border-bottom: 1px solid rgb(176, 164, 164);
+}
+
+.options{
+	display: flex;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.logo h1{
+	color:black;
+	margin-left: 30px;
+	font-size: 30px;
+}
+
+.options li{
+	list-style-type: none;
+	margin-left:60px;
+}
+
+.options li a{
+	color:black;
+	font-weight: bold;
+}
+
+.options :last-child{
+	margin-right:60px;
+}
+
+
+
+body{
+	background-color: var(--body-background-color);
+}
+
+
+
+
+/** explore section css **/
+.features{
+	margin-top:4rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 100px;
+}
+hr{
+	margin: 35px 200px 0px 200px;
+	color: rgb(176, 164, 164, 0.3);
+}
+
+#explore >h1{
+	color:black;
+	font-size: 3em;
+}
+    
+.img{
+width: 400px;
+	/* height: 300px; */
+margin-top: 10px;
+background-color: #000000;
+}
+
+
+.features img{
+width: 100%;
+height: auto;
+} 
+
+
+.description{
+width: 576px;
+	height: 256px;
+margin: 10px 10px 60px 10px;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+}
+
+.description h3{
+font-size: 1.5em;
+font-weight:900;
+margin-bottom: 10px;
+}
+.Explores{
+	padding-top: 40px;
+}
+
+#explore{
+	border-bottom: 1px solid rgb(176, 164, 164, 0.3);
+	margin: 35px 200px 0px 200px;
+}
+/** Developer section css **/
+
+.team{
+width: 100%;
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+/* position: relative; */
+/* background: radial-gradient(#281c3e,#0f051d); */
+}
+
+.team-content{
+width: 100%;
+max-width: 1350px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+align-items: center;
+gap: 2rem;
+text-align: center;
+margin-top: 4rem;
+}
+
+.team-content img{
+width: 100%;
+height: auto;
+border-radius: 15px;
+margin-bottom: 15px;
+}
+
+.center h1{
+color: #000;
+font-size: 3rem;
+text-align: center;
+}
+
+.box{
+padding: 16px;
+/* background: #1b1229; */
+background: var(--card-background-color);
+border-radius: 15px;
+transition: all .38s ease;
+}
+
+.box h3{
+font-size: 23px;
+font-weight: 600;
+color: #000;
+margin-bottom: 8px;
+}
+
+.box h5{
+font-size: 15px;
+font-weight: 600;
+color: #828085;
+margin-bottom: 15px;
+letter-spacing: 2px;
+}
+
+.icons i{
+
+display: inline-block;
+	color: #000;
+font-size: 20px;
+margin: 0 8px;
+transition: all .38s ease;
+}
+
+.icons i:hover{
+transform: scale(1.2);
+}
+
+.box:hover{
+transform: translateY(-10px);
+cursor: pointer;
+}
+
+#telegram{
+	color: #28A7E8;
+}
+
+#youtube{
+	color:#FF0000;
+}
+
+#facebook{
+	color:#166FE5;
+}
+#instagram{
+	color:orangered;
+}
+
+#twitter{
+	color: #00acee;
+}
+
+#utwitter{
+margin-top: 10px;
+color: #00acee;
+font-size: 40px;
+}
+
+#utelegram{
+margin-top: 10px;
+color: #28A7E8;
+font-size: 40px;
+}
+
+#ugithub{
+margin-top: 10px;
+margin-left: 20px;
+font-size: 40px;
+color:#000;
+}
+
+#uinstagram{
+font-size: 40px;
+margin-top: 10px;
+margin-left: 20px;
+color:#ffae00;
+}
+
+@media(max-width: 1240px){
+.team{
+	width: 100%;
+	height: auto;
+	padding: 90px 2%;
+}
+.center h1{
+	font-size: 3.2rem;
+}
+}
+
+
+/** contact section css **/
+
+.contact{
+background-color: #F8F9FA;
+border-top: 1px solid rgba(223, 208, 208,0.3);
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+padding-bottom: 20px;
+padding-top: 10px;
+}
+
+.contact img{
+	border-radius: 18px;
+}
+
+.contactUsers{
+display: flex;
+column-gap: 200px;
+}
+
+.contact h1{
+color: #000;
+font-size: 2.5em;
+}
+
+.contactp{
+	margin-bottom: 50px;
+}
+
+.contactUsers div p{
+padding-bottom: 5px;
+}
+
+.contactUsers div :first-child{
+margin-bottom: 5px;
+}
+
+/* .icons i{
+color: black;
+width: 300px;
+} */
+
+

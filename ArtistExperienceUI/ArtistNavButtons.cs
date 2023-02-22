@@ -32,14 +32,14 @@ namespace ArtRepositorySystem.ArtistExperienceUI
             List<Art> arts = UserExperience.GetDummyArts();
 
             //Actual code
-            //List<Art> arts = UserExperience.currentUser.Works;
+            List<Art> CurrentUserarts = UserExperience.GetCurrentUsersArts();
 
-            currentExperience.AddToPanelContent(new MyWorksPage(arts));
+            currentExperience.AddToPanelContent(new MyWorksPage(CurrentUserarts));
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            //currentExperience.AddToPanelContent(new CreateArtworkPage());
+            currentExperience.AddToPanelContent(new Upload());
         }
     }
 }
