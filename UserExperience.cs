@@ -337,7 +337,7 @@ namespace ArtRepositorySystem
 
         private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start("https://www.youtube.com/watch?v=kis7l0y1JUg&list=PLBYSdC_HMWMrAAzZ6xxkKRT1CdapFLJ-z&index=5");
+            System.Diagnostics.Process.Start("http://127.0.0.1:5500/ABOUT/index.html");
         }
 
     //    private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
