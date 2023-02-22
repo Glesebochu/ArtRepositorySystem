@@ -48,8 +48,27 @@ namespace ArtRepositorySystem
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
-            user.saveUserData();
+            this.Hide();
+
+            //User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
+            //user.saveUserData();
+
+            //Code for calling the User experience from here.
+
+            //This will be replaced by the verified User object from the Login page.
+            //Create User object.
+            User user = new User();
+            user.FirstName = "Yelelew";
+            user.LastName = "Aymertim";
+            user.Username = "user";
+            user.ProfilePic = Properties.Resources.Afewerk_Tekle;
+
+            //Create a ConsumerExperience object from the User object.
+            UserExperience consumerExperience = new UserExperience(user);
+            //Add the ConsumerExperience object to this Form.
+            this.Controls.Add(consumerExperience);
+            //Set the Dock property of the ConsumerExperience object to Fill.
+            consumerExperience.Dock = DockStyle.Fill;
         }
 
         private void label8_Click(object sender, EventArgs e)

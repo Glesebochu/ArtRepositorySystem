@@ -41,5 +41,15 @@ namespace ArtRepositorySystem
         {
             tabControl1.SelectTab(tabPage5);
         }
+
+        private void BtnSignUp_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            //Display UserRegistration page for login
+            UserRegistration userRegistration = new UserRegistration();
+            this.FindForm().Controls.Add(userRegistration);
+
+        }
     }
 }
