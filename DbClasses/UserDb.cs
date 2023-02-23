@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -9,19 +10,20 @@ namespace ArtRepositorySystem
     {
 
         SqlConnection conn;
-        string connectionString =
-            "Data Source=(local);Initial Catalog=UserDb;" + "Integrated Security=true";
+        String ConnectionString = ConfigurationManager.ConnectionStrings["MededaContext"].ToString();
+
 
 
         public int getTotalNumberOfRecord()
         {
+           
             int totalRecords = 0;
             using (SqlConnection conn = new SqlConnection(
-                       connectionString))
+                       ConnectionString))
             {
                 try
                 {
-                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM UserTable", conn);
+                    SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Users", conn);
                     conn.Open();
                     totalRecords = Convert.ToInt32(cmd.ExecuteScalar());
                 }
@@ -37,7 +39,7 @@ namespace ArtRepositorySystem
         public void checkUserCredential(String uname, String pwd)
         {
 
-            using (conn = new SqlConnection(connectionString))
+            using (conn = new SqlConnection(ConnectionString))
             {
                 using (var cmd = new SqlCommand
                 {
@@ -89,7 +91,7 @@ namespace ArtRepositorySystem
 
         private bool isUserExist(String userName, String email)
         {
-            using (conn = new SqlConnection(connectionString))
+            using (conn = new SqlConnection(ConnectionString))
             {
                 using (var cmd = new SqlCommand
                 {
@@ -126,7 +128,7 @@ namespace ArtRepositorySystem
         public void saveToDb(User userObject)
         {
 
-            using (conn = new SqlConnection(connectionString))
+            using (conn = new SqlConnection(ConnectionString))
             {
                 using (var cmd = new SqlCommand
                 {
@@ -141,7 +143,7 @@ namespace ArtRepositorySystem
                         conn.Open();
 
 
-                        if (this.isUserExist(userObject.userName, userObject.email))
+                        if (this.isUserExist(userObject.Username, userObject.email))
                         {
                             MessageBox.Show("User with this Credential already exist!");
                         }
@@ -149,7 +151,7 @@ namespace ArtRepositorySystem
                         {
                             cmd.Parameters.AddWithValue("@id", userObject.id);
                             cmd.Parameters.AddWithValue("@name", userObject.name);
-                            cmd.Parameters.AddWithValue("@uname", userObject.userName);
+                            cmd.Parameters.AddWithValue("@uname", userObject.Username);
                             cmd.Parameters.AddWithValue("@email", userObject.email);
                             cmd.Parameters.AddWithValue("@password", userObject.password);
                             cmd.ExecuteNonQuery();

@@ -42,20 +42,20 @@ namespace ArtRepositorySystem
 
             //Create User object.
 
-            //User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
-            //user.saveUserData();
+            User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
+            user.saveUserData();
 
 
 
             //This will be replaced by the verified User object from the Login page.
 
             //This is dummy data.
-            User user = new User();
-            user.UserId= 1;
-            user.FirstName = "Yelelew";
-            user.LastName = "Aymertim";
-            user.Username = "user";
-            user.ProfilePic = UserExperience.ImageToByteArray(Properties.Resources.Afewerk_Tekle);
+            //User user = new User();
+            //user.UserId= 1;
+            //user.FirstName = "Yelelew";
+            //user.LastName = "Aymertim";
+            //user.Username = "user";
+            //user.ProfilePic = UserExperience.ImageToByteArray(Properties.Resources.Afewerk_Tekle);
 
 
             //Code for calling the User experience from here.

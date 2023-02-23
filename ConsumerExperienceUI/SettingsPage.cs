@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TheArtOfDevHtmlRenderer.Adapters;
 
 namespace ArtRepositorySystem
 {
     public partial class SettingsPage : UserControl
     {
+
+        User currentUser = UserExperience.GetUserByUserName();
         public SettingsPage()
         {
             InitializeComponent();
+           
         }
-
+        
         private void updatePictureClick(object sender, EventArgs e)
         {
             string imagelocation;
@@ -26,28 +30,122 @@ namespace ArtRepositorySystem
 
             if (op.ShowDialog() == System.Windows.Forms.DialogResult.OK) { 
                 imagelocation = op.FileName;
-                guna2PictureBox1.ImageLocation = imagelocation;
-                 //guna2PictureBox1.BackgroundImage = Image.FromFile(op.FileName);
+                //guna2PictureBox1.ImageLocation = imagelocation;
+                guna2PictureBox1.Image = new Bitmap(op.FileName);
+
+
             }
         }
 
         private void saveChangedPassword(object sender, EventArgs e)
         {
-            if (guna2TextBox14.Text == guna2TextBox13.Text)
-            {
+            
                 //update db
-                MessageBox.Show("Password change confirmed.");
+           using (MededaContext mededaContext = new MededaContext())
+            {
+                    User userToBeUpdated = mededaContext.Users.SingleOrDefault
+                        (username => username.Username == UserExperience.currentUser.Username);
+                if (userToBeUpdated != null)
+                {
+                    if (txtNewPassword.Text == txtConfirmPassword.Text)
+                    {
 
-            }
-            else {
-                MessageBox.Show("Make sure the passwords you have entered match and try again.");
-            }
+                        if (userToBeUpdated.password == txtCurrentPassword.Text)
+                        {
+                            userToBeUpdated.password = txtNewPassword.Text;
+                            mededaContext.SaveChanges();
+                            MessageBox.Show("Password change confirmed.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter the correct current password!");
+
+                        }
+
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Make sure the passwords you have entered match and try again.");
+                    }
+                }
+
+           }   
+                   
+            
+           
         }
 
         private void saveChangedProfilePicture(object sender, EventArgs e)
         {
+            using (MededaContext mededaContext = new MededaContext())
+            {
+                User userToBeUpdated = mededaContext.Users.SingleOrDefault
+                    (username => username.Username == UserExperience.currentUser.Username);
+                if (userToBeUpdated != null)
+                {
+                    userToBeUpdated.ProfilePic = UserExperience.ImageToByteArray(guna2PictureBox1.Image);
+                    mededaContext.SaveChanges();
+
+                }
+
+            }
 
         }
 
+        private void btnEditProfileDetails_Click(object sender, EventArgs e)
+        {
+            using (MededaContext mededaContext = new MededaContext())
+            {
+                User userToBeUpdated = mededaContext.Users.SingleOrDefault
+                    (username => username.Username == UserExperience.currentUser.Username);
+                if (userToBeUpdated != null)
+                {
+                    userToBeUpdated.FirstName = txtFirstName.Text;
+                    userToBeUpdated.LastName = txtLastName.Text;
+                    MededaContext checkUsernameContext = new MededaContext();
+                    List<String> UserNames = (from usernames in checkUsernameContext.Users
+                                              select usernames.Username.ToString()).ToList();
+                    if (UserNames.Count > 0)
+                    {
+                        MessageBox.Show("Username has been taken please choose another username");
+                    }
+                    else if (txtUserName != null && UserNames.Count == 0)
+                    {
+                        userToBeUpdated.Username = txtUserName.Text;
+                        
+                        mededaContext.SaveChanges();
+
+                    }
+                    else
+                    {
+                        
+                        mededaContext.SaveChanges();
+                    }
+                   
+
+                }
+
+            }
+
+        }
+
+        private void btnDeleteAccount_Click(object sender, EventArgs e)
+        {
+            using (MededaContext mededaContext = new MededaContext())
+            {
+                User userToBeDeleted = mededaContext.Users.SingleOrDefault
+                    (username => username.Username == UserExperience.currentUser.Username);
+                if (userToBeDeleted != null && userToBeDeleted.password==txtPasswordToDelete.Text)
+                {
+                    mededaContext.Users.Remove(userToBeDeleted);
+                    
+                    mededaContext.SaveChanges();
+
+                }
+
+            }
+
+        }
     }
 }

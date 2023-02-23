@@ -49,7 +49,7 @@ namespace ArtRepositorySystem
         //Create a center display for an Artwork.
 
         public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
-        {
+        {  
             using (var ms = new MemoryStream())
             {
                 imageIn.Save(ms, imageIn.RawFormat);
@@ -62,6 +62,12 @@ namespace ArtRepositorySystem
             MemoryStream ms = new MemoryStream(byteArrayIn);
             Image returnImage = Image.FromStream(ms);
             return returnImage;
+        }
+
+        public static User GetUserByUserName() 
+        {
+            MededaContext mededaContext = new MededaContext();
+            return mededaContext.Users.SingleOrDefault(username => username.Username == currentUser.Username);
         }
         public static void CreateCenterDisplayForArt(Art art, Panel panelContent)
         {

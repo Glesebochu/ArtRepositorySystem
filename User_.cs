@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -28,7 +29,7 @@ namespace ArtRepositorySystem
         //{ 
         //    get { return _password; } 
         //}
-        public string userName
+        public string Username
         { 
             get { return _userName; } 
             set { _userName = value; } 
@@ -41,9 +42,10 @@ namespace ArtRepositorySystem
             this.db = this.createDb();
             this._id = this.getNumberOfRecords().ToString();
             this._name = name;
-            this.userName = userName;
+            this.Username = userName;
             this._email = email;
             this._password = password;
+            this.ProfilePic = UserExperience.ImageToByteArray(Properties.Resources.user_icon);
         }
 
         public User(bool _)

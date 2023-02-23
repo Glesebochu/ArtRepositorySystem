@@ -24,7 +24,7 @@ namespace ArtRepositorySystem.ArtistExperienceUI
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            guna2Button1.Visible = false;
+            btnImage.Visible = false;
             pictureBox1.Visible = true;
 
             // Show the open file dialog to allow the user to select an image file.
@@ -35,53 +35,70 @@ namespace ArtRepositorySystem.ArtistExperienceUI
             {
                 // Load the selected image file into a Bitmap object.
                 Bitmap image = new Bitmap(openFileDialog.FileName);
-                pictureBox1.BackgroundImage = image;
+                pictureBox1.Image = image;
             }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             VisualArt VA = new VisualArt();
+            UserExperience.currentUser.FirstName = "test";
+            VA.Artists = new List<User> { UserExperience.currentUser };
             VA.Image = UserExperience.ImageToByteArray(pictureBox1.Image);
-            VA.Title = drakeuiTextBox1.Text; 
-            VA.Description= drakeuiRichTextBox1.Text;
-            VA.Genre = guna2ComboBox1.Text;
+            VA.Title = txtTitle.Text; 
+            VA.Description= txtDescription.Text;
+            VA.Genre = cmbGenre.Text;
 
 
-            if (guna2ComboBox2.Text == "Painting")
+            if (cmbVisualArtType.Text == "Painting")
             {
                 VA.VisualArtType = VisualArtType.Painting;
             }
-            else if (guna2ComboBox2.Text == "Photograph")
+            else if (cmbVisualArtType.Text == "Photograph")
             {
                 VA.VisualArtType = VisualArtType.Photograph;
             }
-            else if (guna2ComboBox2.Text == "Building")
+            else if (cmbVisualArtType.Text == "Building")
             {
                 VA.VisualArtType = VisualArtType.Building;
             }
-            else if (guna2ComboBox2.Text == "NonBuildingStructureg")
+            else if (cmbVisualArtType.Text == "NonBuildingStructureg")
             {
                 VA.VisualArtType = VisualArtType.NonBuildingStructure;
             }
-            else if (guna2ComboBox2.Text == "Ceramic")
+            else if (cmbVisualArtType.Text == "Ceramic")
             {
                 VA.VisualArtType = VisualArtType.Ceramic;
             }
-            else if (guna2ComboBox2.Text == "Film")
+            else if (cmbVisualArtType.Text == "Film")
             {
                 VA.VisualArtType = VisualArtType.Film;
             }
-            else if (guna2ComboBox2.Text == "Sculpture")
+            else if (cmbVisualArtType.Text == "Sculpture")
             {
                 VA.VisualArtType = VisualArtType.Sculpture;
             }
-            else if (guna2ComboBox2.Text == "Drawing")
+            else if (cmbVisualArtType.Text == "Drawing")
             {
                 VA.VisualArtType = VisualArtType.Drawing;
             }
+            else
+            {
+                MessageBox.Show("Did you choose a visual art type?");
+            }
 
-            MessageBox.Show(VA.VisualArtType.ToString());
+            if (UserExperience.currentUser != null)
+            {
+                using (MededaContext mededaContext = new MededaContext())
+                {
+                    List<int> id = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+                    FeedbackForm DefaultFeedBackForm = mededaContext.FeedbackForm.SingleOrDefault
+                        (DefaultFeedBackForm => DefaultFeedBackForm.FeedbackFromId == 3);
+                    VA.FeedbackForm = DefaultFeedBackForm;
+                    mededaContext.VisualArts.Add(VA);
+                    mededaContext.SaveChanges();
+                }
+            }
 
         }
     }
