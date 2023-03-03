@@ -45,10 +45,10 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
             {
                 //Call the search algorithm with the user's input here...
 
-                MededaContext searchedArtsContext= new MededaContext();
+                MededaContext searchedArtsContext = new MededaContext();
                 List<VisualArt> searchedArts = (from artworks in searchedArtsContext.VisualArts
-                                               where artworks.Description.Contains(TextBoxSearchBar.Text.ToString())
-                                               || artworks.Title.Contains(TextBoxSearchBar.Text.ToString())
+                                                where artworks.Description.Contains(TextBoxSearchBar.Text.ToString())
+                                                || artworks.Title.Contains(TextBoxSearchBar.Text.ToString())
                                                 select artworks).ToList();
 
                 List<User> searchedArtists = (from artists in searchedArtsContext.Users
@@ -64,7 +64,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 //Create a ResultsGrid object from the list of Users.
                 resultsGridArtists = new ResultsGrid(searchedArtists);
                 //Add the ResultsGrid object to PanelArtistsSection.
-                //UserExperience.AddToPanel(resultsGridArtists, PanelArtistsSection);
+                UserExperience.AddToPanel(resultsGridArtists, PanelArtistsSection);
 
                 //Create a ResultsGrid object from the list of VisualArts.
                 resultsGridArtworks = new ResultsGrid(searchedArts);
@@ -72,7 +72,7 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
                 UserExperience.AddToPanel(resultsGridArtworks, PanelArtworksSection);
 
 
-                
+
             }
         }
     }

@@ -47,11 +47,24 @@ namespace ArtRepositorySystem
             this.Hide();
 
             //Display UserRegistration page for login
-            this.FindForm().Controls.Add(new UserRegistration());
+            //this.FindForm().Controls.Add(new UserRegistration());
+
+            //This is dummy data.
+            User user = UserExperience.GetUserByUserName("Leonardo Da Vinci");
+
+            //Code for calling the User experience from here.
+
+            //Create a UserExperience object from the User object.
+            UserExperience userExperience = new UserExperience(user);
+            //Add the UserExperience object to this Form.
+            this.FindForm().Controls.Add(userExperience);
+            //Set the Dock property of the UserExperience object to Fill.
+            userExperience.Dock = DockStyle.Fill;
 
             //Make the form resizable.
             this.FindForm().FormBorderStyle = FormBorderStyle.Sizable;
             this.FindForm().MaximizeBox = true;
+
         }
     }
 }

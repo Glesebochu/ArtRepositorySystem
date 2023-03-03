@@ -14,7 +14,7 @@ namespace ArtRepositorySystem
     public partial class SettingsPage : UserControl
     {
 
-        User currentUser = UserExperience.GetUserByUserName();
+        User currentUser = UserExperience.GetUserByUserName(UserExperience.currentUser.Username);
         public SettingsPage()
         {
             InitializeComponent();
@@ -35,6 +35,8 @@ namespace ArtRepositorySystem
 
 
             }
+
+
         }
 
         private void saveChangedPassword(object sender, EventArgs e)
@@ -90,6 +92,7 @@ namespace ArtRepositorySystem
                 }
 
             }
+
 
         }
 

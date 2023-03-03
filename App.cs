@@ -23,6 +23,8 @@ namespace ArtRepositorySystem
             //Display introductory page
             IntroductoryPageUC intro = new IntroductoryPageUC();
             this.Controls.Add(intro);
+
+            //Disable resizability of form.
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
         }

@@ -36,27 +36,20 @@ namespace ArtRepositorySystem
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            //User loginUser = new User();
+            //loginUser.logUser(textBox5.Text, textBox6.Text);
+
+
+
             this.Hide();
 
             //Check if the user is in the users table. 
 
-            //Create User object.
-
-            User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
-            user.saveUserData();
-
-
-
             //This will be replaced by the verified User object from the Login page.
 
             //This is dummy data.
-            //User user = new User();
-            //user.UserId= 1;
-            //user.FirstName = "Yelelew";
-            //user.LastName = "Aymertim";
-            //user.Username = "user";
-            //user.ProfilePic = UserExperience.ImageToByteArray(Properties.Resources.Afewerk_Tekle);
-
+            User user = UserExperience.GetUserByUserName("Leonardo Da Vinci");
 
             //Code for calling the User experience from here.
 
@@ -83,6 +76,13 @@ namespace ArtRepositorySystem
             {
                 panel3.Height += 50;
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            User user = new User(textBox1.Text, "@" + textBox2.Text, textBox3.Text, textBox4.Text);
+            user.saveUserData();
 
         }
     }

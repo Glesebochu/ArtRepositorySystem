@@ -12,6 +12,7 @@ using System.Configuration;
 using DrakeUI.Framework;
 using System.Data;
 using TheArtOfDevHtmlRenderer.Adapters;
+using System.Diagnostics;
 
 namespace ArtRepositorySystem
 {
@@ -24,7 +25,7 @@ namespace ArtRepositorySystem
     public partial class UserExperience : UserControl
     {
         public static User currentUser;
-        
+
         public UserExperience(User ekele)
         {
             InitializeComponent();
@@ -32,7 +33,7 @@ namespace ArtRepositorySystem
         }
 
         #region Custom Methods
-        
+
         //Add a UserControl to PanelContent.
         public void AddToPanelContent(UserControl userControl)
         {
@@ -49,7 +50,7 @@ namespace ArtRepositorySystem
         //Create a center display for an Artwork.
 
         public static byte[] ImageToByteArray(System.Drawing.Image imageIn)
-        {  
+        {
             using (var ms = new MemoryStream())
             {
                 imageIn.Save(ms, imageIn.RawFormat);
@@ -64,10 +65,10 @@ namespace ArtRepositorySystem
             return returnImage;
         }
 
-        public static User GetUserByUserName() 
+        public static User GetUserByUserName(String username)
         {
             MededaContext mededaContext = new MededaContext();
-            return mededaContext.Users.SingleOrDefault(username => username.Username == currentUser.Username);
+            return mededaContext.Users.SingleOrDefault(user => user.Username == username);
         }
         public static void CreateCenterDisplayForArt(Art art, Panel panelContent)
         {
@@ -86,7 +87,7 @@ namespace ArtRepositorySystem
             panelContent.Controls.Add(centerDisplay);
             centerDisplay.BringToFront();
         }
-        
+
         //Create a center display for an Artist.
         public static void CreateCenterDisplayForArtist(User artist, Panel panelContent)
         {
@@ -104,9 +105,9 @@ namespace ArtRepositorySystem
             //Add the CenterDisplay to the panel and bring it to the front.
             panelContent.Controls.Add(centerDisplay);
             centerDisplay.BringToFront();
-            
+
         }
-        
+
         //Get a list of Art objects for testing purposes.
         public static List<Art> GetDummyArts()
         {
@@ -119,18 +120,18 @@ namespace ArtRepositorySystem
             //mededaContext.SaveChanges();
 
             List<Art> arts;
-           
+
 
             List<VisualArt> contextArts = (from artwork in mededaContext.VisualArts
-                                    select artwork).ToList();
+                                           select artwork).ToList();
 
             arts = new List<Art>();
             foreach (var Visualart in contextArts)
             {
                 arts.Add(Visualart);
             }
-           
-          
+
+
             return arts;
         }
 
@@ -153,23 +154,23 @@ namespace ArtRepositorySystem
             dadapter.Fill(ds);
             int count = ds.Tables[0].Rows.Count;
 
-            if(count > 0)
+            if (count > 0)
             {
-                for(int i = 0; i < count; i++)
+                for (int i = 0; i < count; i++)
                 {
                     int SomeId = (int)ds.Tables[0].Rows[count - i - 1]["WorksArtId"];
                     UserWorksIds.Add(SomeId);
-                     //test to see if it returns what it should and it works well
+                    //test to see if it returns what it should and it works well
                     //MessageBox.Show(SomeId.ToString());
 
                 }
             }
 
-           
+
             MededaContext mededaContext = new MededaContext();
-           
+
             List<VisualArt> CurrentUsersArts = (from items in mededaContext.VisualArts
-                                                where UserWorksIds.Contains(items.ArtId) 
+                                                where UserWorksIds.Contains(items.ArtId)
                                                 select items).ToList();
             List<Art> arts;
 
@@ -189,16 +190,16 @@ namespace ArtRepositorySystem
 
             MededaContext mededaContext = new MededaContext();
 
-           
+
 
             List<User> userList = (from user in mededaContext.Users
-                                           select user).ToList();
-            
-           
+                                   select user).ToList();
+
+
 
             return userList;
         }
-        
+
         //Get a list of Buttons from a list of VisualArts.
         public static List<Button> CreateButtonsFromVisualArtworks(List<VisualArt> visualArts)
         {
@@ -224,7 +225,7 @@ namespace ArtRepositorySystem
             for (int i = 0; i < users.Count(); i++)
             {
                 Button button = new Button();
-               
+
                 Image buttonImage = byteArrayToImage(users[i].ProfilePic);
                 button.BackgroundImage = buttonImage;
                 button.BackgroundImageLayout = ImageLayout.Tile;
@@ -235,7 +236,7 @@ namespace ArtRepositorySystem
 
             return buttonList;
         }
-        
+
         //Add a control to a panel.
         public static void AddToPanel(Control c, Panel panel)
         {
@@ -250,7 +251,7 @@ namespace ArtRepositorySystem
             //Bring the control to the front.
             c.BringToFront();
         }
-        
+
         //Get a list of CategoryTemplateDisplay objects from a list of VisualArts.
         public static List<CategoryTemplateDisplay> GetCategoriesFromVisualArts(List<VisualArt> visuals)
         {
@@ -270,7 +271,7 @@ namespace ArtRepositorySystem
             genres = genres.Distinct().ToList();
 
             //Create one CategoryTemplateDisplay for each genre
-            foreach(String genre in genres)
+            foreach (String genre in genres)
             {
                 //Create a list of VisualArts that are of the specific genre.
                 List<VisualArt> visualsOfGenre = visuals.FindAll(visual => visual.Genre == genre);
@@ -297,7 +298,7 @@ namespace ArtRepositorySystem
 
             //Set the image of the profile picture from the currentUser.
             Image ProfileImage = byteArrayToImage(currentUser.ProfilePic);
-           
+
 
             guna2CirclePictureBoxProfilePic.Image = ProfileImage;
 
@@ -323,7 +324,7 @@ namespace ArtRepositorySystem
                 AddToPanelContent(new MyWorksPage(GetDummyArts()));
             }
         }
-        
+
         #endregion
 
         #region Events
@@ -351,7 +352,7 @@ namespace ArtRepositorySystem
         //Event for hiding and showing the navigation panel based on a button click.
         private void BtnNavigation_Click(object sender, EventArgs e)
         {
-            if(SplitContainerAll.Panel1.Visible == true)
+            if (SplitContainerAll.Panel1.Visible == true)
             {
                 SplitContainerAll.Panel1.Hide();
                 SplitContainerAll.Panel2.Dock = DockStyle.Fill;
@@ -374,11 +375,18 @@ namespace ArtRepositorySystem
         //    System.Diagnostics.Process.Start("http://127.0.0.1:5500/ABOUT/index.html");
         //}
 
-       
+
 
         private void linkLabelAboutPage_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://127.0.0.1:5500/ABOUT/index.html");
+            string url = "http://127.0.0.1:5500/index.html";
+            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+        }
+
+        private void linkLabelAboutPage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "http://127.0.0.1:5500/index.html";
+            Process.Start(new ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
         }
     }
 }

@@ -40,6 +40,8 @@ namespace ArtRepositorySystem.ConsumerExperienceUI
 
             //Fill the bio tab.
             richTextBoxBio.Text = Artist.Bio;
+            richTextBoxBio.SelectAll();
+            richTextBoxBio.SelectionAlignment = HorizontalAlignment.Center;
 
             //Fill the works tab.
             int artistId = Artist.UserId;

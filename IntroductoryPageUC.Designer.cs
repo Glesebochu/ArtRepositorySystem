@@ -29,393 +29,392 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(IntroductoryPageUC));
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.BtnSignUp = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.SuspendLayout();
+            panel3 = new Panel();
+            button7 = new Button();
+            button6 = new Button();
+            button5 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            label3 = new Label();
+            pictureBox2 = new PictureBox();
+            tabPage2 = new TabPage();
+            label2 = new Label();
+            pictureBox6 = new PictureBox();
+            tabPage3 = new TabPage();
+            label4 = new Label();
+            pictureBox4 = new PictureBox();
+            tabPage4 = new TabPage();
+            label5 = new Label();
+            pictureBox3 = new PictureBox();
+            tabPage5 = new TabPage();
+            BtnSignUp = new Button();
+            label6 = new Label();
+            pictureBox5 = new PictureBox();
+            panel2 = new Panel();
+            label1 = new Label();
+            panel4 = new Panel();
+            panel3.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            panel4.SuspendLayout();
+            SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.Silver;
-            this.panel3.Controls.Add(this.button7);
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 501);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(931, 99);
-            this.panel3.TabIndex = 5;
+            panel3.BackColor = Color.Silver;
+            panel3.Controls.Add(button7);
+            panel3.Controls.Add(button6);
+            panel3.Controls.Add(button5);
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(button2);
+            panel3.Dock = DockStyle.Bottom;
+            panel3.Location = new Point(0, 501);
+            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(931, 99);
+            panel3.TabIndex = 5;
             // 
             // button7
             // 
-            this.button7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(413, 13);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(94, 64);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Feedback";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            button7.BackColor = SystemColors.ControlLightLight;
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Location = new Point(413, 13);
+            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Name = "button7";
+            button7.Size = new Size(94, 64);
+            button7.TabIndex = 5;
+            button7.Text = "Feedback";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(642, 13);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(94, 64);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Sign Up";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            button6.BackColor = SystemColors.ControlLightLight;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Location = new Point(642, 13);
+            button6.Margin = new Padding(3, 4, 3, 4);
+            button6.Name = "button6";
+            button6.Size = new Size(94, 64);
+            button6.TabIndex = 4;
+            button6.Text = "Get Started";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(177, 13);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 64);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Discover";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            button5.BackColor = SystemColors.ControlLightLight;
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Location = new Point(177, 13);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(94, 64);
+            button5.TabIndex = 3;
+            button5.Text = "Discover";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(528, 13);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(94, 64);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Analytics";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = SystemColors.ControlLightLight;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Location = new Point(528, 13);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 64);
+            button3.TabIndex = 2;
+            button3.Text = "Analytics";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(294, 13);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(94, 64);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Browse";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            button2.BackColor = SystemColors.ControlLightLight;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(294, 13);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 64);
+            button2.TabIndex = 1;
+            button2.Text = "Browse";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(0, 104);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(931, 403);
-            this.tabControl1.TabIndex = 7;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Controls.Add(tabPage3);
+            tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.Location = new Point(0, 104);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(931, 403);
+            tabControl1.TabIndex = 7;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Silver;
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.pictureBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage1.Size = new System.Drawing.Size(923, 370);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            tabPage1.BackColor = Color.Silver;
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(pictureBox2);
+            tabPage1.Location = new Point(4, 29);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(923, 370);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "tabPage1";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Silver;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 22.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(502, 100);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(382, 184);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Discover new Artists\r\nalong with\r\ntheir artworks.\r\n\r\n";
+            label3.AutoSize = true;
+            label3.BackColor = Color.Silver;
+            label3.Font = new Font("Century Gothic", 22.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label3.Location = new Point(502, 100);
+            label3.Name = "label3";
+            label3.Size = new Size(382, 184);
+            label3.TabIndex = 6;
+            label3.Text = "Discover new Artists\r\nalong with\r\ntheir artworks.\r\n\r\n";
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(75, 24);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(421, 322);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 5;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(75, 24);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(421, 322);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.Silver;
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.pictureBox6);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage2.Size = new System.Drawing.Size(923, 370);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            tabPage2.BackColor = Color.Silver;
+            tabPage2.Controls.Add(label2);
+            tabPage2.Controls.Add(pictureBox6);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(923, 370);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "tabPage2";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Silver;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 22.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(546, 113);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 138);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Browse through\r\nour catalog\r\nof artists.\r\n";
+            label2.AutoSize = true;
+            label2.BackColor = Color.Silver;
+            label2.Font = new Font("Century Gothic", 22.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label2.Location = new Point(546, 113);
+            label2.Name = "label2";
+            label2.Size = new Size(301, 138);
+            label2.TabIndex = 5;
+            label2.Text = "Browse through\r\nour catalog\r\nof artists.\r\n";
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(102, 23);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(438, 324);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 4;
-            this.pictureBox6.TabStop = false;
+            pictureBox6.Image = (Image)resources.GetObject("pictureBox6.Image");
+            pictureBox6.Location = new Point(102, 23);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(438, 324);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 4;
+            pictureBox6.TabStop = false;
             // 
             // tabPage3
             // 
-            this.tabPage3.BackColor = System.Drawing.Color.Silver;
-            this.tabPage3.Controls.Add(this.label4);
-            this.tabPage3.Controls.Add(this.pictureBox4);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(923, 370);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            tabPage3.BackColor = Color.Silver;
+            tabPage3.Controls.Add(label4);
+            tabPage3.Controls.Add(pictureBox4);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(3, 4, 3, 4);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(923, 370);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "tabPage3";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Silver;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 22.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(499, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(412, 92);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Leave a constructive \r\nFeedback.\r\n";
+            label4.AutoSize = true;
+            label4.BackColor = Color.Silver;
+            label4.Font = new Font("Century Gothic", 22.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label4.Location = new Point(499, 111);
+            label4.Name = "label4";
+            label4.Size = new Size(412, 92);
+            label4.TabIndex = 6;
+            label4.Text = "Leave a constructive \r\nFeedback.\r\n";
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(51, 56);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(442, 259);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(51, 56);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(442, 259);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
             // 
             // tabPage4
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.Silver;
-            this.tabPage4.Controls.Add(this.label5);
-            this.tabPage4.Controls.Add(this.pictureBox3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 29);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(923, 370);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
+            tabPage4.BackColor = Color.Silver;
+            tabPage4.Controls.Add(label5);
+            tabPage4.Controls.Add(pictureBox3);
+            tabPage4.Location = new Point(4, 29);
+            tabPage4.Margin = new Padding(3, 4, 3, 4);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new Size(923, 370);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "tabPage4";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Silver;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 22.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(522, 97);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(389, 92);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Unlimited access to \r\nyour Analytics.";
+            label5.AutoSize = true;
+            label5.BackColor = Color.Silver;
+            label5.Font = new Font("Century Gothic", 22.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label5.Location = new Point(522, 97);
+            label5.Name = "label5";
+            label5.Size = new Size(389, 92);
+            label5.TabIndex = 6;
+            label5.Text = "Unlimited access to \r\nyour Analytics.";
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(51, 15);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(465, 342);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(51, 15);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(465, 342);
+            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.TabIndex = 5;
+            pictureBox3.TabStop = false;
             // 
             // tabPage5
             // 
-            this.tabPage5.BackColor = System.Drawing.Color.Silver;
-            this.tabPage5.Controls.Add(this.BtnSignUp);
-            this.tabPage5.Controls.Add(this.label6);
-            this.tabPage5.Controls.Add(this.pictureBox5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(923, 370);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
+            tabPage5.BackColor = Color.Silver;
+            tabPage5.Controls.Add(BtnSignUp);
+            tabPage5.Controls.Add(label6);
+            tabPage5.Controls.Add(pictureBox5);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Margin = new Padding(3, 4, 3, 4);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(923, 370);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "tabPage5";
             // 
             // BtnSignUp
             // 
-            this.BtnSignUp.Location = new System.Drawing.Point(617, 275);
-            this.BtnSignUp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BtnSignUp.Name = "BtnSignUp";
-            this.BtnSignUp.Size = new System.Drawing.Size(125, 31);
-            this.BtnSignUp.TabIndex = 8;
-            this.BtnSignUp.Text = "Sign Up";
-            this.BtnSignUp.UseVisualStyleBackColor = true;
-            this.BtnSignUp.Click += new System.EventHandler(this.BtnSignUp_Click);
+            BtnSignUp.Location = new Point(617, 275);
+            BtnSignUp.Margin = new Padding(3, 4, 3, 4);
+            BtnSignUp.Name = "BtnSignUp";
+            BtnSignUp.Size = new Size(125, 31);
+            BtnSignUp.TabIndex = 8;
+            BtnSignUp.Text = "Get Started";
+            BtnSignUp.UseVisualStyleBackColor = true;
+            BtnSignUp.Click += BtnSignUp_Click;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Silver;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 22.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(509, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(381, 138);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Create an account \r\nwith a few\r\nsimple steps.\r\n";
+            label6.AutoSize = true;
+            label6.BackColor = Color.Silver;
+            label6.Font = new Font("Century Gothic", 22.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label6.Location = new Point(509, 107);
+            label6.Name = "label6";
+            label6.Size = new Size(381, 138);
+            label6.TabIndex = 7;
+            label6.Text = "Create an account \r\nwith a few\r\nsimple steps.\r\n";
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(70, 15);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(433, 338);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 6;
-            this.pictureBox5.TabStop = false;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(70, 15);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(433, 338);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 6;
+            pictureBox5.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(931, 57);
-            this.panel2.TabIndex = 4;
+            panel2.BackColor = Color.Silver;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(931, 57);
+            panel2.TabIndex = 4;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(386, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 39);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Mededa";
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(386, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(155, 39);
+            label1.TabIndex = 1;
+            label1.Text = "Mededa";
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.Silver;
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 57);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(931, 83);
-            this.panel4.TabIndex = 8;
+            panel4.BackColor = Color.Silver;
+            panel4.Controls.Add(label1);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 57);
+            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(931, 83);
+            panel4.TabIndex = 8;
             // 
             // IntroductoryPageUC
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "IntroductoryPageUC";
-            this.Size = new System.Drawing.Size(931, 600);
-            this.panel3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(panel4);
+            Controls.Add(tabControl1);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "IntroductoryPageUC";
+            Size = new Size(931, 600);
+            panel3.ResumeLayout(false);
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
